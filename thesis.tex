@@ -1,0 +1,114 @@
+\documentclass[oneside,11pt,openright]{report}
+
+\usepackage[latin1]{inputenc}
+\usepackage[american]{babel}
+\usepackage{a4}
+\usepackage{latexsym}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{datetime}
+\usepackage{epstopdf}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage[font={small,it}]{caption}
+\usepackage{subcaption}
+\usepackage[authoryear]{natbib} % numbers or authoryear
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+
+% http://willbenton.com/wb-images/pifont.pdf
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+
+\renewcommand*\ttdefault{txtt}
+
+\newcommand{\todo}[1]{{\color[rgb]{.5,0,0}\textbf{$\blacktriangleright$#1$\blacktriangleleft$}}}
+
+% see http://imf.au.dk/system/latex/bog/
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Used for table cells
+\definecolor{TrueColor}{RGB}{209, 243, 209}
+\definecolor{FalseColor}{RGB}{255, 204, 202}
+
+\pagestyle{empty} 
+\pagenumbering{roman} 
+\vspace*{\fill}\noindent{\rule{\linewidth}{1mm}\\[4ex]
+{\Huge\sf Flygtige interfaeses }\\[2ex]
+{\huge\sf Tore Stubbe Lundgren, 20072415}\\[2ex]
+{\huge\sf Stefan Andreas Bugge Loeschcke, 20073986}\\[2ex]
+\noindent\rule{\linewidth}{1mm}\\[4ex]
+\noindent{\Large\sf Master's Thesis, Computer Science\\[1ex] 
+\monthname\ \the\year  \\[1ex] Advisor: Marianne Graves Petersen\\[15ex]}\\[\fill]}
+\epsfig{file=logo.eps}\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain}
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\todo{in English\dots}
+
+\chapter*{Resum\'e}
+\addcontentsline{toc}{chapter}{Resum\'e}
+
+\todo{in Danish\dots}
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+\todo{\dots}
+
+\vspace{2ex}
+\begin{flushright}
+  \emph{Tore Stubbe Lundgren and Stefan Andreas Bugge Loeschcke,}\\
+  \emph{Aarhus, \today.}
+\end{flushright}
+
+\tableofcontents
+\pagenumbering{arabic}
+\setcounter{secnumdepth}{2}
+
+\definecolor{HighLightColor}{RGB}{138,179,255}
+\sethlcolor{HighLightColor}  % set highlighting color
+%sethlcolor{}     %turn highlighting off -- I came back to turn the highlighting off once the changes were approved.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Introduction}
+\label{ch:intro}
+
+ 
+
+
+\chapter{Conclusion}
+\label{ch:conclusion}
+
+\todo{\dots}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addcontentsline{toc}{chapter}{Primary Bibliography}
+
+\bibliographystyle{plainnat} 
+\bibliography{refs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\listoffigures
+\listoftables
+
+\end{document}
+
