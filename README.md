@@ -11,16 +11,16 @@ On Windows, sometimes a build seems to succeed, but the PDF file is not updated.
 Some of the basic commands:
 
 $ git status
-# The main tool you use to determine which files are in which state is the git status command
+_The main tool you use to determine which files are in which state is the git status command_
 
 $ git add README
-# Stages your README file, adding it to the list of files to be committed
+_Stages your README file, adding it to the list of files to be committed_
 
 $ git commit -m 'first commit'
-# Commits your files, adding the message "first commit"
+_Commits your files, adding the message "first commit"_
 
 $ git commit -a -m 'new commit'
-# if you want to skip the staging area, Git provides a simple shortcut. Providing the -a option to the git commit command makes Git automatically stage every file that is already tracked before doing the commit, letting you skip the git add part.
+_if you want to skip the staging area, Git provides a simple shortcut. Providing the -a option to the git commit command makes Git automatically stage every file that is already tracked before doing the commit, letting you skip the git add part._
 
 $ git push origin master
-# Sends your commits in the "master" branch to GitHub
+_Sends your commits in the "master" branch to GitHub_
