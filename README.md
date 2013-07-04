@@ -1,3 +1,13 @@
+## Sublime 2 text + SumatraPDF ##
+
+Setup tutorial: [http://knowledgepayback.blogspot.dk/2012/07/latex-on-windows-with-sublime-text.html](http://knowledgepayback.blogspot.dk/2012/07/latex-on-windows-with-sublime-text.html)
+
+### Compilation hangs on Windows ###
+
+On Windows, sometimes a build seems to succeed, but the PDF file is not updated. This is most often the case if there is a stale pdflatex process running; a symptom is the appearence of a file with extension .synctex.gz(busy). If so, launch the Task Manager and end the pdflatex.exe process; if you see a perl.exe process, end that, too.
+
+## Git basics ##
+
 Some of the basic commands:
 
 $ git status
