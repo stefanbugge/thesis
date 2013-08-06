@@ -22,6 +22,8 @@
 \usepackage[authoryear]{natbib} % numbers or authoryear
 \usepackage{amssymb}% http://ctan.org/pkg/amssymb
 \usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage[titletoc]{appendix}
+\usepackage{hyperref}
 
 % http://willbenton.com/wb-images/pifont.pdf
 \newcommand{\cmark}{\ding{51}}%
@@ -91,10 +93,13 @@
 \label{ch:intro}
 \input{introduction.tex}
 
+\chapter{Related work}
+\label{ch:related-work}
+\input{related_work.tex}
 
-Cite test:
-
-\cite{abowd2012next} \cite{ishii1997tangible} \cite{ishii2012radical} \cite{weiser1991computer}
+\chapter{Workshops}
+\label{ch:workshops}
+\input{workshops.tex}
 
 \chapter{User Interfaces}
 \label{ch:ui}
@@ -105,6 +110,14 @@ Cite test:
 \input{conclusion.tex}
 
 \todo{\dots}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{appendices}
+  \chapter{Workshops}
+  \label{app:workshops}
+  \input{appendices/workshops.tex}
+\end{appendices}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
