@@ -10,3 +10,5 @@
 *.lof
 *.db
 *.lot
+*.out
+*.orig
