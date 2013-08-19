@@ -61,6 +61,8 @@ The piezoresistive fabric acts as a pressure sensitive layer as piezoresistive m
 This approach to making pressure sensitive grids will be described in further detail in the next section as we build upon it in our own prototype.
 
 \subsection{Touch Sensing}
+\todo{bedre indledning}
+
 Generally seen there are three broad categories for doing multi-touch input sensing: optical, capacitive and resistive \citep{rosenberg2009unmousepad}.
 
 Optical sensing usually involve one or more digital cameras placed behind the touch surface to generate an image of the user's finger to track the interaction.
@@ -83,14 +85,38 @@ The simple approach is to create a discrete array of FSR sensors in which each s
 This has some obvious limitations that will be discussed in iteration 1 in the next section.
 Another approach is to create a row/column grid as seen in previously mentioned rSkin, this approach will be explored in iteration 2.
 Lastly in iteration 3 we will explore the approach suggested by \citet{rosenberg2009unmousepad} to create a device based on IFSR, which is interpolating FSR, to increase the resolution of our prototype.
+Generally seen resistive sensing is a low-cost and easy to implement solution to doing multi-touch interfaces and has the added benefit of being able to measure pressure.
+Though to attain resolutions higher than the size of the underlying grid, a lot of data processing has to be done as seen in \citep{rosenberg2009unmousepad}.
+Also from our own experience with the technology we have seen a lot of input signal noise from the sensor which makes it harder to get accurate position tracking.   
 
 \subsection{Gesture recognition}
-\begin{verbatim}
-iOS SDK og Android SDK
-\$1 - Unistroke, fast
-\$n - Multistroke, slow
-\$p - Uni+Multistroke, fast than \$n
-\end{verbatim}
+Being able to sense a x-y position or a pressure map on an interactive surface is usually not enough for an application to provide interesting interaction possibilities.
+Adding gestures can be one way to approach the interaction in a more involving, natural and expressive way.
+\citet{baudel1993charade} points out three possible advantages in using gesture based systems:
+\begin{itemize}
+  \item \emph{Natural interaction:} Gestures are a natural and intuitive way to interact that is easy to learn.
+  \item \emph{Terse and powerful interaction:} The expressive nature of a gesture can provide the ability for a single gesture to specify both a command and its parameters.
+  \item \emph{Direct interaction:} As the hand is used for input no intermediate transducer is needed
+\end{itemize}
+Gestures inherent expressive character does pose a challenge though as the computer system has to interpret the gesture in some way to give it meaning.
+Reversely the user needs to know, or at least have hints at, which gestures that the system understands in order to interact with it.
+Some types of gestures and their interaction meaning has eventually become so common that their behaviour is expected when interacting with touch interfaces today, for example pinch for zoom out, inverse pinch for zoom in and horizontal swipes for shifting though pages.
+A standardized interaction model for gesture interfaces are still a long way off though, at least in our opinion. 
+
+The increase in mainstream use of touch input devices of various types and sizes such as tablets, tabletops and smart phones has resulted in some easily accessible frameworks for doing gesture recognition.
+This is a relatively new thing as earlier gesture recognition was reserved for experts in pattern matching and therefore not quite suitable for user interface prototyping, unless you where able to put a large amount of work into it \citep{wobbrock2007gestures}.  
+
+The dollar family of recognizers \citep{anthony2010lightweight,vatavu2012gestures,wobbrock2007gestures} are some of the most popular frameworks for doing easily implementable 2-D gesture recognition.
+This family of recognizers are all geometric template matchers which means that they match the user input against a predefined template, and based on an Euclidean distance scoring function, selects the best match between template and input.
+\begin{itemize}
+  \item \emph{\$1-recognizer \citep{wobbrock2007gestures}:} is a single-stroke recognizer, fast
+  \item \emph{\$N-recognizer \citep{anthony2010lightweight}:} is a multi-stroke recognizer, slow
+  \item \emph{\$P-recognizer \citep{vatavu2012gestures}:} is a single and multi-stroke point-cloud recognizer, faster than \$N
+\end{itemize}
+We have implemented and experimented with the \$N and \$P recognizer as to determine which one performs the best with our data input, this will be discussed in section \todo{ref til sektion}.
+
+\todo{giver det mening at teste dollar-1?}
+
 \section{Implementation}
 \todo{skal det praesenteres som iterationer eller som en proces?}
 \subsection{Iteration 1}
