@@ -1,6 +1,18 @@
 %!TEX root = thesis.tex
-\section{Concept}
+Our second prototype will move away from the world of jammable shape changing interfaces and into the surfaces of our environment.
+Since the vision of ubiquitous computing was presented researchers have sought to integrate interactive technology into our everyday environment in variety of ways, which can be seen from the diverse selection of research fields that has stemmed from ubiquitous computing such as context awareness, tangible computing and shape changing interfaces.
+In this prototype we have taken Weiser's vision very literally - how do you integrate interaction into the fabric of our everyday environment, i.e. the surfaces that surrounds us?
+
+In the following sections we explore the possibilities of creating textile touch surfaces with advanced interaction capabilities as an exemplification of how surfaces can be used to interact in the home.
+We have chosen to work with textiles as an interactive platform as we see unused potential in this area, both for its tangible and aesthetic textural qualities compared to e.g. polymer solutions \cite{rosenberg2009unmousepad}, as well as for the interesting possibilities to allow for DIY solutions to creating interactive stuff in the home.
+
 \section{Related work and approaches}
+Before getting into detail with our implementation we will first give an overview of work and approaches that relates to our prototype and have inspired our solution.
+We are, of course, not the first ones to consider the surfaces that surrounds us as interactive potential.
+For example interactive floors such as iFloor \citep{petersen2005floor} and  iGameFloor \citep{gronbaek2007igamefloor}, augmented surface displays in fridges, walls and bowls \citep{taylor2007homes}, interactive tables such as reacTable \citep{jorda2007reactable} or, quite different from the other examples, REVEL that via a digital overlay changes the tactile perception of a physical surfaces \citep{bau2013revel}.
+
+We have separated this section into three different fields that all have influenced the construction and implementation of our prototype work: electronic textiles, touch sensing and gesture recognition.
+ 
 \subsection{Electronic Textiles}
 \begin{quotation}
 \emph{The most profound technologies are those that disappear. They weave themselves into the fabric of everyday life until they are indistinguishable from it. \citep{weiser1991computer}}
@@ -54,11 +66,10 @@ One of our inspirations has been rSkin \citep{rskinplusea,rSsininstructables}, a
    {rSkin, Open Source Robot Skin}
    \label{rskin}
 \end{figure}
-
 The `skin' is made of stretchy fabric and a 28 rows x 28 columns large pressure sensitive grid is embedded into the fabric using conductive thread.
 The skin is made out of three layers: first a non-conductive layer with 28 rows of conductive thread, then a layer piezoresistive fabric and lastly a non-conductive layer with 28 columns of conductive thread.
 The piezoresistive fabric acts as a pressure sensitive layer as piezoresistive materials decrease their electrical resistivity under mechanical stress \citep{piezoresistiveWIKIPEDIA}.
-This approach to making pressure sensitive grids will be described in further detail in the next section as we build upon it in our own prototype.
+This approach to making pressure sensitive grids will be described in further detail in the implementation section as we use it as a starting point for our second prototype iteration.
 
 \subsection{Touch Sensing}
 \todo{bedre indledning}
@@ -116,6 +127,8 @@ This family of recognizers are all geometric template matchers which means that 
 We have implemented and experimented with the \$N and \$P recognizer as to determine which one performs the best with our data input, this will be discussed in section \todo{ref til sektion}.
 
 \todo{giver det mening at teste dollar-1?}
+
+\section{Concept}
 
 \section{Implementation}
 \todo{skal det praesenteres som iterationer eller som en proces?}
