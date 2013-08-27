@@ -20,6 +20,7 @@ The five levels can be seen visualized in figure~\ref{foci-interface}.
 \end{figure}
 The levels should not be seen as isolated entities, as there exists interdependencies between the levels, for example before progress can be made to level 2, there might have to be made improvements to the hardware at level 1.
 
+\subsubsection{Level 1: Interface as hardware}
 At the first level (1950s) the interface is seen as hardware, understood in the way that the interaction between the user and the computer is defined by the workings of the hardware.
 So for engineers and programmers, which are the principal users, a central part of the user interaction involves the inner workings of the hardware.
 A common way to interact at the time were, besides modifying the hardware, was though punch cards.
@@ -27,60 +28,51 @@ Punch cards represents digital information by the presence or absence of holes o
 The user would use a machine to punch holes in the cards which could contain programming commands or it could be used as an analogue data storage that could later be read by the computer.
 From a human perspective the interaction at the time was very much on the premises of the computer, as the interaction was based on binary .
 
+\subsubsection{Level 2: Interface as software}
 The second level (1960s-1970s) defines the interface as software.
 As the hardware level is abstracted away by advancements in software and programming languages programmers and the interface they interacts with moves away from the physical inner workings of the computer and onto software.
 The main users now mostly programmers and the interface focus is on the computer, so the user interaction is still on the premises of the computer, with a lack of attention to human factors like legibility of code.
 Programmers interacted with the computer though assembly code, compilers and mathematics as the main focus of the computer was on computations. The notion of a ``user interface'' was still unarticulated and interface development was focused on programmer efficiency, not human factors.
 
+\subsubsection{Level 3: Interface as terminal}
 At the third level (1970s-1990s) the interface focus moves away from the programming task and onto the terminal where the dominant user is no longer necessarily programmers or engineers, but seen more broadly as ``end-users''.
 Grundin also marks this as the start of the discipline of human-computer interaction, including the `human' in the computer interaction.
-The move to the terminals was made possible by advances in visual displays and interactive capabilities, letting the user, to a larger degree than before, interact on more human terms where the interface aids the user in the interaction, with for example menus and command languages.
+The move to the terminals was made possible by advances in visual displays and interactive capabilities, letting the user, to a larger degree than before, interact on more human terms where the interface aids the user in the interaction.
+Firstly as command-line interfaces with a text-based input and output system that are somewhat readable by humans.
+The challenge here is its strictly command driven nature where the user has to know which commands the computer provides, or at least know how to list available commands, to be able to interact with it.
+For this reason it is, still today, mostly used by expert users, as there is a lack of physical and/or visual metaphors to link the command language to the real world.
 
-
-The fourth level (1980s-1990s) focus on the interface as an interaction dialogue where the interface can be adapted and tailored to the specific user. 
-Grundin sees it as the computer \emph{is extending its grasp beyond the keyboard and the display surface}, in the sense that the computer now has some knowledge about the user which lets it partake in a two-way dialogue.
-
-The fifth level (1990s-) takes the interaction dialogue to the work or social setting, moving the interface further away from the computer.
-The principal user is now a group of ``end-users'' and as the interaction takes place in a social setting it is increasingly necessary for the computer to have information about the surrounding environment.
-\blank
-The most interesting part of \citeauthor{grudin1990computer}'s levels is what he describes as the continuously \emph{outward movement of the computer's interface to its external environment}.
-This notion is strongly supported a year later with Mark Weiser's vision of the ubiquitous computer.
-
-Alongside these shifts in computer generations there has also been quite a development, both in the way we can interact and manipulate the computer, but also in the computer's knowledge about its user.
-In traditional computer systems there have always been a strong separation between the user and the machine - between the physical world and the digital world.
-In this section we will take a look at how the relation between physical and digital has evolved through time.
-
-\subsection{Computer interaction}
-\todo{afsnit skal have nogle referencer}
- 
-Command-line interface begins to gain traction with a text-based input and output system that are readable by humans.
-The user issues commands to the computer by typing lines of text commands and gets a visual response on the monitor.
-The challenge here is it strictly command driven and that the user has to know which commands the computer provides to be able to interact with it, but once you master the commands it can provide a fast and efficient interaction.
-For this reason it is, still today, mostly used by expert users, as there is a lack of physical and/or visual metaphors to link the command language to the real world to make it intuitive.  
-The physical and digital world is still very much separated although the language of interaction, bridging the two world, does incorporate some human aspects by being directly readable, but not necessarily easily understood.
-
-With the emergence of the computer mice and more powerful computers, the Graphical User Interface(GUI) became, and still is, the most popular method of interacting with the computer.
-GUIs make use of visual metaphors inspired by the real world to guide the users actions and understanding of the system.
-The most obvious being the desktop metaphor that links the office space to the computer with digital folders, documents, trash bins and so on, simulating a physical desktop on the monitor.
+With the emergence of the computer mice and more powerful computers, Graphical User Interfaces (GUIs) became, and still is, the most popular method of interacting with the computer.
+One of the main aspects of the GUI is the use of visual metaphors, inspired by the real world, to guide the users actions and understanding of the system.
+The most well knows being the desktop metaphor that links the office space to the computer with digital folders, documents, trash bins and so on, simulating a physical desktop on the monitor.
 Using metaphors in this way can ease the user's annexation into the digital world as they, if done properly, creates logical links between knows physical actions and potential digital actions.
 
-Virtual Reality (VR) systems puts even more of the physical world in to the digital environment.
-Instead of using metaphors from the real world the goal here is to create a virtual representation of a physical world, giving the user a simulated feeling of physical presence in the digital environment.
-This approach very clearly separates the digital and physical layer as the digital environment only simulates a physical space without affecting it or being affected by it.
+\subsubsection{Level 4: Interface as dialogue}
+The use of metaphors as described in level 3 does also somewhat fit into the this level since the GUI is adapting physical attributes (the office) into the virtual space and in that way incorporates the surrounding environment, though in a static way.
+The fourth level (1980s-1990s) focus on the interface as an interaction dialogue where the interface can be adapted and tailored, by the computer, to the specific user.
+This could for example be computer systems, over time, gathers information about the users interaction patterns enabling it to possibly foresee a user action, and maybe by making it easier to execute the action, assisting the user.
+Grundin sees it as the computer \emph{is extending its grasp beyond the keyboard and the display surface} in the sense that the computer now has some knowledge about the user which lets it partake in a two-way dialogue.
 
-As an opposite to VR systems attempt to create digital representations of the real world, we find TUIs.
-TUI systems attempts to create physical representations of the digital state of the computer, embedding a digital layer into physical objects and environments.
-The term was first coined by \citet{ishii1997tangible}, building on Weiser's vision of the ubiquitous and invisible computer.
-Ishii and Ullmer states two goals for TUIs:
-\begin{itemize}
-		\item{allowing users to ``grasp and manipulate'' foreground bits by coupling bits with physical objects, and}
-		\item{enabling users to be aware of background bits at the periphery using ambient media in an augmented space}
-\end{itemize}
-By embodying digital information into tangible objects, TUI systems takes advantage of humans ability to sense, interact and manipulate the physical world. 
+\subsubsection{Level 5: Interface as work setting}
+The fifth level (1990s-) takes the interaction dialogue to the work or social setting, moving the interface further away from the computer.
+The principal user is now a group of ``end-users'' and as the interaction takes place in a social setting it is increasingly necessary for the computer to have information about the surrounding environment.
 
-\todo{videre herfra}
+\todo{more here}
+\blank
+The most interesting part of \citeauthor{grudin1990computer}'s levels is what he describes as the continuously \emph{outward movement of the computer's interface to its external environment}.
+This notion is strongly supported a year later with Mark Weiser's vision of ubiquitous computing.
+
+\todo{more here}
+
+\subsection{Ubiquitous computing}
+In traditional computer systems there have always been a strong separation between the user and the machine - between the physical world and the digital world.
+In this section we will take a look at how ubiquitous computing, and many of the paradigms following it, has changed the relationship between the physical world and digital world.
+
+\todo{more to come!}
 
 \subsection{Computer generations}
+\todo{maybe use abowds generations to introduce ubicomp}
+
 Another interesting aspect of the evolution of computers to look at the changes to the user's relation to the computer.
 A simple way to look at the at this, on a broad scale, is to divide the changes into generations based on the relation between the user and the computer system.
 \citet{abowd2012next} mentions three overall generation.
@@ -92,6 +84,8 @@ As Abowd correctly notes, Weiser's vision has to some extend become reality.
 Computers are part of the environment and have indeed been \textit{woven} into the fabric of everyday life in many ways. \todo{giv nogle simple eksempler}  
 
 \section{A possible future for user interfaces}
+\todo{not done at all}
+
 If we are beginning to pass the 3\textsuperscript{rd}, Abowd asks \textit{so, what's next?}.
 This is of course a complex and difficult question to answer.
 Abowd suggests a future where the human-computer experience is more conjoined than ever, blurring the boundaries between them.
