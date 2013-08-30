@@ -27,32 +27,30 @@ So for engineers and programmers, which are the principal users, a central part 
 A common way to interact at the time were, besides modifying the hardware, was though punch cards.
 Punch cards represents digital information by the presence or absence of holes on the card, based on a predefined pattern which the computer can then read.
 The user would use a machine to punch holes in the cards which could contain programming commands or it could be used as an analogue data storage that could later be read by the computer.
-From a human perspective the interaction at the time was very much on the premises of the computer, as the interaction was based on binary .
+From a human perspective the interaction at the time was very much on the premises of the computer, as the language of interaction was based on things like binary numbers, hexadecimals and memory locations.
 
 \subsubsection{Level 2: Interface as software}
 The second level (1960s-1970s) defines the interface as software.
 As the hardware level is abstracted away by advancements in software and programming languages programmers and the interface they interacts with moves away from the physical inner workings of the computer and onto software.
 The main users now mostly programmers and the interface focus is on the computer, so the user interaction is still on the premises of the computer, with a lack of attention to human factors like legibility of code.
-Programmers interacted with the computer though assembly code, compilers and mathematics as the main focus of the computer was on computations. The notion of a ``user interface'' was still unarticulated and interface development was focused on programmer efficiency, not human factors.
+Programmers interacted with the computer though assembly code, compilers and mathematics as the main focus of the computer was on computations. The notion of a \emph{user interface} was still unarticulated as interface development was focused on programmer efficiency, not human factors.
 
 \subsubsection{Level 3: Interface as terminal}
-At the third level (1970s-1990s) the interface focus moves away from the programming task and onto the terminal where the dominant user is no longer necessarily programmers or engineers, but seen more broadly as ``end-users''.
+At the third level (1970s-1990s) the interface focus moves away from the programming task and onto the terminal where the dominant user is no longer necessarily programmers or engineers, but seen more broadly as \emph{end-users}.
 Grundin also marks this as the start of the discipline of human-computer interaction, including the `human' in the computer interaction.
 The move to the terminals was made possible by advances in visual displays and interactive capabilities, letting the user, to a larger degree than before, interact on more human terms where the interface aids the user in the interaction.
-Firstly as command-line interfaces with a text-based input and output system that are somewhat readable by humans.
-The challenge here is its strictly command driven nature where the user has to know which commands the computer provides, or at least know how to list available commands, to be able to interact with it.
-For this reason it is, still today, mostly used by expert users, as there is a lack of physical and/or visual metaphors to link the command language to the real world.
 
 With the emergence of the computer mice and more powerful computers, Graphical User Interfaces (GUIs) became, and still is, the most popular method of interacting with the computer.
 One of the main aspects of the GUI is the use of visual metaphors, inspired by the real world, to guide the users actions and understanding of the system.
 The most well knows being the desktop metaphor that links the office space to the computer with digital folders, documents, trash bins and so on, simulating a physical desktop on the monitor.
+The central components of the desktop metaphor being windows, icons, menus and pointers, also known as the WIMP paradigm \citep[chap. 6]{krumm2009ubiquitous}. 
 Using metaphors in this way can ease the user's annexation into the digital world as they, if done properly, creates logical links between knows physical actions and potential digital actions.
 
 \subsubsection{Level 4: Interface as dialogue}
 The use of metaphors as described in level 3 does also somewhat fit into the this level since the GUI, in the previous example, is adapting physical attributes (the office) into the virtual space and in that way incorporates the surrounding environment, though in a static way.
 The fourth level (1980s-) focus on the interface as an interaction dialogue where the interface can be adapted and tailored, by the computer, to the specific user.
 This could for example be computer systems, over time, gathers information about the users interaction patterns enabling it to possibly foresee a user action, and maybe by making it easier to execute the action, assisting the user.
-Grundin sees it as the computer \emph{is extending its grasp beyond the keyboard and the display surface} in the sense that the computer now has some knowledge about the user which lets it partake in a two-way dialogue.
+Grundin sees it as the computer \emph{``is extending its grasp beyond the keyboard and the display surface''} in the sense that the computer now has some knowledge about the user which lets it partake in a two-way dialogue.
 
 \subsubsection{Level 5: Interface as work setting}
 The fifth level (1990s-) takes the interaction dialogue to the work or social setting, moving the interface further away from the computer.
@@ -61,36 +59,57 @@ Social settings are generally complex structures where environment, culture, soc
 All of these aspects needs, to some degree, to be design for in a user interface aimed at the work or social setting, increasing the complexity of the system.
 \blank
 Grundins five levels describes a movement where the interface separates itself from the physical enclosure of the hardware and into the cognitive and social structures of humans.
-\citeauthor{grudin1990computer} himself describes it as a continuously \emph{outward movement of the computer's interface to its external environment}.
+\citeauthor{grudin1990computer} himself describes it as a continuously \emph{``outward movement of the computer's interface to its external environment''}.
+A concequence of this is that a move in the interaction language also happens, from abstract to natural, in terms of the human readability, as the focus of the interface moves from the computer to its user.
+
 Grundin points out that as of 1990 most work has been focused on the third level but he sees a future where the interface dialogue and the social setting is increasingly influential in the design of computing systems.
 This notion is not far away from what \citeauthor{weiser1991computer} presents a year later in his vision of ubiquitous computing \citep{weiser1991computer}.
 
 \subsection{Ubiquitous computing}
+In traditional computer systems there has generally been a strong separation between the physical and the digital, but with ubiquitous computing, not only does the computer's interface move to its external environment, as Grundin pointed to, we also see that the computer itself moves into the environment, creating a stronger link between the physical world and the digital world.
+A consequence of ubiquitous computing is also a change in the relationship between the user and computers.
+This change can be seen by looking at the evolution of the relationship, which can be roughly split into three generations or eras \citep{weiser1997coming,abowd2012next}.
+\begin{itemize}
+\item[] \textbf{1\textsuperscript{st} generation} being terminal based computing where multiple users share the same computer in a many-to-one relationship.
+\item[] \textbf{2\textsuperscript{nd} generation} where the personal computing revolution happens and it becomes possible to have \emph{your} computer, in a one-to-one relationship between the computer and the user.
+\item[] \textbf{3\textsuperscript{rd} generation} being ubiquitous computing, here a one-to-many relationship becomes possible as computers move out into the world and multiple computers now shares and interacts with a single person.
+\end{itemize}
+
 The idea of ubiquitous computing, as presented in \citep{weiser1991computer}, is that a multitude of interconnected computers are embedded seamlessly into the environment as to become invisible, both physical and metaphorical, and integrate into the everyday life of people.
 In contrast to terminal based computing, interactions with these systems can happen everywhere, with a multitude of different devices with computers with many different forms. 
 This points to two key aspects of attaining this vision, \emph{location} and \emph{scale}.
 The purpose of location is to be able to inform the user and adapt to the need of the user based on the location context available to system. 
-The aspect of scale is relevant for creating \emph{machines that fit the human environment, instead of
-forcing humans to enter their}, as \citeauthor{weiser1991computer} puts it, where different sized computers can fit into different environments, contexts or functions. 
+The aspect of scale is relevant for creating \emph{``machines that fit the human environment, instead of
+forcing humans to enter their''}, as \citeauthor{weiser1991computer} puts it, where different sized computers can fit into different environments, contexts or functions. 
 
-In traditional computer systems there has generally been a strong separation between the physical and the digital, but with ubiquitous computing, not only does the computer's interface move to its external environment, as Grundin pointed to, we also see that the computer itself moves into the environment, creating a stronger link between the physical world and the digital world.
-A consequence of ubiquitous computing is also a change in the relationship between the user and computers.
-This change can be seen by looking at the evolution of the relationship which can be roughly split into three generations or eras \citep{weiser1997coming}.
+This vision of moving a multitude of computers and their user interface out into the world has been the basis inspiration for an array of related research areas, each with a specific focus or approach, but with the shared purpose of going beyond the situated use of the desktop computer, and its WIMP interface, and move into the environment.
+
+We will limit ourself to present only a selected few areas following the ubiquitous vision that we find relevant to our own work and which will be further discussed throughout the thesis.
+\subsubsection{Context Awareness (CA)}
+As mentioned a key part of ubiquitous computing is location and this has laid the basis for the research area of context awareness.
+There has been many definition of context and context aware computing, the first being by \citet{schilit1994context}, but here we will stick to the definition proposed by \citeauthor{abowd1999towards} as we find it more encompassing. 
+
+\citet{abowd1999towards} defines context-aware computing as \emph{``the use of context to
+provide task-relevant information and/or services to a user''}, where context is \emph{``any information that can be used characterize the situation of an entity''} and entity describing anything that is relevant for the application or user.
+\citeauthor{abowd1999towards} describe the control loop of CA applications as three-parted. 
+First the application looks at the incoming context, this is the \emph{who's, where's, when's and what's} and based on this information decides on a \emph{why} the situation is occurring and when the \emph{why} is decided, the application should act accordingly with an appropriate \emph{action}
+One of the main challenges of making such systems is to define which parts of the context that is relevant in a given situation and how it should translate into a \emph{why}, as this is something that the application designer as to encode into the application.
+
+\subsubsection{Tangible User Interfaces (TUI)}
+TUIs attempts to create physical representations of the digital state of the computer, embedding a digital layer into physical objects and environments.
+The term was first coined by \citet{ishii1997tangible}, building on Weiser's vision of the ubiquitous and invisible computer.
+Ishii and Ullmer states two goals for TUIs:
 \begin{itemize}
-\item[] \textbf{1\textsuperscript{st} generation} being terminal based computing where multiple users share the same computer in a many-to-one relationship.
-\item[] \textbf{2\textsuperscript{nd} generation} where the personal computing revolution happens and it becomes possible to have a one-to-one relationship between the computer and the user.
-\item[] \textbf{3\textsuperscript{rd} generation} being ubiquitous computing, here a one-to-many relationship becomes possible as multiple computers now shares and interacts with a single person.
+    \item{allowing users to ``grasp and manipulate'' foreground bits by coupling bits with physical objects, and}
+    \item{enabling users to be aware of background bits at the periphery using ambient media in an augmented space}
 \end{itemize}
+By embodying digital information into tangible objects, TUI systems takes advantage of humans ability to sense, interact and manipulate the physical world. 
 
-
-\todo{more to come!}
-
-As Abowd correctly notes, Weiser's vision has to some extend become reality. 
-Computers are part of the environment and have indeed been \textit{woven} into the fabric of everyday life in many ways. \todo{giv nogle simple eksempler}  
 
 \section{A possible future for user interfaces}
 \todo{not done at all}
-
+As Abowd correctly notes, Weiser's vision has to some extend become reality. 
+Computers are part of the environment and have indeed been \textit{woven} into the fabric of everyday life in many ways. \todo{giv nogle simple eksempler} 
 If we are beginning to pass the 3\textsuperscript{rd}, Abowd asks \textit{so, what's next?}.
 This is of course a complex and difficult question to answer.
 Abowd suggests a future where the human-computer experience is more conjoined than ever, blurring the boundaries between them.
