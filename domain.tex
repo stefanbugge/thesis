@@ -97,15 +97,54 @@ The physical world comes with many constraints compared to the digital.
 We can't just magically make physical objects appear and disappear which is to do on a digital display.
 \todo{But what can we do} 
 
-\subsubsection{Product with ad hoc characteristics}
+\subsubsection{Products with ad hoc characteristics}
 Ad hoc characteristics in interfaces are not some novel invention and they an be found in several existing products.
-A simple example would be The Clapper~\cite{theclapperWIKIPEDIA} from the mid eighties, an electrical switch reacting to sounds in a specific frequency, tuned to claps, to turn a switch on and off respectively.
+A simple example would be The Clapper~(figure~\ref{ch:adhoc:theclapper})~\cite{theclapperWIKIPEDIA} from the mid eighties, an electrical switch reacting to sounds in a specific frequency, tuned to claps, to turn a switch on and off respectively.
 Here the interface is pervasive in the nearby environment and one interacts with it when needed after which it ``disappears'' again.
 
-Another example is the conceptual and somewhat futuristic product ShapePhone based on particle jamming, which will also be addressed in \autoref{ch:jamming}.
+\begin{figure}[hb]
+	\centering
+  		\includegraphics[width=1in]{figures/theclapper}
+	\caption[The Clapper, a sound activated electronic switch.]
+   {The Clapper, a sound activated electronic switch.}
+   \label{ch:adhoc:theclapper}
+\end{figure}
+
+Another example is the conceptual and somewhat futuristic product ShapePhone based on particle jamming, which will also be addressed in \autoref{ch:jamming}(figure~\ref{fig:ch:jamming:jui-phone}).
 ShapePhone is generic shape changing product which changes it behaviour based on its physical form.
 For example, in its base form it is a phone but when wrapped around a wrist it could serve as a watch and when folded in some other way it could be a game controller.
 So, the different interfaces are created on demand and have very different purposes of use.
+
+In a masters course in 2011 called Innovation Project\footnote{https://services.brics.dk/java/courseadmin/INNOPRO} we, the authors, designed and implemented a dynamic shape shifting wall with the ability to change its surface structure for acoustic regulation, i.e. diffusion, absorption and reflection.
+On top of that the wall had illuminating features so that different areas could light up and serve as an aesthetic lighting for the atmosphere of the room. 
+On the one hand it could serve as a standard static wall but could on demand change surface structure and serve a functional purpose.
+
+We envisioned two scenarios of use for the wall.
+One where context awareness was the primary driver which meant that everything (acoustic and lighting conditions) would be automatically sensed and controlled.
+The other where a user to a higher degree is in control.
+The user would actively create deformations on the surface for aesthetic purposes and also control illuminated areas by interacting with the wall surface, see \ref{fig:ch:adhoc:beomotion}.
+
+and the system would respond by still preserving the acoustic regulations.
+computeren hjaelper understoetter
+ekspressive kvaliteter.
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.46\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{figures/beomotion/prototype}
+		\caption{Prototype}
+	\end{subfigure}%
+	\begin{subfigure}{.54\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{figures/beomotion/concepts}
+		\caption{Concept illustrations}
+	\end{subfigure}
+	\caption{BeoMotion product design, Innovation Project, Aarhus University 2011}
+	\label{fig:ch:adhoc:beomotion}
+\end{figure}
+
+
 
 \subsubsection{Comparisons to other (X)UI} 
 It might seem that AHI overlaps with the concept of Context Aware Computing in that they both have a focus on environmental context.
@@ -127,11 +166,14 @@ It would seem quite natural to have an ad hoc system that also incorporates some
 \blank
 \todo{and NUIs}  
 \blank
+
+\subsubsection{Discussion}
+
+Some of the more interesting or ideal examples may seem 
+
 \subsubsection{Noter \dots  } 
 \begin{verbatim}
 
-\subsubsection{Discussion}
- 
 
 ``fashioned from whatever is immediately available''
 Ad hoc vs context aware
