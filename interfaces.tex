@@ -12,7 +12,7 @@ As a start we have chosen to take an offset in \citeauthor{grudin1990computer}'s
 \citeauthor{grudin1990computer} describes the evolution of the user interface from the 1950's to the 1990's though five overall development foci or 'levels' for researchers, along with the principle user group for each level.
 The five levels can be seen visualized in figure~\ref{foci-interface}.
 
-\begin{figure}[hb]
+\begin{figure}[h]
 	\centering
   		\includegraphics[width=3in]{figures/foci-interface}
 	\caption[The development of user interfaces \citep{grudin1990computer}.]
@@ -85,26 +85,45 @@ forcing humans to enter their''}, as \citeauthor{weiser1991computer} puts it, wh
 This vision of moving a multitude of computers and their user interface out into the world has been the basis inspiration for an array of related research areas, each with a specific focus or approach, but with the shared purpose of going beyond the situated use of the desktop computer, and its WIMP interface, and move into the environment.
 
 We will limit ourself to present only a selected few areas following the ubiquitous vision that we find relevant to our own work and which will be further discussed throughout the thesis.
-\subsubsection{Context Awareness (CA)}
+
+\subsection{Context Aware Computing}
 As mentioned a key part of ubiquitous computing is location and this has laid the basis for the research area of context awareness.
 There has been many definition of context and context aware computing, the first being by \citet{schilit1994context}, but here we will stick to the definition proposed by \citeauthor{abowd1999towards} as we find it more encompassing. 
 
 \citet{abowd1999towards} defines context-aware computing as \emph{``the use of context to
 provide task-relevant information and/or services to a user''}, where context is \emph{``any information that can be used characterize the situation of an entity''} and entity describing anything that is relevant for the application or user.
-\citeauthor{abowd1999towards} describe the control loop of CA applications as three-parted. 
-First the application looks at the incoming context, this is the \emph{who's, where's, when's and what's} and based on this information decides on a \emph{why} the situation is occurring and when the \emph{why} is decided, the application should act accordingly with an appropriate \emph{action}
-One of the main challenges of making such systems is to define which parts of the context that is relevant in a given situation and how it should translate into a \emph{why}, as this is something that the application designer as to encode into the application.
+\citeauthor{abowd1999towards} describe the control loop of context aware applications as three-parted. 
+First the application looks at the incoming context, this is the \emph{who's, where's, when's and what's} and based on this information decides on a \emph{why} the situation is occurring and when the \emph{why} is decided, the application should act accordingly with an appropriate \emph{action}.
+
+One of the main challenges of making such systems is to define which parts of the context that is relevant in a given situation and how it should translate into an action. 
+As this is something that the application designer has to encode into the application this can potentially result in conflicting notions of what is relevant context between the user and the application, leading to unwanted actions being executed or unneeded information being shown.
+In \todo{section/chapter ref til afsnit} we will further discuss context awareness in relation to ad hoc interfaces. \todo{lidt mere afrunding}
+
+\subsection{Physical Computing}
+The second key part of ubiquitous computing is scale and the possibility to put computers out into the environment.
+This has led the way for an increasing focus on the physical aspects of computer interaction.
+
+\citet{o2004physical}'s depiction of the user as finger with one eye and two ears, seen in figure~\ref{finger-eye}, illustrates how, in traditional first and second generation computing, the computer sees us based on the way we interact. 
+
+\begin{figure}[h]
+  \centering
+      \includegraphics[height=1.5in]{figures/igoefinger}
+  \caption[An illustration of how the computer sees us, chapter 0 \citep{o2004physical}]
+   {An illustration of how the computer sees us, chapter 0 \citep{o2004physical}}
+   \label{finger-eye}
+\end{figure}
+So how do we go beyond the mouse, keyboard, monitor and speakers and create interfaces that are more fitting for the whole body and its plethora of senses and motor skills? 
 
 \subsubsection{Tangible User Interfaces (TUI)}
-TUIs attempts to create physical representations of the digital state of the computer, embedding a digital layer into physical objects and environments.
+To better bridge the gaps between the digital and physical world, TUIs attempts to create physical representations of the digital state of the computer, embedding a digital layer into physical objects and environments.
 The term was first coined by \citet{ishii1997tangible}, building on Weiser's vision of the ubiquitous and invisible computer.
-Ishii and Ullmer states two goals for TUIs:
+\citeauthor{ishii1997tangible} states two main aspects of TUIs as:
 \begin{itemize}
     \item{allowing users to ``grasp and manipulate'' foreground bits by coupling bits with physical objects, and}
     \item{enabling users to be aware of background bits at the periphery using ambient media in an augmented space}
 \end{itemize}
+The overall goal is to make \emph{bits} tangible by integrating interactive surfaces, graspable objects and ambient media into the everyday physical environment.
 By embodying digital information into tangible objects, TUI systems takes advantage of humans ability to sense, interact and manipulate the physical world. 
-
 
 \section{A possible future for user interfaces}
 \todo{not done at all}
