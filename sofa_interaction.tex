@@ -22,23 +22,24 @@ One of the research areas that have stemmed from ubiquitous computing is electro
 One of the main obstacles for attaining this vision of the \emph{fabric as the computer} is how to incorporate the underlying computation into the fabric.
 There are generally seen three ways to do it, either by computing \emph{offline}, on a separate system connected to the fabric, \emph{onto}, on components attached to the fabric or \emph{into} the fabric, embedded seamlessly into it \citep{marculescu2003}.
 Today computation is commonly done either offline or onto the fabric, or a combination of the two, but advances in organic electronics and nano technology, for example with organic transistors weaved into fabric \citep{lee2005weave}, suggests that computation embedded into the fabric is not far off.
-\begin{figure}
+
+\begin{figure}[h]
 \centering
-\begin{minipage}[t]{.3\textwidth}
+\begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[width=0.8\linewidth]{figures/wearable_motherboard}
   \captionof{figure}{The Wearable Motherboard, taken from \citep{gopalsamy1999wearable}}
   \label{sofa_interaction:wearable_motherboard}
 \end{minipage}%
 \hspace{0.2cm}
-\begin{minipage}[t]{.3\textwidth}
+\begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[width=0.8\linewidth]{figures/shutters}
   \captionof{figure}{Shutters, taken from \citep{coelho2009shutters}}
   \label{sofa_interaction:shutters}
 \end{minipage}
 \hspace{0.2cm}
-\begin{minipage}[t]{.3\textwidth}
+\begin{minipage}{.3\textwidth}
   \centering
   \includegraphics[width=0.8\linewidth]{figures/sprout}
   \captionof{figure}{Sprout I/O, taken from \citep{coelho2009shutters}}
@@ -77,11 +78,11 @@ This approach to making pressure sensitive grids will be described in further de
 Generally seen there are three broad categories for doing multi-touch input sensing: optical, capacitive and resistive \citep{rosenberg2009unmousepad}.
 
 Optical sensing usually involve one or more digital cameras placed behind the touch surface to generate an image of the user's finger to track the interaction.
-As this approach relies on cameras it is typically used for larger applications such as tabletops, since the cameras has to be far enough away to capture entire interactive surface, e.g. reacTable \citep{jorda2007reactable} and the tabletop version of Microsoft Surface.
+As this approach relies on cameras it is typically used for larger applications such as tabletops, since the cameras has to be far enough away to capture entire interactive surface, e.g. reacTable \citep{jorda2007reactable}, seen in figure~\ref{sofa_interaction:reactable} and the tabletop version of Microsoft Surface.
 
 Capacitive sensing systems for touch based interaction rely on the human body's capacitive abilities to acquire the position of the touch on a surface. 
 As a finger touches the surface, the surface's electrostatic field distorts and this change is then measurable as a change in capacitance at some position in a 2D grid.
-The most common example of this approach is the touch surface of modern smart phones and tablets where touch has become the preferred form of interaction.
+The most common example of this approach is the touch surface of modern smart phones and tablets where touch has become the preferred form of interaction, for example Apples iPad seen in figure~\ref{sofa_interaction:ipad}.
 Another example is Touch\'e \citep{sato2012touche} that allow objects and environments to become touch sensitive, allowing everyday objects to become touch interfaces, such as doorhandles, cups, water bottles ect.
 This is done by sending a signal through the object and doing electromagnetic frequency sweeps. 
 These frequencies will change when a touch occur and will change based on the size of the touched on the surface allowing for simple gesture recognition.
@@ -97,8 +98,33 @@ This has some obvious limitations that will be discussed in iteration 1 in the n
 Another approach is to create a row/column grid as seen in previously mentioned rSkin, this approach will be explored in iteration 2.
 Lastly in iteration 3 we will explore the approach suggested by \citet{rosenberg2009unmousepad} to create a device based on IFSR, which is interpolating FSR, to increase the resolution of our prototype.
 Generally seen resistive sensing is a low-cost and easy to implement solution to doing multi-touch interfaces and has the added benefit of being able to measure pressure.
+It does also enable the use of flexible materials such as polymers in UnMousePad, seen wrapped on a coffee cup in figure~\ref{sofa_interaction:unmousepad}, and fabrics, as seen in rSkin where it is wrapped on a robot arm in figure~\ref{rskin}.
 Though to attain resolutions higher than the size of the underlying grid, a lot of data processing has to be done as seen in \citep{rosenberg2009unmousepad}.
 Also from our own experience with the technology we have seen a lot of input signal noise from the sensor which makes it harder to get accurate position tracking.   
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/touch/reactable}
+  \captionof{figure}{Example of an optical sensing system, reacTable}
+  \label{sofa_interaction:reactable}
+\end{minipage}%
+\hspace{0.2cm}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/touch/ipad}
+  \captionof{figure}{Example of a capacitive sensing system, iPad}
+  \label{sofa_interaction:ipad}
+\end{minipage}
+\hspace{0.2cm}
+\begin{minipage}{.3\textwidth}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/touch/unmousepad}
+  \captionof{figure}{Example of a resistive sensing system, an UnMousePad sensor on a cup} 
+  \label{sofa_interaction:unmousepad}
+\end{minipage}
+\end{figure}
 
 \subsection{Gesture recognition}
 Being able to sense a x-y position or a pressure map on an interactive surface is usually not enough for an application to provide interesting interaction possibilities.
