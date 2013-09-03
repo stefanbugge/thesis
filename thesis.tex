@@ -50,11 +50,12 @@
 \pagestyle{empty}
 \pagenumbering{roman}
 \vspace*{\fill}\noindent{\rule{\linewidth}{1mm}\\[4ex]
-{\Huge\sf Ad Hoc Interfaces}\\[2ex]
+{\Huge\sf Ad Hoc Interfaces: a physical approach to temporal on-demand user interfaces}\\[2ex]
 {\huge\sf Tore Stubbe Lundgren, 20072415}\\[2ex]
 {\huge\sf Stefan Andreas Bugge Loeschcke, 20073986}\\[2ex]
 \noindent\rule{\linewidth}{1mm}\\[4ex]
-\noindent{\Large\sf Master's Thesis, Computer Science\\[1ex]
+\noindent{\Large\sf Master's Thesis, ICT Product Development\\[1ex]
+\noindent{\Large\sf Department of Computer Science, Aarhus University\\[1ex]
 \monthname\ \the\year  \\[1ex] Advisor: Marianne Graves Petersen\\[15ex]}\\[\fill]}
 \epsfig{file=logo.eps}\clearpage
 
@@ -73,6 +74,13 @@
 
 \chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgments}
+
+Marianne Graves Petersen\\
+Kristoffer Moos\\
+Tina Kaia Stokvad Brix\\
+Julian Loeschcke\\
+Anne Marie Rasmussen\\
+Mie Bugge Christiansen
 
 \todo{\dots}
 
@@ -116,9 +124,9 @@
 \label{ch:jamming}
 \input{jamming.tex}
 
-\chapter{Prototype: Sofa Interaction}
-\label{ch:sofa_interaction}
-\input{sofa_interaction.tex}
+\chapter{Prototype: Textile touch}
+\label{ch:textile-touch}
+\input{textile_touch.tex}
 
 \chapter{Design Clues in Dynamic Objects}
 \label{ch:design_clues}
@@ -134,9 +142,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Bibliography
 
-\addcontentsline{toc}{chapter}{Primary Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{plainnat}
 \bibliography{refs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Tables and figure lists
+
+\listoffigures
+\listoftables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Appendices
@@ -151,13 +166,6 @@
   \input{appendices/schematics.tex}   
 \end{appendices}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Tables and figure list
-
-\listoffigures
-\listoftables
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
 
