@@ -3,8 +3,8 @@ Our second prototype will move away from the world of jammable shape changing in
 Since the vision of ubiquitous computing was presented researchers have sought to integrate interactive technology into our everyday environment in variety of ways, which can be seen from the diverse selection of research fields that has stemmed from ubiquitous computing such as context awareness, tangible computing and shape changing interfaces.
 In this prototype we have taken Weiser's vision very literally - how do you integrate interaction into the fabric of our everyday environment, i.e. the surfaces that surrounds us?
 
-In the following sections we explore the possibilities of creating textile touch surfaces with advanced interaction capabilities as an exemplification of how surfaces can be used to interact in the home.
-We have chosen to work with textiles as an interactive platform as we see unused potential in this area, both for its tangible and aesthetic textural qualities compared to e.g. polymer solutions \cite{rosenberg2009unmousepad}, as well as for the interesting possibilities to allow for DIY solutions to creating interactive stuff in the home.
+In the following sections we explore the possibilities of creating textile touch surfaces with advanced interaction capabilities as an exemplification of how surfaces can be used to interact in the home to create ad hoc interaction.
+We have chosen to work with textiles as an interactive platform as we see unused potential in this area, both for its tangible and aesthetic textural qualities compared to e.g. polymer solutions \cite{rosenberg2009unmousepad}, as well as for the interesting possibilities to allow for DIY solutions to creating interactive surfaces in the home.
 
 \section{Related work and approaches}
 Before getting into detail with our implementation we will first give an overview of work and approaches that relates to our prototype and have inspired our solution.
@@ -159,46 +159,7 @@ We have implemented and experimented with the \$N and \$P recognizer as to deter
 \section{Concept}
 
 \section{Implementation}
-\todo{skal det praesenteres som iterationer eller som en proces?}
-\subsection{Iteration 1}
-\begin{verbatim}
-- Fokus paa konstruktionspricipper
-- Inspireret af instructable
-- 2x3 pad i neopren
-- Hvert felt virker som en individuel tryksensor
-- Meget simpel at prototype, viste os at princippet med conductive 
-  thread og plast virker
-- Simpel grafisk gui til test
-- Ikke skalerbar, man kan ikke trykke uden for felterne og hvert felt
-  bruger et input i audrino (2x3=6)
-- Opdateringshastighed svarende til max baud-rate
-\end{verbatim}
-\subsection{Iteration 2}
-\begin{verbatim}
-- Fokus paa skalerbarhed
-- Inspireret af rSkin
-- 7x7 pad i sofastof
-- Row/column tilgang reducerer antallet af arduino input til 7+7(additiv)
-  i stedet for 7x7(multiplikativ),
-  men kraever mere kompleks arduino kode, er derfor lang mere skalerbar end foer
-- Reset knap til at kalibrere efter deformation
-- Har samme oploesning som stoerrelsen (7x7), tryk imellem linjerne vil derfor blive 
-  registeret som enten den ene eller anden linje
-- Opdateringshastighed svarende til max baud-rate
-\end{verbatim}
-\subsection{Iteration 3}
-See \ref{app:textile-touch} for schematics and \dots
-\begin{verbatim}
-- Fokus paa kode (gestures,resolution,performance)
-- Inspireret af UnMousePad
-- Samme fysiske prototype som iteration 2
-- Interpolering muliggoere tryk mellem linjerne, 10x saa hoej oploesning dog udfald 
-  og varierende praesision (vis vi har eksperimenteret med forskellige oploesninger)
-- Forskellige visualiseringer til performance evaluering
-- Integrering af gesture recognition og test miljoe til dette
-- Haptisk feedback, vibration
-- Udfordringer: praesision, performance 
-  (max baud-rate for hurtigt til at java kunne foelge med)
-\end{verbatim}
+\input{textiletouch/implementation.tex}
 
 \section{Evaluation and future work}
+\input{textiletouch/evaluation.tex}
