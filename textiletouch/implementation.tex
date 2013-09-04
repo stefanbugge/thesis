@@ -5,10 +5,21 @@ To give an insight into the prototype process as well as the final prototype, we
 Our hope is that this will give a better understanding of the rationale behind our construction decisions as well as ... something something   
 
 \subsection{Iteration 1}
-The goal of our first iteration of the prototype was to ensure that the we had construction principles and the right materials for constructing a touch and pressure sensitive fabric.
-The basic principle of a FSR sensor is to apply current to a semi-conductive material with piezoresistive capabilities and read the outgoing current from it.
-As stress is applied to the semi-conductor the resistance will decrease and the outgoing current will therefore increase.
-For our first prototype we applied this principle, inspired by (instructable), to construct a 2x3 pad in neoprene and a bend sensor.
+The goal of our first iteration of the prototype was to ensure that the we had construction principles and the right materials for constructing a touch and pressure sensitive fabric, with only off-the-shelf materials and tools.
+
+For our first simple prototype we applied this principle, inspired by (instructable \todo{ref}), to construct a 2x3 touch pad in neoprene, seen in figure~\todo{ref} and a bend sensor, seen in figure~\todo{ref}.
+The prototype consists of three layers as depicted in figure~\todo{ref}, connected to an Arduino \todo{ref} for input/output data that is sent to  Processing \todo{ref} for data visualization and to Java for data manipulation.
+ 
+The top layer is made of 3 mm thick neoprene from an old mouse pad with one long conductive thread, made of stainless steel fibers, sewn into it.
+Neoprene is easy to work with and gives a nice natural force-feedback when touched because of its thickness, \hl{but lacks the naturalness and flexibility of normal fabric used for clothing}.
+The middle layer made from anti-static polymer bags that are normally used to protect electronics. 
+Some types of anti-static bags, such as the ones we have used, acts as semi-conductors with piezoresistive capabilities and therefore fits in a FSR sensor.
+We do not know which specific types have this ability but one of our uncut bags are seen in figure \todo{ref}
+The bottom layer is another layer of neoprene, but with separate conductive stitchings for each of the 2x3 elements.
+
+By sending current into the single top layer stitch each of the six (2x3) outputs can now be read on the Arduino.
+
+Here each of the 2x3 elements acts as a discrete sensor 
 
 \begin{verbatim}
 - Fokus paa konstruktionspricipper

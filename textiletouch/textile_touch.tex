@@ -90,12 +90,14 @@ This is done by sending a signal through the object and doing electromagnetic fr
 These frequencies will change when a touch occur and will change based on the size of the touched on the surface allowing for simple gesture recognition.
 Two limitations of this technology is that pressure can not reliably be measured and that most systems based this technology only works with bare skin touching it.    
 
-Resistive sensing is based on the principle of Force Sensitive Resistance (FSR). 
+Resistive sensing is based on the principle of Force Sensitive Resistance (FSR).
+The basic principle of a FSR sensor is to apply current to a semi-conductive material with piezoresistive capabilities then and read the outgoing current.
+As stress is applied to the semi-conductor the resistance will decrease and the outgoing current will therefore increase. 
 \citet{rosenberg2009unmousepad} describes FSR devices as 
 \begin{quotation}
 \emph{a continuous electrical switch through which electric conductance increases gradually as external force is applied}
 \end{quotation}
-The simple approach is to create a discrete array of FSR sensors in which each sensor has its own input and output channel.
+The simple approach to making a touch sensetive surface, with multiple input areas, is to create a discrete array of FSR sensors in which each sensor has its own input and output channel.
 This has some obvious limitations that will be discussed in iteration 1 in the next section.
 Another approach is to create a row/column grid as seen in previously mentioned rSkin, this approach will be explored in iteration 2.
 Lastly in iteration 3 we will explore the approach suggested by \citet{rosenberg2009unmousepad} to create a device based on IFSR, which is interpolating FSR, to increase the resolution of our prototype.
