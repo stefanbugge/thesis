@@ -27,7 +27,7 @@ Windows are opened, closed and arranged as needed to support different use cases
 So, ad hoc is a prevalent characteristic within many activities and contexts.
 Next we will give our own definition of being ad hoc when applied to the field of user interfaces and also compare this to other elements of \todo{computer science}.
 
-\section{Ad hoc interfaces} 
+\section{Defining ad hoc interfaces} 
 We define ad hoc interfaces as 
 
 \begin{quotation}\label{adhoc:definition}
@@ -42,11 +42,40 @@ This makes good sense in the digital realm as pixels on a screen can easily be c
 The questions is, how do we apply these ad hoc elements or characteristics to physical interfaces.
 The physical world comes with many constraints compared to the digital.
 We can't just magically make physical objects appear and disappear which is easy to do on a digital display.
+
+Basically we see two ways of approaching this \todo{Stefan sees two ways while writing this ;-)}.
+\begin{itemize}
+	\item{Through invisible interfaces embedded into the physical environment}
+	\item{Using shape change as the construction mechanism}
+\end{itemize}
+
+In the following we will elaborate on both approaches.
+
+\subsubsection{Embedding invisible interfaces into the physical environment}
+
+In this case an existing element of the environment will contain the interface.
+An element can be both a physical object, for example walls, furniture, devices etc, and also ambient air \todo{there is a better word for this}.
+The perceived action possibilities are constrained by the affordances of the object. 
+The input and output possibilities depend on the materiality of the physical object.
+A variety of sensors can be used for input and actuators for output.
+
+In \autoref{ch:textile-touch} we explore this approach.
+
+\subsubsection{Using shape change as the construction mechanism}
+
+In this case an objects shape changing capabilities lets it shift or morph into an particular interface.
+Affordances are here dictated by the perceived action possibilities of the particular end-shape.
+Again, sensors and actuators can be embedded for input and output control.
+
+In \autoref{ch:jamming} we explore this approach.
+
 \todo{But what can we do} 
 \begin{verbatim}
 create interface: shape-change tilgange
 create i bogstavelig forstand: bare paint
 access interface: textile-touch
+
+introducerer muligheden for baade space- og time multiplexing
 \end{verbatim}
 
 Let's first have a look at some existing products and projects which we have found that exhibit ad hoc characteristics. \todo{\ensuremath{\leftarrow} overgang til naeste subsektion}
@@ -75,6 +104,8 @@ We envisioned two scenarios of use for the wall.
 One where context awareness was the primary driver which meant that everything (acoustic and lighting conditions) would be automatically sensed and controlled.
 The other where a user to a higher degree would be in control.
 The user could actively create deformations on the surface for aesthetic purposes and also control illuminated areas by interacting with the wall surface, see \ref{fig:ch:adhoc:beomotion}. \todo{afrunding a paragraf} 
+
+And of course, also the inherent ad hoc nature of the way we interact with personal computers as mentioned in the introduction of this chapter.
 \blank
 \todo{2-3 flere eksempler \dots} 
 
@@ -94,7 +125,7 @@ The user could actively create deformations on the surface for aesthetic purpose
 	\label{fig:ch:adhoc:beomotion}
 \end{figure}
 
-\subsubsection{Relationship with other fields} 
+\subsection{Relationship with other fields} 
 % CAC comparison
 It might seem that AHI overlaps with the concept of Context Aware Computing in that they both have a focus on environmental context.
 In context aware computing a system attempts to derive, through a variety of cues, what the current context of use is and as a result it adapts its behaviour \citep[chap. 8]{krumm2009ubiquitous}. 
@@ -112,9 +143,9 @@ They are both elements or characteristics of a system and one does not exclude t
 It would seem quite natural to have an ad hoc system that also incorporates some context aware computing elements, for example \todo{give a good example} 
 \blank
 % TUI comparison
-Tangible user interfaces, or TUIs, do generally not exhibit ad hoc characteristics. \todo{det skal lige overvejes om det er helt sandt}
-They are mentioned here more for their movement away from the standard GUI paradigm for human-computer interaction.
-TUIs demonstrate a inherently tight coupling between digital information and the associated physical object, for example tangible tokens representing a specific digital entity or mapping to a specific function or action.
+Tangible user interfaces, or TUIs, do generally not exhibit ad hoc characteristics. \todo{det skal lige overvejes om det er helt sandt- NEJ}
+They are mentioned here more for their nature of physical representation and their movement away from the standard GUI paradigm for human-computer interaction.
+TUIs demonstrate a inherently tight coupling between digital information and the associated physical representation, for example tangible tokens representing a specific digital entity or mapping to a specific function or action.
 There are numerous examples of these, for example, the ReacTable \cite{jorda2007reactable}, the Marble Answering Machine \todo{citation possible or link} to name a few.
 Furthermore, because of this tight coupling the physical representations are often created only for the specific purpose and are of no use outside of the TUI context. \todo{er det at sk\ae re det over en kam??}
 
@@ -124,6 +155,9 @@ This will be exemplified in \autoref{ch:textile-touch} where we prototype a gene
 \todo{and Augmented reality - While on the topic of adding a digital layer to the real-world environment we should also bring up the concept of Augmented Reality, or AR.}
 
 \section{Discussion}
+
+By giving an overview of related fields within HCI it is apparent that ad hoc interfaces relates in one way or another to other 
+
 Opsumm\'er ad hoc
 \begin{verbatim}
 Ad hoc definiton
