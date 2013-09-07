@@ -9,17 +9,18 @@ Our hope is that this will give a better understanding of the rationale behind o
 \subsection{Iteration 1}
 The goal of our first iteration of the prototype was to ensure that the we had construction principles and the right materials for constructing a touch and pressure sensitive fabric, with only off-the-shelf materials and tools.
 
-For our first simple prototype we applied this principle, inspired by Pressure Sensor Matrix\footnote{http://www.instructables.com/id/Pressure-Sensor-Matrix/}, to construct a 2x3 touch pad in neoprene, seen in figure~\ref{prototype_1}, and a bend sensor for simple testing, also seen in figure~\ref{prototype_1}.
-The prototype consists of three layers as depicted in figure~\todo{ref}, connected to an Arduino\footnote{http://www.arduino.cc/} for input/output data that is sent to Processing\footnote{http://processing.org/} for data visualization and to Java for data manipulation.
+\subsubsection{Construction principles}
+As a first iteration of our prototype we applied the principles from Pressure Sensor Matrix\footnote{http://www.instructables.com/id/Pressure-Sensor-Matrix/}, to construct a simple 2x3 touch pad in neoprene, seen in figure~\ref{prototype_1}, and a bend sensor for simple testing, also seen in figure~\ref{prototype_1}.
+The prototype consists of three layers as depicted in figure~\todo{ref}, connected to an Arduino\footnote{http://www.arduino.cc/} for input/output data that is sent to Processing\footnote{http://processing.org/} for data visualization.
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}[t]{.5\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{figures/touch/proto1_1}
   \caption{On the left is our simple bend sensor and on the right our 2x3 pressure matrix}
 \end{subfigure}%
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}[t]{.5\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{figures/touch/proto1_2}
   \caption{A close up of the materials}
@@ -32,32 +33,87 @@ The top layer is made of 3 mm thick neoprene from an old mouse pad with one long
 Neoprene is easy to work with and gives a natural force-feedback when touched because of its thickness, \hl{but lacks the naturalness and flexibility of normal fabric used for clothing}.
 The middle layer made from anti-static polymer bags that are normally used to protect electronics. 
 Some types of anti-static bags, such as the ones we have used, acts as semi-conductors with piezoresistive capabilities and therefore fits in a FSR sensor.
-We have tested three different types of anti-static bags, two semi transparent and one black, but only black ones, as seen in figure \todo{ref}, are piezoresistive.
+We have tested three different types of anti-static bags, two  transparent and one black, but only black ones are piezoresistive.
 We do not know if this is the general case as we only had a limited number of samples.
-The bottom layer is another layer of neoprene, but with separate conductive stitchings for each of the 2x3 cells.
+The bottom layer is another layer of neoprene, but with separate conductive stitchings for each of the 2 x 3 cells.
+The setup is illustrated in figure~\ref{layers_iteration1}.
 
-By sending 5v signal into the single top layer stitch, each of the six (2x3) bottom layer outputs can now be read on the Arduino after passing through the piezoresistive material.  
+By sending a 5V signal into the single top layer stitch, each of the six (\(2*3\)) bottom layer outputs can now be read on the Arduino after passing through the piezoresistive material.  
 As pressure is applied to the different sections the voltage drop at the individual grid locations can now be measured with the analog input pins on the Arduino.
-The ADC on the Arduino then translates the measured voltage, between 0-5v, into the amount of pressure that is applied to each of the cells, as a number between 0-1023.
+The ADC on the Arduino then translates the measured voltage, between 0--5V, into the amount of pressure that is applied to each of the cells, as a number between 0--1023.
 The measured numbers will never reach the extremes as there is always some amount of resistance in the material.
 A single layer of our anti-static bags have resistance values from around 180-200 KOhms, with little to no pressure applied, down to around 1.8 kOhms when pressed hard.
 Depending on the piezoresistive material and the construction of the sensor, these values will vary, \citep{rosenberg2009unmousepad} reports values between 1.2 MOhms and 2.2 kOhms for their FSR ink.
 
-Each of the cells acts, in principle, as a discrete sensor as they have their own individual output and are not influenced by each other
+\begin{figure}[h]
+	\centering
+  		\includegraphics[width=3in]{figures/touch/layers_it_1}
+	\caption[The three layers of our touch sensitive fabric, iteration 1]
+   {The three layers of our touch sensitive fabric showing the construction principle of iteration 1}
+   \label{layers_iteration1}
+\end{figure}
 
-\begin{verbatim}
-- Fokus paa konstruktionspricipper
-- Inspireret af instructable
-- 2x3 pad i neopren
-- Hvert felt virker som en individuel tryksensor
-- Meget simpel at prototype, viste os at princippet med conductive 
-  thread og plast virker
-- Simpel grafisk gui til test
-- Ikke skalerbar, man kan ikke trykke uden for felterne og hvert felt
-  bruger et input i audrino (2x3=6)
-- Opdateringshastighed svarende til max baud-rate
-\end{verbatim}
+Each of the cells acts in principle as a discrete sensor as they have their own individual output and are not influenced by each other.
+This approach is simple, both in terms of Arduino setup and coding, and can attain the fastest possible update rates as no computation is needed to determine the location of the touch. 
+The data received from the sensors is sent to Processing for visualization as can be seen in figure~\todo{ref} which we have used for testing.
+
+\subsubsection{Conclusion}
+This quite simple prototype showed us that the basic principles for constructing a textile touch surface with the materials we have had access to, is indeed possible.
+One of the major obstacles we found though was the transition from soft electronics (thread and anti-static bags) to hard electronics, as the conductive metal in the threads are woven into normal cotton thread, making soldering extremely hard.
+For this first iteration we made due with glued on tin foil connectors as a quick-and-dirty solution.
+
+A major downsides to making touch surfaces as a grid of discrete sensors, as we did in this iteration, is the lack scalability.
+There has to be an input pin for each cell in the touch grid you create, so for a given number of rows \(i\) and columns \(j\) you need hardware I/O pins equal to \(i*j\), which is not a suitable for normal micro-controllers which usually have 10--20 I/O pins.
+So with this approach we would, just barely, be able to make a 4 x 4 grid with our Arduino Uno. 
+
 \subsection{Iteration 2}
+To combat the lack of scalability in iteration 1 we build a new version of the prototype.
+To increase our touch surface resolution we improved the prototype in two ways, first by an improved construction and sewing approach inspired by rSkin \citep{rSsininstructables,rskinplusea} and secondly with interpolating post-processing of the input data inspired by \citep{rosenberg2009unmousepad}. 
+
+\subsubsection{Construction principles}
+For the second iteration we made a new 7 x 7 grid prototype, as seen in figure~\ref{prototype_2}, and instead of neoprene, we used sofa textile to get a more natural look and feel, and a larger degree of flexibility in the material.
+We used the same basic three layer principle from iteration 1, but in order to solve the scalability issue the conductive thread is sewn in rows and columns as illustrated in figure~\ref{layers_iteration2_and_3}.
+The principle is to first activate row 0, then read the output on each of the columns, then activate row 1 and read output on all columns, and so on, contentiously scanning the grid one row/column at a time.
+To reduce the sensor noise non active rows and columns are connected to ground throughout the sweep.
+Each finished sweep outputs a pressure map that is sent to our applications.
+
+\begin{figure}[h]
+	\centering
+  		\includegraphics[width=3in]{figures/touch/layers_it_23}
+	\caption[The three layers of our touch sensitive fabric, iteration 2 and 3]
+   {The three layers of our touch sensitive fabric showing the construction principle of iteration 2 and 3}
+   \label{layers_iteration2_and_3}
+\end{figure}
+
+As only one row and one column are active at a given time the micro-controller now only needs to have one I/O pin for input and one for output and can instead rely on multiplexers\footnote{http://en.wikipedia.org/wiki/Multiplexer} to shift the currently active row/column.
+As a result the number of I/O pins now needed is dependent on the number of multiplexers that are used, greatly reducing the number needed for larger grids.
+
+Generally for a multiplexer with \({2^n}\) inputs, n control pins are needed plus one pin for the actual signal.
+So for a j x i grid, the amount of pin needed would be in the range of \(\sqrt{j*i}\), compared to the \(i*j\) from iteration 1, reducing the complexity by the square root.
+
+As mentioned earlier, if pressure is applied to the piezoresistive material the resistance decreases.
+So if the fabric is bend or deformed in any way, this will happen, as the deformation puts stress on the material.
+To allow the fabric to be bendable while attaining sensitivity we added a function to `reset' the pressure map by taking a snapshot of the pressure map in its bended state and use this snapshot to subtract from the outputted pressure map.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{figures/touch/proto2_1}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{figures/touch/proto2_2}
+\end{subfigure}
+\caption{Second iteration of the prototype}
+\label{prototype_2}
+\end{figure}
+
+\subsubsection{Interpolating FSR}
+
+\subsubsection{Conclusion}
+
+
 \begin{verbatim}
 - Fokus paa skalerbarhed
 - Inspireret af rSkin
