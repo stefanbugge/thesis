@@ -6,19 +6,28 @@ Our hope is that this will give a better understanding of the rationale behind o
 
 \todo{iteration 1 is longer because we describes the basics osv. ??}
 
-\begin{figure}[h]
-	\centering
-  		\includegraphics[height=1in]{figures/touch/process}
-	\caption{.}
-   \label{data-process}
-\end{figure}
-
 \subsection{Iteration 1}
 The goal of our first iteration of the prototype was to ensure that the we had construction principles and the right materials for constructing a touch and pressure sensitive fabric, with only off-the-shelf materials and tools.
 
 \subsubsection{Construction principles}
 As a first iteration of our prototype we applied the principles from Pressure Sensor Matrix\footnote{http://www.instructables.com/id/Pressure-Sensor-Matrix/}, to construct a simple 2x3 touch pad in neoprene, seen in figure~\ref{prototype_1}, and a bend sensor for simple testing, also seen in figure~\ref{prototype_1}.
 The prototype consists of three layers as depicted in figure~\todo{ref}, connected to an Arduino\footnote{http://www.arduino.cc/} for input/output data that is sent to Processing\footnote{http://processing.org/} for data visualization.
+
+\begin{figure}[h]
+  \centering
+      \includegraphics[height=1in]{figures/touch/process}
+  \caption{Data process}
+   \label{data-process}
+\end{figure}
+
+The top layer is made of 3 mm thick neoprene from an old mouse pad with one long conductive thread, made of stainless steel fibers, sewn into it.
+Neoprene is easy to work with and gives a natural force-feedback when touched because of its thickness, \hl{but lacks the naturalness and flexibility of normal fabric used for clothing}.
+The middle layer made from anti-static polymer bags that are normally used to protect electronics. 
+Some types of anti-static bags, such as the ones we have used, acts as semi-conductors with piezoresistive capabilities and therefore fits in a FSR sensor.
+We have tested three different types of anti-static bags, two  transparent and one black, but only black ones are piezoresistive.
+We do not know if this is the general case as we only had a limited number of samples.
+The bottom layer is another layer of neoprene, but with separate conductive stitchings for each of the 2 x 3 cells.
+The setup is illustrated in figure~\ref{layers_iteration1}.
 
 \begin{figure}[h]
 \centering
@@ -35,15 +44,6 @@ The prototype consists of three layers as depicted in figure~\todo{ref}, connect
 \caption{First iteration of our touch prototype}
 \label{prototype_1}
 \end{figure}
-
-The top layer is made of 3 mm thick neoprene from an old mouse pad with one long conductive thread, made of stainless steel fibers, sewn into it.
-Neoprene is easy to work with and gives a natural force-feedback when touched because of its thickness, \hl{but lacks the naturalness and flexibility of normal fabric used for clothing}.
-The middle layer made from anti-static polymer bags that are normally used to protect electronics. 
-Some types of anti-static bags, such as the ones we have used, acts as semi-conductors with piezoresistive capabilities and therefore fits in a FSR sensor.
-We have tested three different types of anti-static bags, two  transparent and one black, but only black ones are piezoresistive.
-We do not know if this is the general case as we only had a limited number of samples.
-The bottom layer is another layer of neoprene, but with separate conductive stitchings for each of the 2 x 3 cells.
-The setup is illustrated in figure~\ref{layers_iteration1}.
 
 By sending a 5V signal into the single top layer stitch, each of the six (\(2*3\)) bottom layer outputs can now be read on the Arduino after passing through the piezoresistive material.  
 As pressure is applied to the different sections the voltage drop at the individual grid locations can now be measured with the analog input pins on the Arduino.
@@ -96,7 +96,7 @@ As only one row and one column are active at a given time the micro-controller n
 As a result the number of I/O pins now needed is dependent on the number of multiplexers that are used, greatly reducing the number needed for larger grids.
 
 Generally for a multiplexer with \(2^n\) inputs, n control pins are needed plus one pin for the actual signal.
-So for a \emph{j} x \emph{i} grid, the amount of pin needed would be in the range of \(\sqrt{j*i}\), compared to the \(i*j\) from iteration 1, reducing the complexity by the square root.
+So for a \emph{j} x \emph{i} grid, the amount of pin needed would be in the range of \(\sqrt{j*i}\), compared to the \(i*j\) from iteration 1, reducing the amount of I/Os needed by the square root.
 
 As mentioned earlier, if pressure is applied to the piezoresistive material the resistance decreases.
 So if the fabric is bend or deformed in any way, this will happen, as the deformation puts stress on the material.
@@ -112,7 +112,7 @@ To allow the fabric to be bendable while attaining sensitivity we added a functi
   \centering
   \includegraphics[width=.9\linewidth]{figures/touch/proto2_2}
 \end{subfigure}
-\caption{Second iteration of the prototype.}
+\caption{Second iteration of the prototype. The interactive area is a 7 x 7 grid with each row and column spaced approximately 1 cm apart from each other.}
 \label{prototype_2}
 \end{figure}
 
@@ -132,7 +132,12 @@ As a result we have taken a slightly more simple approach to the interpolation t
 \blank
 For a given touch we first find the max value of the nearest intersection of the touch, point \(P_{max}\).
 Because a touch gives a radial spread of current around itself, the precise location of the touch will always be in the region of the \(P_{max}\).
-As there is a linear drop-off we can now take the readings from the surrounding \((X_{max}\pm1,Y_{max}\pm1))\) and use them them to do a weighted average to approximate the correct position. 
+As there is a linear drop-off we can now take the readings from the surrounding \((X_{max}\pm1,Y_{max}\pm1))\) and use them them to do a weighted average on both axes to approximate the correct position.
+The new approximated point \(P_{approx}\) will, as a result of the radial spread, have a higher weight than the sensed \(P_{max}\) so we scale the value of \(P_{approx}\) with a factor according to the euclidean distance to \(P_{max}\). 
+
+\todo{maaske lidt mere her}
+
+\todo{lav en af ligning interpolationen?}
 
 \begin{figure}[h]
 \centering
@@ -152,22 +157,26 @@ As there is a linear drop-off we can now take the readings from the surrounding 
 \end{figure}
 
 \subsubsection{Conclusion}
+For this type of application where a large number of individual sensor cells are needed the construction approach we have used in this iteration is by far superior to the one from iteration 1.
+It is a more complex setup both in software and hardware but it does in turn enable much larger sensor arrays than before as we showed before with the amount of I/O pins needed.
+As it scales up it is of course more computational heavy on the Arduino CPU as the multiplexers and, in our case, 49 sensor cells needs to be controlled, but as this is still only a 7 x 7 grid we did not experience performance problems.
 
+The interpolation point approximation was, to some degree, a success as it enabled us to up-scale the resolution with a factor 5 with only few approximation errors, but when scaled with a factor 10, which was the goal, quite a few errors appeared.
+Many of these errors are due to the sewing of the conductive thread as it, because of the close seams, protrudes a bit where the stitches are, which can be seen by looking at figure~\ref{prototype_2}.
+Also the fact that the precision of the sewing are not machine-accurate somewhat eliminates the linearity that we base our interpolation on, creating errors in the raw data that are hard to even out in the software.
 
-\begin{verbatim}
-- Fokus paa skalerbarhed
-- Inspireret af rSkin
-- 7x7 pad i sofastof
-- Row/column tilgang reducerer antallet af arduino input til 7+7(additiv)
-  i stedet for 7x7(multiplikativ),
-  men kraever mere kompleks arduino kode, er derfor lang mere skalerbar end foer
-- Reset knap til at kalibrere efter deformation
-- Har samme oploesning som stoerrelsen (7x7), tryk imellem linjerne vil derfor blive 
-  registeret som enten den ene eller anden linje
-- Opdateringshastighed svarende til max baud-rate
-\end{verbatim}
 \subsection{Iteration 3}
-See \ref{app:textile-touch} for schematics and \dots
+One of the foci of iteration 3 was build a larger and more precise version of iteration 2 as to get more reliable raw data from the sensor grid to use for gesture interaction.
+As we were aware of the possibility of generating imprecise data, as we have discussed in the previous iterations, from physical deformation, construction imprecision, material variations and approximation errors, the second focus was to implement a gesture recognition framework that would function under these constraints.
+
+\subsubsection{Construction Principles}
+We used the same setup of iteration 3 but scaled to a 16 x 16 grid, providing 256 sensor cells, compared to the 49 of iteration 1.
+The prototype was made in linen which is robust but a lot finer and thinner that the sofa textile and the conductive thread sewed with less close seams.
+The prototype can be seen in figure~\todo{ref} and the schematics for the hardware setup can be seen in appendix \ref{app:textile-touch}.
+
+ where limited by the baud-rate\footnote{http://en.wikipedia.org/wiki/Baud} 
+
+
 \begin{verbatim}
 - Fokus paa kode (gestures,resolution,performance)
 - Inspireret af UnMousePad
