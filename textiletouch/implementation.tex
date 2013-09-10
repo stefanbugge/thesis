@@ -172,10 +172,34 @@ As we were aware of the possibility of generating imprecise data, as we have dis
 
 \subsubsection{Construction Principles}
 We used the same setup of iteration 3 but scaled to a 16 x 16 grid, providing 256 sensor cells, compared to the 49 of iteration 1.
-The prototype was made in linen which is robust but a lot finer and thinner that the sofa textile and the conductive thread sewed with less close seams.
-The prototype can be seen in figure~\todo{ref} and the schematics for the hardware setup can be seen in appendix \ref{app:textile-touch}.
+The prototype was made in linen which is robust but a lot finer and thinner that the sofa textile and the conductive thread was sewed with less close seams to avoid some of the problems from iteration 2.
+The prototype can be seen in figure~\todo{ref} and the schematics for the final hardware setup can be seen in appendix \ref{app:textile-touch}.
 
- where limited by the baud-rate\footnote{http://en.wikipedia.org/wiki/Baud} 
+One of the main challenge in the construction of this iteration was the attachment of the wires to the conductive thread.
+In iteration 1 we tried with glued on tin foil which only worked because we only had 6 connections to handle.
+The 14 connections in iteration 2 was connected with alligator clips which, besides not looking elegant, tend to cause deformation of the fabric as they close upon it.
+As we now had 32 connections to deal with we found that conductive paint can be a good solution to overcome this connection problem.
+As the paint dries it functions like glue but with the added ability of being conductive so you avoid the possibility of letting the glue get in between the two conductors severing the connection.  
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[t]{.45\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{figures/touch/barepaint}
+  \caption{Bare Paint, an electrically conductive ink, found at www.bareconductive.com}
+\end{subfigure}%
+\hspace{0.5cm}
+\begin{subfigure}[t]{.45\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{figures/touch/connectors}
+  \caption{The drying process. The tape is only added to hold the wires in place as the ink dries.}
+\end{subfigure}
+\caption{One solution for the challenge of connecting conductive thread to wires.}
+\label{interpolation}
+\end{figure}
+
+\subsubsection{Noise reduction}
+\subsubsection{Gesture recognition} 
 
 
 \begin{verbatim}
