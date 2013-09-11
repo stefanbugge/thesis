@@ -7,6 +7,7 @@ Our hope is that this will give a better understanding of the rationale behind o
 \todo{iteration 1 is longer because we describes the basics osv. ??}
 
 \subsection{Iteration 1}
+\label{ch:textiletouch:it1}
 The goal of our first iteration of the prototype was to ensure that the we had construction principles and the right materials for constructing a touch and pressure sensitive fabric, with only off-the-shelf materials and tools.
 
 \subsubsection{Construction principles}
@@ -15,7 +16,7 @@ The prototype consists of three layers as depicted in figure~\todo{ref}, connect
 
 \begin{figure}[h]
   \centering
-      \includegraphics[height=1in]{figures/touch/process}
+      \includegraphics[width=\textwidth]{figures/touch/process}
   \caption{Data process}
    \label{data-process}
 \end{figure}
@@ -74,6 +75,7 @@ There has to be an input pin for each cell in the touch grid you create, so for 
 So with this approach we would, just barely, be able to make a 4 x 4 grid with our Arduino Uno. 
 
 \subsection{Iteration 2}
+\label{ch:textiletouch:it2}
 To combat the lack of scalability in iteration 1 we build a new version of the prototype.
 To increase our touch surface resolution we improved the prototype in two ways, first by an improved construction and sewing approach inspired by rSkin \citep{rSsininstructables,rskinplusea} and secondly with interpolating post-processing of the input data inspired by \citep{rosenberg2009unmousepad}. 
 
@@ -96,7 +98,7 @@ As only one row and one column are active at a given time the micro-controller n
 As a result the number of I/O pins now needed is dependent on the number of multiplexers that are used, greatly reducing the number needed for larger grids.
 
 Generally for a multiplexer with \(2^n\) inputs, n control pins are needed plus one pin for the actual signal.
-So for a \emph{j} x \emph{i} grid, the amount of pin needed would be in the range of \(\sqrt{j*i}\), compared to the \(i*j\) from iteration 1, reducing the amount of I/Os needed by the square root.
+So for a \emph{j} x \emph{i} grid, the amount of pins needed would be \(\sqrt{j*i}\), compared to the \(i*j\) from iteration 1, reducing the amount of I/Os needed by the square root.
 
 As mentioned earlier, if pressure is applied to the piezoresistive material the resistance decreases.
 So if the fabric is bend or deformed in any way, this will happen, as the deformation puts stress on the material.
@@ -119,7 +121,8 @@ To allow the fabric to be bendable while attaining sensitivity we added a functi
 We now have a 7 x 7 grid fabric pad which in it self gives us a resolution of 49 cells compared to the 6 from iteration 1.
 To increase this even further we now go from hardware to software.
 
-\subsubsection{Interpolating FSR}
+\subsubsection{Peak detection and interpolating FSR}
+\label{ch:textiletouch:it2-ifsr}
 If a touch is made between two rows or columns or current approach will register the touch at the closest row/column intersection instead of the true position.
 To improve on this aspect, \citet{rosenberg2009unmousepad} presents a new approach to making FRS sensors called IFSR, or Interpolating Force Sensitive Resistance, in their UnMousePad project. The basic principle is to utilize that each sensor cell has overlapping regions of sensitivity with its neighbours.
 This overlapping sensitivity is due to the fact that pressure at some position would also affect the surrounding neighbours as they are connected though the resistive middle layer.
@@ -166,22 +169,24 @@ Many of these errors are due to the sewing of the conductive thread as it, becau
 Also the fact that the precision of the sewing are not machine-accurate somewhat eliminates the linearity that we base our interpolation on, creating errors in the raw data that are hard to even out in the software.
 
 \subsection{Iteration 3}
-\label{ch:textiletouch:iteration3}
-One of the foci of iteration 3 was build a larger and more precise version of iteration 2 as to get more reliable raw data from the sensor grid to use for gesture interaction.
-As we were aware of the possibility of generating imprecise data, as we have discussed in the previous iterations, from physical deformation, construction imprecision, material variations and approximation errors, the second focus was to implement a gesture recognition framework that would function under these constraints.
+\label{ch:textiletouch:it3}
+One of the focus areas of iteration 3 was build a larger and more precise version of iteration 2 as to get more reliable raw data from the sensor grid to use for gesture interaction.
+As we were aware of the possibility of generating imprecise data, as we have discussed in the previous iterations, from physical deformation, construction imprecision, material variations and approximation errors, the second focus was to implement a basis for gesture recognition that would function under these constraints.
 
 \subsubsection{Construction Principles}
-We used the same setup of iteration 3 but scaled to a 16 x 16 grid, providing 256 sensor cells, compared to the 49 of iteration 1.
+We used the same setup of iteration 3 but scaled to a 16 x 16 grid, providing 256 sensor cells after software upscaling, compared to the 49 of iteration 1.
 The prototype was made in linen which is robust but a lot finer and thinner that the sofa textile and the conductive thread was sewed with less close seams to avoid some of the problems from iteration 2.
 The prototype can be seen in figure~\todo{ref} and the schematics for the final hardware setup can be seen in appendix \ref{app:textile-touch}.
 
-One of the main challenge in the construction of this iteration was the attachment of the wires to the conductive thread.
+One of the main challenges in the construction of this iteration was the attachment of the wires to the conductive thread.
 In iteration 1 we tried with glued on tin foil which only worked because we only had 6 connections to handle.
-The 14 connections in iteration 2 was connected with alligator clips which, besides not looking elegant, tend to cause deformation of the fabric as they close upon it.
-As we now had 32 connections to deal with we found that conductive paint can be a good solution to overcome this connection problem.
-As the paint dries it functions like glue but with the added ability of being conductive so you avoid the possibility of letting the glue get in between the two conductors severing the connection, see figure~\ref{fig:ch:textiletouch:barepaint}.  
-
-\begin{figure}[h]
+The 14 connections in iteration 2 were connected with alligator clips which, besides not looking elegant, tend to cause deformation of the fabric as they close upon it.
+As we now had 32 connections to deal with we found that using ribbon cables would give a better structure.
+Furthermore, as alligator clips were out of the question and as tin and textile do not work well together we needed to find an alternative for the connection.
+Conductive paint turned out to be a good substitute and worked as a kind ``cold''-soldering method - a secondary feature of the paint.
+As the paint dries it functions like an adhesive but with the added ability of being conductive so you avoid the risk of the glue get in between the two conductors severing the connection, see figure~\ref{fig:ch:textiletouch:barepaint}. 
+\blank
+\begin{figure}[t]
 \centering
 \begin{subfigure}[t]{.45\textwidth}
   \centering
@@ -197,15 +202,56 @@ As the paint dries it functions like glue but with the added ability of being co
 \caption{One solution for the challenge of connecting conductive thread to wires.}
 \label{fig:ch:textiletouch:barepaint}
 \end{figure}
+In figure~\ref{fig:textiletouch:dataflow} we illustrate each major step in the data flow and processing 
+of our prototype.
+The flow of data starts from sensor data in the \emph{physical layer} read by the arduino.
+Thereafter it is converted to digital data and streamed to the \emph{processing layer}.
+In the \emph{processing layer} the data goes through several filter stages to optimise the data.
+Lastly the filtered data is delivered to \emph{application layer} where data can be translated into gestures or visualisations.
+We have already covered the principles of the physical layer in \ref{ch:textiletouch:it1} and peak detection and interpolation in \ref{ch:textiletouch:it2}.
+Next we will cover some additional steps in the data flow and the \emph{application layer}.
+
+\begin{figure}[b]
+  \centering
+      \includegraphics[width=\textwidth]{figures/touch/dataflow}
+  \caption[The data flow from sensor to application.]
+   {Textile Touch data flow from sensor to application.}
+   \label{fig:textiletouch:dataflow}
+\end{figure}
 
 \subsubsection{Noise reduction}
+On the software side we have implemented a simple averaging filter to reduce noise by increasing the signal-to-noise ratio, SNR.
+This filter takes each input frame and averages the values of each cell with the cell values of \(x\) previous frames.
+We have found that averaging over the past \(x = 2\) frames gives the best result for our setup. 
+\todo{udpensles mere?} 
+In this way noise such as sudden spikes will be reduced while preserving the actual touch values of the frame.
+
+\subsubsection{Peak detection and interpolation}
+The algorithm for detecting touch input and interpolation has generally not changed since iteration 2, see~\nameref{ch:textiletouch:it2-ifsr} in \ref{ch:textiletouch:it2-ifsr}.
+
+The new part is that we in iteration 3 also have introduced multi-touch input.
+This is more a proof of concept feature which will not be fully functional and stable for interaction. The reason for this is that our code needs some adjustments to be able to provide proper stroke data to the recognition framework which would require too much implementation time.
+So for now we can visualise multi-touch input and basically use it for drawing, see figure~\ref{fig:textiletouch:multitouch}.
+
+An alternative would be to serve all recorded touch points to the \$N implementation, as opposed to \$P, \todo{but as noted earlier} this would be unsatisfactory slow.
+
+\begin{figure}[h]
+  \centering
+      \includegraphics[width=.9\textwidth]{figures/touch/tt_multitouch}
+  \caption[The data flow from sensor to application.]
+   {Multi-touch input visualised. 3 fingers are detected and 3 lines are drawn simultaneously.}
+   \label{fig:textiletouch:multitouch}
+\end{figure}
+
 \subsubsection{Gesture recognition} 
 
+\subsubsection{Feedback} 
+
+\subsubsection{Conclusion} 
+balance between the size of the interactive area and the complexity of the hardware setup.
 
 \begin{verbatim}
 - Fokus paa kode (gestures,resolution,performance)
-- Inspireret af UnMousePad
-- Samme fysiske prototype som iteration 2
 - Interpolering muliggoere tryk mellem linjerne, 10x saa hoej oploesning dog udfald 
   og varierende praesision (vis vi har eksperimenteret med forskellige oploesninger)
 - Forskellige visualiseringer til performance evaluering
