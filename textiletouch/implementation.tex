@@ -184,8 +184,8 @@ The 14 connections in iteration 2 were connected with alligator clips which, bes
 As we now had 32 connections to deal with we found that using ribbon cables would give a better structure.
 Furthermore, as alligator clips were out of the question and as tin and textile do not work well together we needed to find an alternative for the connection.
 Conductive paint turned out to be a good substitute and worked as a kind ``cold''-soldering method - a secondary feature of the paint.
-As the paint dries it functions like an adhesive but with the added ability of being conductive so you avoid the risk of the glue get in between the two conductors severing the connection, see figure~\ref{fig:ch:textiletouch:barepaint}. 
-\blank
+As the paint dries it functions like an adhesive but with the added ability of being conductive so you avoid the risk of the glue get in between the two conductors severing the connection, see figure~\ref{fig:ch:textiletouch:barepaint}.
+
 \begin{figure}[t]
 \centering
 \begin{subfigure}[t]{.45\textwidth}
@@ -202,9 +202,11 @@ As the paint dries it functions like an adhesive but with the added ability of b
 \caption{One solution for the challenge of connecting conductive thread to wires.}
 \label{fig:ch:textiletouch:barepaint}
 \end{figure}
+
+\subsubsection{Data flow}
 In figure~\ref{fig:textiletouch:dataflow} we illustrate each major step in the data flow and processing 
 of our prototype.
-The flow of data starts from sensor data in the \emph{physical layer} read by the arduino.
+The flow of data starts from sensor data in the \emph{physical layer} read by the Arduino.
 Thereafter it is converted to digital data and streamed to the \emph{processing layer}.
 In the \emph{processing layer} the data goes through several filter stages to optimise the data.
 Lastly the filtered data is delivered to \emph{application layer} where data can be translated into gestures or visualisations.
@@ -244,11 +246,67 @@ An alternative would be to serve all recorded touch points to the \$N implementa
 \end{figure}
 
 \subsubsection{Gesture recognition} 
+\label{ch:textiletouch:gesture_implementation}
+
+We have created an application that takes the filtered data of the \emph{processing layer} and abstracts it to a collection of strokes that are delivered to the \$P gesture recognition framework, which matches the input up against a set of predefined gestures templates.
+The dollar family of recognizers were presented earlier in \ref{ch:textiletouch:gesture_recognition}.
+Initially we experimented with the \$N implementation which was able to recognise gestures but with some limitations.
+
+First of all, the recogniser was sensitive to the ordering of the strokes which meant that the it could fail on the same gesture if drawn from different starting points. \todo{Tore, yes?}
+
+Secondly, there was a considerable amount of delay before a resulting gesture was found.
+We measured this to be in the area of \(800\) to \(1000 ms\), a latency which in our opinion does influence the user experience.
+After changing to the \$P implementation we got this delay down to \(< 10 ms\) which is quite an improvement.
+This is because \$P avoids a combinatorial overhead of \$N where \$N matches up against every possible combination of stroke order and direction.
+
+Furthermore, the \$P implementation does not distinguish the order of the strokes which allows for subjective ways of drawing specific shapes.
+
+One limitation of both implementations is that they do not take in to account the orientation of the input. 
+This means that, for example, for a line to be recognised in both a vertical, horizontal and diagonal version they all need to have a predefined template. \todo{say something about the complexity of writing templates? P vs N}
 
 \subsubsection{Feedback} 
 
 \subsubsection{Conclusion} 
-balance between the size of the interactive area and the complexity of the hardware setup.
+
+Although the 3rd iteration overcame some of the limitations of the 2nd iteration it still has some constraints that we would like to address.
+
+One noticeable limitation is performance as foreseen in interation 2.
+Our current Ardiuno Uno is not fast enough to always follow along with quick touch movements on the prototype.
+Simple gestures like lines or simple characters are not affected as much as more complicated symbols.
+The new and exceedingly faster Arduino Due\footnote{http://arduino.cc/en/Main/ArduinoBoardDue}, an ARM-based board which operates at a clock speed of 84 MHz, has recently been released and would greatly outperform our older 8 MHz Arduino Uno.
+
+One of the reasons for scaling up the prototype was to get a larger area for touch input.
+In the process of tripling the dimensions of the prototype (from approximately \(8x8cm\) to \(25x25cm\)) we also increased the amount of rows and columns but with a little extra spacing (\(1.5cm\)) between the individual lines.
+It seems that this spacing has become a bit too large, meaning that pressing in between the intersections of two rows and two columns does not propagate quite enough pressure to the surrounding line crossings, resulting in smaller pressure values (see figure~\ref{fig:textiletouch:intersections}).
+
+We have tried to improve this in our approximation algorithm by multiplying the value with a factor relative to distance away from the line in both axes.
+This has to some degree amended the issue but not fully.
+
+\begin{figure}
+\centering
+\begin{minipage}[t]{.45\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{figures/touch/intersections}
+  \caption[Pressing in between the intersection of two rows and two columns does not propagate enough pressure.]
+  {Pressing in between the intersections of two rows and two columns (red dot) does not propagate enough pressure to the surrounding lines crossings (blue dots).}
+  \label{fig:textiletouch:intersections}
+\end{minipage}%
+\hspace{1cm}
+\begin{minipage}[t]{.45\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{figures/touch/wires}
+  \caption[Breadboard crowded with wires.]
+  {Breadboard crowded with wires.}
+  \label{fig:textiletouch:wires}
+\end{minipage}
+\end{figure}
+
+An alternative approach is to reduce the spacing again to \(1cm\) or less but that would require quite a few extra wires which we already have quite a few of (see figure~\ref{fig:textiletouch:wires}).
+Furthermore increasing the grid size would result in an exponential growth in the amount of data to be transmitted by the microcontroller.
+With a \(16x16\) grid we are sending 256 values every frame (\(10ms\)),
+If we were to lower the spacing to \(1cm\) we would get a grid size of \(24x24\) which in turn would require a transmission of 576 values for every frame.
+As our microcontroller is already running at over capacity this out of the question for now, but replacing the microcontroller with a more powerful one, as mentioned before, it could become relevant again.
+Therefore we see it as a balance between the size of the touch area and the complexity of the hardware setup.
 
 \begin{verbatim}
 - Fokus paa kode (gestures,resolution,performance)
