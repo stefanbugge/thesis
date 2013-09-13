@@ -32,23 +32,24 @@ The platform is called JMU (Jamming Modulated Unimorph) and has been tested as c
 These different examples from other fields of research illustrate how creative implementations of the jamming technique and adding other layers of actuation can extend the applicability of jamming.
 \todo{purpose $\to$ human unfriendly environments}
 
-\begin{figure}
-\centering
-\begin{minipage}[t]{.5\textwidth}
+\begin{figure}[h]
   \centering
-  \includegraphics[width=.9\linewidth]{figures/jamming/chembot-robot-blob}
-  \caption[Jamming Skin Enabled Locomotion (JSEL) by \citet{steltz2009jsel}.]
-  {Jamming Skin Enabled Locomotion (JSEL). Each cell can be jammed individually to create motion.}
-  \label{fig:ch:jamming:jsel}
-  \hspace{.2\textwidth} 
-\end{minipage}%
-\begin{minipage}[t]{.5\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{figures/jamming/jmu-worm}
-  \caption[Jamming Modulated Unimorph by \citet{steltz2010jamming}.]
-  {Jamming Modulated Unimorph.}
-  \label{fig:ch:jamming:jmu}
-\end{minipage}
+  \begin{minipage}[t]{.45\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/jamming/chembot-robot-blob}
+    \caption[Jamming Skin Enabled Locomotion (JSEL) by \citet{steltz2009jsel}.]
+    {Jamming Skin Enabled Locomotion (JSEL). Each cell can be jammed individually to create motion.}
+    \label{fig:ch:jamming:jsel}
+    \hspace{.2\textwidth} 
+  \end{minipage}%
+  \hspace{0.5cm}
+  \begin{minipage}[t]{.45\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/jamming/jmu-worm}
+    \caption[Jamming Modulated Unimorph by \citet{steltz2010jamming}.]
+    {Jamming Modulated Unimorph.}
+    \label{fig:ch:jamming:jmu}
+  \end{minipage}
 \end{figure}
 
 \subsubsection{Human-computer Interaction}
@@ -74,22 +75,23 @@ The input is detected by a depth camera from above the tabletop.
 \todo{critical points: depth camera and project. and application - 1-page-paper though, it exists in a longer version in Japanese}
 \todo{the videos give a more artistic impression of the applicability.}
 
-\begin{figure}
-\centering
-\begin{minipage}[t]{.5\textwidth}
+\begin{figure}[h]
   \centering
-  \includegraphics[width=.8\linewidth]{figures/jamming/hovermesh}
-  \caption[The HoverMesh by \citet{mazzone2004hovermesh}.]
-  {The HoverMesh.}
-  \label{fig:ch:jamming:hovermesh}
-\end{minipage}%
-\begin{minipage}[t]{.5\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{figures/jamming/claytric-surface}
-  \caption[Claytric Surface by \citet{matoba2012claytricsurface}.]
-  {Claytric Surface.}
-  \label{fig:ch:jamming:claytric-surface}
-\end{minipage}
+  \begin{minipage}[t]{.45\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/jamming/hovermesh}
+    \caption[The HoverMesh by \citet{mazzone2004hovermesh}.]
+    {The HoverMesh.}
+    \label{fig:ch:jamming:hovermesh}
+  \end{minipage}%
+  \hspace{0.5cm}
+  \begin{minipage}[t]{.45\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/jamming/claytric-surface}
+    \caption[Claytric Surface by \citet{matoba2012claytricsurface}.]
+    {Claytric Surface.}
+    \label{fig:ch:jamming:claytric-surface}
+  \end{minipage}
 \end{figure}
 
 \paragraph{Jamming User Interfaces}
@@ -130,29 +132,26 @@ Ideas are presented for integrating various sensing techniques such as capacitiv
 
 \begin{figure}
         \centering
-        \begin{subfigure}[b]{0.4\textwidth}
+        \begin{subfigure}[b]{0.45\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{figures/jamming/jui_tunable-clay}
                 \caption{Tuneable Clay}
                 \label{fig:ch:jamming:jui-clay}
-        \end{subfigure}%
-        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
-          %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.4\textwidth}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{figures/jamming/jui_haptic-lens}
                 \caption{Transparent Haptic Lens}
                 \label{fig:ch:jamming:jui-lens}
         \end{subfigure}
-        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
-          %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.4\textwidth}
+
+        \begin{subfigure}[b]{0.45\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{figures/jamming/jui_behind-the-tablet}
                 \caption{Behind-the-Tablet Jamming}
                 \label{fig:ch:jamming:jui-tablet}
         \end{subfigure}
-        \begin{subfigure}[b]{0.4\textwidth}
+        \begin{subfigure}[b]{0.45\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{figures/jamming/jui_shapephone}
                 \caption{ShapePhone}
@@ -161,3 +160,32 @@ Ideas are presented for integrating various sensing techniques such as capacitiv
         \caption{Jamming User Interfaces by \citet{follmer2012jamming}.}
         \label{fig:ch:jamming:jui-collection}
 \end{figure}
+
+\subsection{Summary}
+
+In the previous sections we have given an introduction to the mechanics of jamming and an overview of different research applications of jamming.
+Table \ref{ch:jamming:table:applications_overview} summarises and categorises these applications according to their characteristics.
+In the next we will move on to our own concepts that support the notion of ad hoc interfaces.
+
+\begin{landscape}
+  \thispagestyle{empty}
+  \centering
+  \captionof{table}{An overview of jamming in HCI} \label{ch:jamming:table:applications_overview} 
+  \begin{tabularx}{\linewidth}{|l|c|c|c|c|c|X|}
+    \hline
+    Project & Input & Output & Type & Particles & Transparent & Summary \\ \hline
+    The HoverMesh & \cellcolor{FalseColor}\xmark & \cellcolor{TrueColor}\cmark & pneumatic & polystyrene (2-3 mm) & \xmark & A cell-based deformable surface structure . \\ \hline    
+    ClaytricSurface & \cellcolor{TrueColor}\cmark & \cellcolor{FalseColor}\xmark & pneumatic & polystyrene & \xmark & A flexible tabletop surface which serves as a sculptable display medium. \\ \hline
+      Tunable Clay & \cellcolor{TrueColor}\cmark & \cellcolor{FalseColor}\xmark & hydraulic & glass beads & \cmark & A malleable tabletop for direct 3D modelling. \\ \hline
+      Transparent Haptic Lens & \cellcolor{FalseColor}\xmark & \cellcolor{TrueColor}\cmark & hydraulic & glass beads & \cmark & A small tangible puck to be used as a haptic information channel on a tabletop display. \\ \hline
+      Behind-the-Tablet Jamming & \cellcolor{TrueColor}\cmark & \cellcolor{TrueColor}\cmark & pneumatic & ? & \xmark & A tablet with a interactive jamming volume on the back. \\ \hline
+      ShapePhone & \cellcolor{TrueColor}\cmark & \cellcolor{FalseColor}\xmark & pneumatic & coffee (coarse or fine ?) & \xmark & a generic mobile device that can be shaped and locked into different forms. \\
+      \hline
+  \end{tabularx}
+
+\begin{flushleft}
+This table is an overview of the prototypes presented in the papers covered in this section. It should be mentioned that in categorising \textit{input} and \textit{output} features we are only considering whether input or output is enabled using the jamming technique. For example, \textit{Tunable Clay} does have output in the form a image projection but it does not utilise the jamming technique.
+\todo{information is of course retrieved from the papers but some parts are not available. Check other sources: web pages, videos, email author??}
+\end{flushleft}
+
+\end{landscape}
