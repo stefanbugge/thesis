@@ -1,31 +1,48 @@
 %!TEX root = thesis.tex
-\todo{Overall introduction and possibly a new headline instead of Domain}
+As we noted in the introduction, the domestic environment is a domain where we find the relationship between computers and user interesting.
+The domestic environment is interesting because we see the home as a space where adaptability, personalization, and ??  are central aspects of making a home \emph{home} and as such our idea of AHI, that we will present in chapter~\ref{ch:adhoc}, feels appropriate and relevant in this domain.
+We have chosen this as a design constraint with the hope it will enable us to make a more precise and sharp presentation and exploration of the possibilities of AHIs as we are now forced to put it into a specific context.
+
+As a point of origin we will first look at the building as a concept and how the building relates to changes and to the people that inhabits its walls.
+Secondly we will look into so called ``smart homes'', homes where computers becomes large part of the ecology of the home, as this poses interesting possibilities and challenges for designing computer systems.
+
 \section{The evolution of buildings}
 Buildings, like everything else, changes over time.
 But different parts of a building change with different rates, a wall will most likely endure longer than the paint on its sides and the ground on which the wall stands will most likely still be there when the wall collapses.
 This ever changing nature of buildings has been conceptualized by Steward Brand in his book \emph{How Buildings Learn: What Happens After They're Built} \citep{brand1995buildings}.
 Here Brand presents a framework, in which he define six S's as a ground for understanding changes in a building: Site, Structure, Skin, Services, Space plan and Stuff.
 
-\begin{figure}[hb]
+\begin{figure}[h]
 	\centering
   		\includegraphics[width=3in]{figures/brand-diagram}
-	\caption[The different layers of change, taken from \cite{brand1995buildings}]
-   {The different layers of change \cite{brand1995buildings}}
+	\caption{The different layers of change \citep[chapter 2]{brand1995buildings}}
    \label{brand-diagram}
 \end{figure}
 
 The six S's describes the different layers of change, three describing the exterior: Site, Structure and Skin and three describing the interior: Services, Space plan and Stuff.
-Each layer has a different rate of change, Site having the longest and Stuff the shortest rate of change, see figure~\ref{brand-diagram}. As the rate of change differs for the different components of the building, the building is, as Brand notes, constantly `tearing itself apart', or in a more constructive term, constantly evolving.
+Each layer has a different rate of change, Site having the longest and Stuff the shortest rate of change, see figure~\ref{brand-diagram}.
+As the rate of change differs for the different components of the building, the building is, as Brand notes, constantly `tearing itself apart', or in a more constructive term, constantly evolving.
 
 Brand argues in favor for an approach where the inhabitants of a building can evolve and change the building over time according to their needs \citep{brandBBCvideo}.
 He sees this in contrast to a scenario where a single person or group designs a building for others to use.
 In light of this, providing inhabitants with higher rates of change could accommodate an even more dynamic relationship between the building and the people living in it.
-Inspired by this concept of the building as a living, ever-evolving entity, we want to explore how we can accommodate and design for change in physical interfaces in the context of digital systems in a domestic setting.
 
-We want to explore how physical interfaces can be created on demand in an ad hoc manner, to better cope with the changes in the buildings space plan and stuff, and better accommodate the changing needs of its inhabitants.
-The idea is to let the interface exist when it is needed and then let it slowly perish when it is no longer used, either manually, over time, by natural forces or based on sensory data.
-This does somewhat challenge the traditional view of physical interfaces as they are generally considered static and permanent.
-To put this into perspective we will give an overview of the development of interfaces in chapter~\ref{ch:ui}. \todo{hvis kap. 2 og 3 byttes om skal dette tilpasses}
+We see two interesting ways of exploring this existing relationship between building and inhabitants.
+One is to open up the layer of Stuff.
+The layer of Stuff is all the things that gets moved around or changed on daily to monthly basis such as chairs and desks, kitchen appliances and lamps.
+So what if Stuff could be changed, moved or modified on an even more frequent basis, say in minutes or hours, accommodating the need of the inhabitants with the possibility for them to adapt furniture and objects to current needs.
+
+Another approach could be to pull down a given layer of change to a lower layer, for example enabling changes in the Space Plan as if it was Stuff, creating a more dynamic Space Plan.
+This would open up for entirely new possibilities of rethinking the home. 
+If, for example, homes had dynamic walls, ceilings, floors and doors that would give them a less static and permanent function, it could enable changes to the Space Plan that maybe lasts days or months, enabling the Space Plan to adapt to specific situations, just as you on the Stuff plan would add an extra chair to the table for a visiting guest. 
+
+It is, of course, non trivial to make the home as dynamic and adaptable as suggested above.
+But the this concept of the building as a living, ever-evolving entity, does give us inspiration to explore the use of digital systems in a domestic setting, as this could be one way to approach such a vision.
+So with the help of computers and new materials we want to explore how we can accommodate and design for change in physical environment that surrounds us.
+We want to explore how physical interfaces can be created on demand in an ad hoc manner, to better cope with the changes in the buildings space plan and on the level of stuff, and better accommodate the changing needs of its inhabitants.
+As touched upon in chapter~\ref{ch:ui} this does somewhat challenge the traditional view of physical interfaces as they are generally considered static and permanent.
+\todo{bedre afrunding til smart homes}
+\todo{maaske til ad hoc afsnit: The idea is to let the interface exist when it is needed and then let it slowly perish when it is no longer used, either manually, over time, by natural forces or based on sensory data.}
 
 \section{Smart homes or home that make us smart}
 The idea of adding computer systems into the domestic environment is not a new one.
@@ -36,7 +53,7 @@ An early visual example of the fascination of `smart homes' is seen in the Gener
 Here we see a remote control of the different kitchen appliances, a (computer)screen that can show the final result of the recipe it is given, and a seemingly context-aware moving table.
 Domestic technology appears even earlier where in the 1915-20, with the advent of electricity in common homes, electrically powered machines such as vacuum cleaners and refrigerators providing the `seedbed', as Frances Aldrich puts it, for the emergence for the smart home \citep{aldrich2003smart}.
 
-In recent years, especially since Mark Weiser's introduction of Ubiquitous Computing \citep{weiser1991computer}, a lot of the research in the domestic realm has focused on the idea of a \emph{home that is smart} where the goal is to use computers to make the home \emph{intelligent} \citep{taylor2007homes}.
+In recent years, especially since Mark Weiser's vision of ubiquitous computing \citep{weiser1991computer}, a lot of the research in the domestic realm has focused on the idea of a \emph{home that is smart} where the goal is to use computers to make the home \emph{intelligent} \citep{taylor2007homes}.
 \citet{aldrich2003smart} defines smart homes as:
 
 \begin{quotation}
