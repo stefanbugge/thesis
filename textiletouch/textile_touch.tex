@@ -27,24 +27,24 @@ Today computation is commonly done either offline or onto the fabric, or a combi
 
 \begin{figure}[h]
 \centering
-\begin{minipage}{.3\textwidth}
+\begin{minipage}[b]{.3\textwidth}
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/wearable_motherboard}
-  \captionof{figure}{The Wearable Motherboard, taken from \citep{gopalsamy1999wearable}}
+  \includegraphics[width=0.9\linewidth]{figures/wearable_motherboard}
+  \captionof{figure}{The Wearable Motherboard, from \citep{gopalsamy1999wearable}}
   \label{sofa_interaction:wearable_motherboard}
 \end{minipage}%
 \hspace{0.2cm}
-\begin{minipage}{.3\textwidth}
+\begin{minipage}[b]{.3\textwidth}
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/shutters}
-  \captionof{figure}{Shutters, taken from \citep{coelho2009shutters}}
+  \includegraphics[width=0.9\linewidth]{figures/shutters}
+  \captionof{figure}{Shutters, from \citep{coelho2009shutters}}
   \label{sofa_interaction:shutters}
 \end{minipage}
 \hspace{0.2cm}
-\begin{minipage}{.3\textwidth}
+\begin{minipage}[b]{.3\textwidth}
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/sprout}
-  \captionof{figure}{Sprout I/O, taken from \citep{coelho2009shutters}}
+  \includegraphics[width=0.9\linewidth]{figures/sprout}
+  \captionof{figure}{Sprout I/O, from \citep{coelho2009shutters}}
   \label{sofa_interaction:sprout}
 \end{minipage}
 \end{figure}
@@ -106,27 +106,29 @@ Though to attain resolutions higher than the size of the underlying grid, a lot 
 Also from our own experience with the technology we have seen a lot of input signal noise from the sensor which makes it harder to get accurate position tracking.   
 
 \begin{figure}[h]
-\centering
-\begin{minipage}{.3\textwidth}
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/touch/reactable}
-  \captionof{figure}{Example of an optical sensing system, reacTable}
-  \label{sofa_interaction:reactable}
-\end{minipage}%
-\hspace{0.2cm}
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=0.8\linewidth]{figures/touch/ipad}
-  \captionof{figure}{Example of a capacitive sensing system, iPad}
-  \label{sofa_interaction:ipad}
-\end{minipage}
-\hspace{0.2cm}
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=0.8\linewidth]{figures/touch/unmousepad}
-  \captionof{figure}{Example of a resistive sensing system, an UnMousePad sensor on a cup} 
-  \label{sofa_interaction:unmousepad}
-\end{minipage}
+  \begin{subfigure}[b]{.3\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/touch/reactable}
+    \captionof{figure}{Optical sensing, reacTable}
+    \label{sofa_interaction:reactable}
+  \end{subfigure}%
+  \hspace{0.2cm}
+  \begin{subfigure}[b]{.3\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/touch/ipad}
+    \captionof{figure}{Capacitive sensing, iPad}
+    \label{sofa_interaction:ipad}
+  \end{subfigure}
+  \hspace{0.2cm}
+  \begin{subfigure}[b]{.3\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/touch/unmousepad}
+    \captionof{figure}{Resistive sensing, UnMousePad} 
+    \label{sofa_interaction:unmousepad}
+  \end{subfigure}
+  \caption{Examples of different sensing systems.}
+  \label{sofa_interaction:sensing_systems}
 \end{figure}
 
 \subsection{Gesture recognition}
