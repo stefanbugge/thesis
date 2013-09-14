@@ -133,30 +133,33 @@ In this scenario the interface was shaped and created by the user for the specif
 % CAC comparison
 It might seem that AHI overlaps with the concept of Context Aware Computing in that they both have a focus on environmental context.
 In context aware computing a system attempts to derive, through a variety of cues, what the current context of use is and as a result it adapts its behaviour \citep[chap. 8]{krumm2009ubiquitous}. 
-In this way it is the system itself that takes action autonomously and the user continues on outside of the control loop. \todo{rephrase??}
+In this way it is the system itself that takes action autonomously while the user continues on, outside of the control loop.
 Exactly the topic of control is one of the points where context aware systems have received criticism \cite{erickson2002some}, \citep[chap. 8]{krumm2009ubiquitous}.
 The criticism has to do with a systems ability to make inference based on the analysis of quantitative contextual information available, something that can be quite difficult to do for a computer as contextual information is often subtle and implicit.
-\todo{This is not supposed to be a critique of context aware systems as they surely have their legitimacy and offer a lot of convenience.}
-\todo{An AHI can have CAC elements} 
+As such there is a possibility for a mismatch between the user and the computers inference of a situation leading to conflicts.
+This is not to say that context aware systems are not useful or appropriate in some situations as they can offer a lot of convenience, if done with care and with the \emph{user} in mind, with all the complexity that follows it.
 
-Where context aware systems put the user out of the control loop AHIs do not.
-In AHIs the user is the initiator of action.
+An aspect of our AHI definition is \emph{on-demand} where the word \emph{demand} both implies a concious and specific need and an explicit interaction.
+This puts a focus on the user as the initiator of action and as such this might seem conflicting with context aware systems where the focus often is on implicit and autonomous actions.
+But this does not mean that context-aware systems and AHIs necessary are incompatible, since they are both elements or characteristics of a system and one does not exclude the other as a part of a complex system.
 
-It actually makes no sense to compare them directly as they cannot be juxtaposed.
-They are both elements or characteristics of a system and one does not exclude the other as a part of a system.
-It would seem quite natural to have an ad hoc system that also incorporates some context aware computing elements, for example \todo{give a good example} 
+It would seem quite natural to have an ad hoc system that also incorporates some context aware computing elements, as long as it does not put the user out of the control loop.
+An example could be to use context information to identify which user is currently using the interface, enabling customizable profiles or actions to the specific users, but without letting the system take action or determine the most proper action for the user.
+As with any successful context system this does however require reliable context information and a high degree of robustness to avoid it being a hindrance for the user experience.
 \blank
 % TUI comparison
-Tangible user interfaces, or TUIs, do generally not exhibit ad hoc characteristics. \todo{det skal lige overvejes om det er helt sandt- NEJ}
+Tangible user interfaces, or TUIs, do generally not exhibit ad hoc characteristics.
 They are mentioned here more for their nature of physical representation and their movement away from the standard GUI paradigm for human-computer interaction.
-TUIs demonstrate a inherently tight coupling between digital information and the associated physical representation, for example tangible tokens representing a specific digital entity or mapping to a specific function or action.
+TUIs demonstrate a inherently tight coupling between digital information and the associated physical representation, for example tangible tokens representing a \emph{specific} digital entity or mapping to a \emph{specific} function or action.
 There are numerous examples of these, for example, the ReacTable \cite{jorda2007reactable}, the Marble Answering Machine \todo{citation possible or link} to name a few.
-Furthermore, because of this tight coupling the physical representations are often created only for the specific purpose and are of no use outside of the TUI context. \todo{er det at sk\ae re det over en kam??}
+Furthermore, because of this tight coupling the physical representations are often created only for the specific purpose and are of no use outside of the TUI context. \todo{giv evt. eksempel}
 
-In contrast, ad hoc interfaces define a more loose coupling meaning that one physical object can serve several purposes. \todo{igen - ???}
-This will be exemplified in \autoref{ch:textile-touch} where we prototype a general purpose ad hoc interface called textile touch, which can augment existing household objects by adding a digital layer.
+In contrast, ad hoc interfaces define a less strict coupling between digital content and physical objects, meaning that one physical object can serve several purposes.
+This will be exemplified in \autoref{ch:textile-touch} where we prototype a general purpose ad hoc interface called Textile Touch, which can augment existing household objects by adding a digital layer. \todo{}
 \blank
 \todo{and Augmented reality - While on the topic of adding a digital layer to the real-world environment we should also bring up the concept of Augmented Reality, or AR.}
+
+\todo{noget om shape change}
 
 \section{Discussion}
 
