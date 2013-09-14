@@ -11,7 +11,7 @@ This gripper was simply build with an elastic bag as a container for the granula
 It is able to pick up objects of heterogeneous shapes due to the gripper simply adapting to the surface structure of the objects on impact, see figure~\ref{fig:ch:jamming:jamming-robot-gripper}. 
 \todo{this is cool because\dots 1-degree freedom $\rightarrow$ modulated into multi DoF}
 
-\begin{figure}[hb]
+\begin{figure}
 	\centering
   		\includegraphics[width=4in]{figures/jamming/jamming-robot-gripper}
 	\caption[A universal robotic gripper based on the jamming of granular material by \citet{brown2010universal}.]
@@ -32,7 +32,7 @@ The platform is called JMU (Jamming Modulated Unimorph) and has been tested as c
 These different examples from other fields of research illustrate how creative implementations of the jamming technique and adding other layers of actuation can extend the applicability of jamming.
 \todo{purpose $\to$ human unfriendly environments}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \begin{minipage}[t]{.45\textwidth}
     \centering
@@ -75,9 +75,9 @@ The input is detected by a depth camera from above the tabletop.
 \todo{critical points: depth camera and project. and application - 1-page-paper though, it exists in a longer version in Japanese}
 \todo{the videos give a more artistic impression of the applicability.}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
-  \begin{minipage}[t]{.45\textwidth}
+  \begin{minipage}[t]{.4\textwidth}
     \centering
     \includegraphics[width=.9\linewidth]{figures/jamming/hovermesh}
     \caption[The HoverMesh by \citet{mazzone2004hovermesh}.]
@@ -85,7 +85,7 @@ The input is detected by a depth camera from above the tabletop.
     \label{fig:ch:jamming:hovermesh}
   \end{minipage}%
   \hspace{0.5cm}
-  \begin{minipage}[t]{.45\textwidth}
+  \begin{minipage}[t]{.4\textwidth}
     \centering
     \includegraphics[width=.9\linewidth]{figures/jamming/claytric-surface}
     \caption[Claytric Surface by \citet{matoba2012claytricsurface}.]
@@ -164,28 +164,60 @@ Ideas are presented for integrating various sensing techniques such as capacitiv
 \subsection{Summary}
 
 In the previous sections we have given an introduction to the mechanics of jamming and an overview of different research applications of jamming.
-Table \ref{ch:jamming:table:applications_overview} summarises and categorises these applications according to their characteristics.
+These applications show two primary approaches to jamming.
+The first one is the basic approach where a single volume containing particles can be jammed by applying a vacuum inside, see figure~\ref{fig:ch:jamming:approaches:basic}.
+Applications of the basic approach are for example, \emph{Claytric Surface} and \emph{ShapePhone}.
+The other is the more complicated cell-based approach where each cell is an independent jammable volume working in the same manner as the basic approach.
+As the cells exist on the perimeter of the volume some other compound must constitute the body of the volume and stabilise the form.
+In \emph{The HoverMesh} this was air inside a cubicle and in \emph{JSEL} it was liquid, see figure~\ref{fig:ch:jamming:approaches:cell}.
+
+\begin{figure}
+  \centering
+  \begin{minipage}[t]{.45\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/jamming/basic_jamming}
+    \caption[The basic jamming approach.]
+    {Illustrates the basic approach with a single jammable volume.}
+    \label{fig:ch:jamming:approaches:basic}
+  \end{minipage}%
+  \hspace{0.5cm}
+  \begin{minipage}[t]{.45\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/jamming/cell_jamming}
+    \caption[The cell-based jamming approach.]
+    {Illustrates the cell-based approach where each cell functions as an independent jammable volume.}
+    \label{fig:ch:jamming:approaches:cell}
+  \end{minipage}
+\end{figure}
+
+Table \ref{ch:jamming:table:applications_overview} summarises and categorises the mentioned applications according to their characteristics.
 In the next we will move on to our own concepts that support the notion of ad hoc interfaces.
 
 \begin{landscape}
   \thispagestyle{empty}
-  \centering
-  \captionof{table}{An overview of jamming in HCI} \label{ch:jamming:table:applications_overview} 
+  \centering 
+  \captionof{table}{An overview of jamming in HCI}
+  \label{ch:jamming:table:applications_overview} 
   \begin{tabularx}{\linewidth}{|l|c|c|c|c|c|X|}
     \hline
-    Project & Input & Output & Type & Particles & Transparent & Summary \\ \hline
-    The HoverMesh & \cellcolor{FalseColor}\xmark & \cellcolor{TrueColor}\cmark & pneumatic & polystyrene (2-3 mm) & \xmark & A cell-based deformable surface structure . \\ \hline    
-    ClaytricSurface & \cellcolor{TrueColor}\cmark & \cellcolor{FalseColor}\xmark & pneumatic & polystyrene & \xmark & A flexible tabletop surface which serves as a sculptable display medium. \\ \hline
-      Tunable Clay & \cellcolor{TrueColor}\cmark & \cellcolor{FalseColor}\xmark & hydraulic & glass beads & \cmark & A malleable tabletop for direct 3D modelling. \\ \hline
-      Transparent Haptic Lens & \cellcolor{FalseColor}\xmark & \cellcolor{TrueColor}\cmark & hydraulic & glass beads & \cmark & A small tangible puck to be used as a haptic information channel on a tabletop display. \\ \hline
-      Behind-the-Tablet Jamming & \cellcolor{TrueColor}\cmark & \cellcolor{TrueColor}\cmark & pneumatic & ? & \xmark & A tablet with a interactive jamming volume on the back. \\ \hline
-      ShapePhone & \cellcolor{TrueColor}\cmark & \cellcolor{FalseColor}\xmark & pneumatic & coffee (coarse or fine ?) & \xmark & a generic mobile device that can be shaped and locked into different forms. \\
-      \hline
+    Project                 & Input                         & Output                        & Type      & Particles   & Approach  & Summary \\ \hline
+    \hline
+    Robotic gripper         & \cellcolor{FalseColor}\xmark  & \cellcolor{TrueColor}\cmark   & pneumatic & coffee      & basic     & A universal robotic gripper \\ \hline
+    Jamming Skin Enabled Locomotion & \cellcolor{FalseColor}\xmark  & \cellcolor{TrueColor}\cmark   & pneumatic & glass beads     & cell-based& A soft moving robot \\ \hline
+    Jamming Modulated Unimorph & \cellcolor{FalseColor}\xmark  & \cellcolor{TrueColor}\cmark   & pneumatic & glass beads          & cell-based& A worm-like robot \\ \hline
+    \hline
+    The HoverMesh           & \cellcolor{FalseColor}\xmark  & \cellcolor{TrueColor}\cmark   & pneumatic & polystyrene & cell-based& A cell-based deformable surface structure . \\ \hline    
+    ClaytricSurface         & \cellcolor{TrueColor}\cmark   & \cellcolor{FalseColor}\xmark  & pneumatic & polystyrene & basic     & A flexible tabletop surface which serves as a sculptable display medium. \\ \hline
+    Tunable Clay            & \cellcolor{TrueColor}\cmark   & \cellcolor{FalseColor}\xmark  & hydraulic & glass beads & basic     & A malleable tabletop for direct 3D modelling. \\ \hline
+    Transparent Haptic Lens & \cellcolor{FalseColor}\xmark  & \cellcolor{TrueColor}\cmark   & hydraulic & glass beads & basic     & A small tangible puck to be used as a haptic information channel on a tabletop display. \\ \hline
+    Behind-the-Tablet       & \cellcolor{TrueColor}\cmark   & \cellcolor{TrueColor}\cmark   & pneumatic & ?           & basic     & A tablet with a interactive jamming volume on the back. \\ \hline
+    ShapePhone              & \cellcolor{TrueColor}\cmark   & \cellcolor{FalseColor}\xmark  & pneumatic & coffee      & basic     & a generic mobile device that can be shaped and locked into different forms. \\
+    \hline
   \end{tabularx}
 
-\begin{flushleft}
-This table is an overview of the prototypes presented in the papers covered in this section. It should be mentioned that in categorising \textit{input} and \textit{output} features we are only considering whether input or output is enabled using the jamming technique. For example, \textit{Tunable Clay} does have output in the form a image projection but it does not utilise the jamming technique.
-\todo{information is of course retrieved from the papers but some parts are not available. Check other sources: web pages, videos, email author??}
-\end{flushleft}
+  \begin{flushleft}
+  This table is an overview of the prototypes presented in the papers covered in this section. It should be mentioned that in categorising \textit{input} and \textit{output} features we are only considering whether input or output is enabled using the jamming technique. For example, \textit{Tunable Clay} does have output in the form a image projection but it does not utilise the jamming technique.
+  \todo{information is of course retrieved from the papers but some parts are not available. Check other sources: web pages, videos, email author??}
+  \end{flushleft}
 
 \end{landscape}
