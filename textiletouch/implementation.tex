@@ -251,11 +251,13 @@ An alternative would be to serve all recorded touch points to the \$N implementa
 \label{ch:textiletouch:gesture_implementation}
 
 We have created an application that takes the filtered data of the \emph{processing layer} and abstracts it to a collection of strokes that are delivered to the \$P gesture recognition framework, which matches the input up against a set of predefined gestures templates.
+Each of these predefined gestures map directly to a function in the application.
+Our simple testing application is audio and video application where functions such as channel/skip, volume, play, play pause and stop are implemented.
+Furthermore, we have been experimenting with an extra layer of input for functions such as volume where the average touch force for the given gesture is calculated and used as a parameter for the amount of  change.
+
 The dollar family of recognizers were presented earlier in \ref{ch:textiletouch:gesture_recognition}.
 Initially we experimented with the \$N implementation which was able to recognise gestures but with some limitations.
-
 First of all, the recogniser was sensitive to the ordering of the strokes which meant that the it could fail on the same gesture if drawn from different starting points. \todo{Tore, yes?}
-
 Secondly, there was a considerable amount of delay before a resulting gesture was found.
 We measured this to be in the area of \(800\) to \(1000 ms\), a latency which in our opinion does influence the user experience.
 After changing to the \$P implementation we got this delay down to \(< 10 ms\) which is quite an improvement.
