@@ -7,21 +7,45 @@ Of the three approaches this is the one that we have explored the least.
 we presented this approach as interfaces that was .. .. .. 
 But how do you go about making such a system?
 
-There exist various physical ``frameworks'' that incorporates at least some of the aspects that we see in this approach to creating AHIs.
-\todo{examples}
-
+\subsection{Related work}
 We have done a few, though a bit cursory, experiments to explore the concept.
 The main challenge has been to find materials, or a generic enough platform, that allows you to create objects or environments with interactive capabilities from \emph{whatever is immediately available}. 
-\blank
+
+There exist various physical ``frameworks'' or assembly kits that incorporates at least some of the aspects that we see in this approach to creating AHIs, in the sense that they provide building blocks or a general platform for creating interactive interfaces that can be dismantled.
+For example physical computing platforms such as Arduino, which is a prototyping platform for electronics and one we have used a lot in our prototype work for this thesis, and LEGO Mindstorms which is a programmable robotics platform.
+Common for these two examples is the focus on digital programmability and less focus on the physical aspects of the specific build, in terms of where and how different parts are assembled.
+Of course wires, actuators, sensors, gears, wheels and so on have to be assembled correctly, but the underlying system does not care if your sensor in placed on a wheel or taped to the ground.
+
+More of an assembly approach is seen in for example Topobo and Siftables, where there is less focus on the digital programmability and more on the specific composition of the physical elements.
+Topobo, which is a physical 3D modelling system where the individual modules have kinetic memory. 
+The setup employs a mix of passive and active elements to m
+\todo{examples}
+
+\subsection{Exploration}
 We have explored the use of Bare Conductive, an electric water-based paint, as a material for creating ad hoc interfaces on the spot.
 This electrical paint has some interesting properties as it is easily applied and dries quickly but at the same time, because it is water-based, can be removed with a wet cloth.
-This fits well with our idea of quick to make, quick to erase.
+This fits well with our idea of an interface that is quick to make and quick to erase.
 
 We see two overall options for using a paint like this.
 Firstly as a connector where the paint either acts as a wire between two points or as a switch.
 Secondly the paint can work as a variable resistor as the paint itself is resistive inversely proportional to the cross sectional area\footnote{Bare Conductive technical data sheet - http://www.bareconductive.com/file/2013-technicaldatasheet-bareconductivepaint-pdf}. 
-This means that a thin line will have a larger resistance than a wide one. 
+This means that a thin line will have a higher resistance than a wide line of the same length. 
 
+Inspired by Brand's earlier mentioned six S's \citep{brand1995buildings} we have envisioned a concept where we, instead of hiding it, try to expose the infrastructures of the house.
+It is the norm to hide as much of the ``working guts'' of a building from sight.
+Electrical wiring and plumbing are embedded into the building itself hindering easy change or modification to these systems.
+Our idea is to bring down these services to the layer of Stuff where continuous changes and adaptations can be made as needed.
+At the same time it is a move against the tendency of always hiding away the complexity of things behind polished surfaces, instead showing off the complexity as an aesthetic intellectual quality, combining the raw functionality of the service with the expressiveness of paints.
+
+We have taken an offset in the wiring of the house and envision a concept where the wires and switches in the house can be painted on the walls, both with the traditional functionality of wires but also the added ability to create variable resistors with any time of visual expression and interactive capabilities that, at least in some fashion, correlates with the aesthetics of the painting.
+
+We have made a simple video prototype showing the possibility of making a light switch on the spot and removing it again.
+In figure \todo{ref} a room is shown with its wiring exposed to the inhabitants as a mix functionality and wall art that can be remade or adapted as they see fit.
+
+So can a paint like Bare Conductive provide ad hoc capabilities?
+
+
+\subsection{Discussion}
 
 \begin{verbatim}
 physical programming - digital programming
