@@ -178,7 +178,7 @@ As we were aware of the possibility of generating imprecise data, as we have dis
 \subsubsection{Construction Principles}
 We used the same setup of iteration 3 but scaled to a 16 x 16 grid, providing 256 sensor cells after software upscaling, compared to the 49 of iteration 1.
 The prototype was made in linen which is robust but a lot finer and thinner that the sofa textile and the conductive thread was sewed with less close seams to avoid some of the problems from iteration 2.
-The prototype can be seen in figure~\todo{ref} and the schematics for the final hardware setup can be seen in appendix \ref{app:textile-touch}.
+The prototype can be seen in figure~\todo{ref} and the schematics for the final hardware setup as well as links to the software implementation can be found in appendix \ref{app:textile-touch}.
 
 One of the main challenges in the construction of this iteration was the attachment of the wires to the conductive thread.
 In iteration 1 we tried with glued on tin foil which only worked because we only had 6 connections to handle.
@@ -224,7 +224,7 @@ Next we will cover some additional steps in the data flow and the \emph{applicat
 \end{figure}
 
 \subsubsection{Noise reduction}
-On the software side we have implemented a simple averaging filter to reduce noise by increasing the signal-to-noise ratio, SNR.
+On the software side we have implemented a simple averaging filter\footnote{http://en.wikipedia.org/wiki/Moving\_average} to reduce noise by increasing the signal-to-noise ratio, SNR.
 This filter takes each input frame and averages the values of each cell with the cell values of \(x\) previous frames.
 We have found that averaging over the past \(x = 2\) frames gives the best result for our setup. 
 \todo{udpensles mere?} 
@@ -252,8 +252,9 @@ An alternative would be to serve all recorded touch points to the \$N implementa
 
 We have created an application that takes the filtered data of the \emph{processing layer} and abstracts it to a collection of strokes that are delivered to the \$P gesture recognition framework, which matches the input up against a set of predefined gestures templates.
 Each of these predefined gestures map directly to a function in the application.
-Our simple testing application is audio and video application where functions such as channel/skip, volume, play, play pause and stop are implemented.
-Furthermore, we have been experimenting with an extra layer of input for functions such as volume where the average touch force for the given gesture is calculated and used as a parameter for the amount of  change.
+Our simple testing application is an audio and video application where functions such as channel/skip, volume, play, play pause and stop are implemented.
+Furthermore, we have been experimenting with an extra layer of input for functions such as volume where the average touch force for the given gesture is calculated and used as a parameter for the amount of change.
+In this way, the harder the touch pressure the more increase in volume.
 
 The dollar family of recognizers were presented earlier in \ref{ch:textiletouch:gesture_recognition}.
 Initially we experimented with the \$N implementation which was able to recognise gestures but with some limitations.
@@ -271,29 +272,29 @@ This means that, for example, for a line to be recognised in both a vertical, ho
 \subsubsection{Feedback} 
 
 The prototype \todo{bla bla}
-For haptic feedback we have used a vibration motor mounted on the rear of the prototype, see \ref{fig:ch:textiletouch:feedback:haptic}.
-The motor vibrates shortly in response to a matched gesture input. \todo{tell about ``touch hard to begin'' ??}
-For visual feedback we have installed a single LED which comes up through the textile, see \ref{fig:ch:textiletouch:feedback:visual}.
+For haptic feedback we have used a vibration motor mounted on the rear of the prototype, see \todo{fig:ch:textiletouch:feedback:haptic}.
+The motor vibrates shortly for a haptic sensation in response to a matched gesture input. \todo{tell about ``touch hard to begin'' ??}
+For visual feedback we have installed a single LED which comes up through the textile, see \todo{fig:ch:textiletouch:feedback:visual}.
 As an indication of input the LED will blink continuously while drawing a gesture.
 This will help the user to notice that their touch is being recorded by the system.
 Additionally, the LED will blink to indicate that it has stopped recording strokes and will instead find a matching gesture.
 
-\begin{figure}[t]
-\centering
-\begin{subfigure}[t]{.45\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/feedback_haptic}
-  \caption{A vibration motor mounted on the rear side of the prototype for haptic feedback.}
-  \label{fig:ch:textiletouch:feedback:haptic}
-\end{subfigure}%
-\hspace{0.5cm}
-\begin{subfigure}[t]{.45\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/feedback_haptic}
-  \caption{A LED for visual feedback.}
-  \label{fig:ch:textiletouch:feedback:visual}
-\end{subfigure}
-\end{figure}
+% \begin{figure}[t]
+% \centering
+% \begin{subfigure}[t]{.45\textwidth}
+%   \centering
+%   \includegraphics[width=.9\linewidth]{figures/touch/feedback_haptic}
+%   \caption{A vibration motor mounted on the rear side of the prototype for haptic feedback.}
+%   \label{fig:ch:textiletouch:feedback:haptic}
+% \end{subfigure}%
+% \hspace{0.5cm}
+% \begin{subfigure}[t]{.45\textwidth}
+%   \centering
+%   \includegraphics[width=.9\linewidth]{figures/touch/feedback_haptic}
+%   \caption{A LED for visual feedback.}
+%   \label{fig:ch:textiletouch:feedback:visual}
+% \end{subfigure}
+% \end{figure}
 
 \subsubsection{Conclusion} 
 
@@ -338,12 +339,5 @@ As our microcontroller is already running at over capacity this out of the quest
 Therefore we see it as a balance between the size of the touch area and the complexity of the hardware setup.
 
 \begin{verbatim}
-- Fokus paa kode (gestures,resolution,performance)
-- Interpolering muliggoere tryk mellem linjerne, 10x saa hoej oploesning dog udfald 
-  og varierende praesision (vis vi har eksperimenteret med forskellige oploesninger)
-- Forskellige visualiseringer til performance evaluering
-- Integrering af gesture recognition og test miljoe til dette
-- Haptisk feedback, vibration
-- Udfordringer: praesision, performance 
-  (max baud-rate for hurtigt til at java kunne foelge med)
+Flere punkter i konklusionen?
 \end{verbatim}
