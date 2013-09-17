@@ -178,7 +178,7 @@ As we were aware of the possibility of generating imprecise data, as we have dis
 \subsubsection{Construction Principles}
 We used the same setup of iteration 3 but scaled to a 16 x 16 grid, providing 256 sensor cells after software upscaling, compared to the 49 of iteration 1.
 The prototype was made in linen which is robust but a lot finer and thinner that the sofa textile and the conductive thread was sewed with less close seams to avoid some of the problems from iteration 2.
-The prototype can be seen in figure~\todo{ref} and the schematics for the final hardware setup can be seen in appendix \ref{app:textile-touch}.
+The prototype can be seen in figure~\todo{ref} and the schematics for the final hardware setup as well as links to the software implementation can be found in appendix \ref{app:textile-touch}.
 
 One of the main challenges in the construction of this iteration was the attachment of the wires to the conductive thread.
 In iteration 1 we tried with glued on tin foil which only worked because we only had 6 connections to handle.
@@ -224,7 +224,7 @@ Next we will cover some additional steps in the data flow and the \emph{applicat
 \end{figure}
 
 \subsubsection{Noise reduction}
-On the software side we have implemented a simple averaging filter to reduce noise by increasing the signal-to-noise ratio, SNR.
+On the software side we have implemented a simple averaging filter\footnote{http://en.wikipedia.org/wiki/Moving\_average} to reduce noise by increasing the signal-to-noise ratio, SNR.
 This filter takes each input frame and averages the values of each cell with the cell values of \(x\) previous frames.
 We have found that averaging over the past \(x = 2\) frames gives the best result for our setup. 
 \todo{udpensles mere?} 
@@ -339,12 +339,5 @@ As our microcontroller is already running at over capacity this out of the quest
 Therefore we see it as a balance between the size of the touch area and the complexity of the hardware setup.
 
 \begin{verbatim}
-- Fokus paa kode (gestures,resolution,performance)
-- Interpolering muliggoere tryk mellem linjerne, 10x saa hoej oploesning dog udfald 
-  og varierende praesision (vis vi har eksperimenteret med forskellige oploesninger)
-- Forskellige visualiseringer til performance evaluering
-- Integrering af gesture recognition og test miljoe til dette
-- Haptisk feedback, vibration
-- Udfordringer: praesision, performance 
-  (max baud-rate for hurtigt til at java kunne foelge med)
+Flere punkter i konklusionen?
 \end{verbatim}
