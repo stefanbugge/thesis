@@ -31,7 +31,7 @@ Applications are used when needed and maybe even used in connection with each ot
 Windows are opened, closed and arranged as needed to support different use cases.
 
 Even the TV industry is confronted with a change in demand.
-TV streaming services such Netflix, HBO etc. are becoming increasingly popular as they deliver content on demand.
+Change in peoples TV viewing habits have made streaming services such Netflix, HBO etc. increasingly popular as they deliver content on demand.
 
 So, ad hoc is a prevalent characteristic within many activities and contexts.
 Next we will give our own definition of being ad hoc when applied to the field of user interfaces and also compare this to other elements of \todo{computer science}.
@@ -40,7 +40,7 @@ Next we will give our own definition of being ad hoc when applied to the field o
 We define ad hoc interfaces as 
 
 \begin{quotation}\label{adhoc:definition}
-\emph{physical interfaces that can be \todo{created} or accessed on} 
+\emph{physical interfaces that can be created or accessed on} 
 
 \emph{demand for a particular purpose in mind. }
 \end{quotation}
@@ -60,13 +60,13 @@ We have identified three overall approaches to creating physical interfaces with
 	\item{Literally constructing the interface on the spot}
 \end{itemize}
 
-The three approaches does not exclude each other as they could surely be combined while still living up to our definition.
+The three approaches do not exclude each other as they could surely be combined while still living up to our definition.
 In the following we will elaborate on our initial thoughts for each approach.
 
 \subsubsection{Embedding invisible interfaces into the physical environment}
 
 In this case an existing element of the environment will contain the interface.
-An element can be both a physical object, for example walls, furniture, devices etc, and also ambient air \todo{there is a better word for this}.
+An element can be both a physical object, for example walls, furniture, devices etc, and also the ambient air \todo{there is a better word for this} that surrounds us.
 The perceived action possibilities are constrained by the affordances of the object. 
 The input and output possibilities depend on the materiality of the physical object.
 A variety of sensors can be used for input and actuators for output.
@@ -99,13 +99,10 @@ Here we envision an approach to AHIs where the actual interface is constructed o
 By using special materials, the form or composition of the constructed interface will define the associated functions.
 Again, this is an attempt to bring out digital qualities into the physical space as this construction of physical interfaces in a sense becomes a kind of physical programming.
 An approach like this is of course very restricted by the available materials, but also the fact that if we really want these interfaces to be quick to make, then the functions will be equally simple.
-Though like in normal programming layers of abstraction could provide advanced capabilities but maybe at the cost of unnecessary complexity or at the cost of less flexibility.
+Though like in normal programming, layers of abstraction could provide advanced capabilities but maybe at the cost of unnecessary complexity or at the cost of less flexibility.
 
-This approach is on our part the least explored of the three as it is has proven to be difficult with the materials of today, at least in the manifestation that was our initially point of origin. 
-
-In \todo{ref} we explore this approach though in much less detail and length than the previous two.
-
-Let's first have a look at some existing products and projects which we have found that exhibit ad hoc characteristics. \todo{\ensuremath{\leftarrow} overgang til naeste subsektion}
+This approach is on our part the least explored of the three as it is has proven to be difficult with the materials of today, at least in the manifestation that was our initial point of origin. 
+In \ref{ch:proto3} we explore this approach.
 
 \subsection{Products with ad hoc characteristics}
 Ad hoc characteristics in interfaces are not some novel invention and they an be found in several existing products.
@@ -125,34 +122,9 @@ ShapePhone is generic shape changing product which changes it behaviour based on
 For example, in its base form it is a phone but when wrapped around a wrist it could serve as a watch and when folded in some other way it could be a game controller.
 So, the different interfaces are created on demand by the user and have very different purposes of use depending on the form of the interface.
 
-In a masters course in 2011 called Innovation Project\footnote{https://services.brics.dk/java/courseadmin/Inno\_pro2011} \cite{beomotionreportstefan, beomotionreporttore}  we, the authors, designed and implemented a dynamic shape shifting wall module with the ability to change its surface structure for acoustic regulation, i.e. diffusion, absorption and reflection for optimal conditions.
-On top of that the module had illuminating features so that different areas could light up and serve as an aesthetic lighting for the atmosphere of the room.
-The idea for the module was to retain the aesthetics of existing surroundings, so the module was not in use, the module would be `invisible' and flat like the wall.  
-We envisioned two scenarios of use for the wall.
-One where context awareness was the primary driver which meant that everything (acoustic and lighting conditions) would be automatically sensed and the wall module would modify itself accordingly and shift from flat to active.
-In the other scenario the user would, to a higher degree, be in control.
-The user could actively create deformations on the surface for aesthetic purposes and also control illuminated areas by interacting with the wall surface, see \ref{fig:ch:adhoc:beomotion}.
-In this scenario the interface was shaped and created by the user for the specific situation, i.e. current acoustic and lightning conditions, as well as the desired aesthetic expression. 
-
-\todo{afslut afrunding} And of course, also the inherent ad hoc nature of the way we interact with personal computers as mentioned in the introduction of this chapter.
+\todo{afslut afrunding}.
 \blank
 \todo{2-3 flere eksempler \dots} 
-
-\begin{figure}
-	\centering
-	\begin{subfigure}{.46\textwidth}
-		\centering
-		\includegraphics[width=.9\linewidth]{figures/beomotion/prototype}
-		\caption{Interactive prototype}
-	\end{subfigure}%
-	\begin{subfigure}{.54\textwidth}
-		\centering
-		\includegraphics[width=.9\linewidth]{figures/beomotion/concepts}
-		\caption{Concept illustrations}
-	\end{subfigure}
-	\caption{BeoMotion product design, Innovation Project, Aarhus University 2011}
-	\label{fig:ch:adhoc:beomotion}
-\end{figure}
 
 \subsection{Relationship with other fields} 
 % CAC comparison
@@ -186,20 +158,84 @@ This will be exemplified in \autoref{ch:textile-touch} where we prototype a gene
 
 \todo{noget om shape change}
 
-\section{Discussion}
+\section{Summary}
 
-By giving an overview of related fields within HCI it is apparent that ad hoc interfaces relates in one way or another to other 
+In this chapter we have given an introduction to ad hoc interfaces, a \todo{design approach} to user interfaces where the temporality of interaction is taken into account in the interface itself, and where the user is the initiator of action.
+We have \todo{discussed} how AHIs relate to established fields of research and how the \todo{design approach} brings together different aspects of various fields within HCI.
+Last but not least, we have identified three approaches to approaching AHIs that will be the guidelines for further explorations throughout this thesis.
 
-Opsumm\'er ad hoc
-\begin{verbatim}
-Ad hoc definiton
-Some existing products exhibit ad hoc behaviour 
-bringing together different aspects of various fields within HCI.
-
-``fashioned from whatever is immediately available'' - may not quite be possible
-
-Hvad aabner det op for.
-
-\end{verbatim}
+As an opening to our explorations of AHIs and as an ending to this chapter, we would like to start off with a review of a preceding project we made in a course at Aarhus Univerity that in many ways have motivated our initial ideas about AHIs.
 
 \section{Past work and research through design}
+
+The project that we would like to \todo{review} was made during a masters course in 2011 called Innovation Project\footnote{https://services.brics.dk/java/courseadmin/Inno\_pro2011}.
+The course was provided in cooperation with the danish design company B\&O\footnote{http://www.bang-olufsen.com/} and the goal was to create novel concepts for B\&O for the purpose of unveiling technical, design and commercial potentials within home-automation systems.
+
+Our contribution was the concept BeoMotion, a dynamic shape shifting wall module with the ability to change its surface structure for acoustic regulation, i.e. diffusion, absorption and reflection for optimal conditions \cite{beomotionreportstefan, beomotionreporttore}, see figure~\ref{fig:beomotion}.
+The idea for the module was to retain the aesthetics of existing surroundings, so if the module was not in use, it would be ``invisible'' and flat like the wall (figure~\ref{fig:beomotion:concept_flat}).  
+The acoustic functionality and the aesthetics that follow were the primary features of the modules.
+Secondary, the modules had illumination features integrated into the modules.
+In this way different areas of the modules could light up, both on the front (figure~\ref{fig:beomotion:concept_light}) and as backlighting (figure~\ref{fig:beomotion:concept_backlight}), and serve as an aesthetic lighting for the atmosphere of the room.
+
+We envisioned two scenarios of use for the wall.
+One where context awareness was the primary driver which meant that everything (acoustic and lighting conditions) would be automatically sensed and the wall module would modify itself accordingly and shift from flat to actively in motion.
+In the other scenario the user would, to a higher degree, be in control.
+The user could actively create deformations on the surface for aesthetic purposes and also control illuminated areas by interacting with the wall surface, see figure~\ref{fig:beomotion:concept_backlight}.
+In this scenario the interface was shaped and created by the user for the specific situation, i.e. current acoustic and lightning conditions, as well as the desired aesthetic expression. 
+
+This project has spurred our initial thoughts on ad hoc interfaces though the notion of ad hocness was not deliberate at the time.
+The ad hoc characteristics are \todo{twofold}.
+Firstly, the acoustic features are hidden when not needed and then highly \todo{prevalent} when active as the otherwise static nature of walls start going in motion providing a engaging aesthetic expression.
+Secondly, by using the surface of the wall as an interface in itself to control lighting conditions of the room. \todo{mere?}
+Both are addressing the approach we earlier labeled 
+
+\begin{quotation}
+	\emph{Through invisible interfaces embedded into the physical environment}. \todo{yes, Tore?}
+\end{quotation}
+
+
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/beomotion/prototype_front}
+		\caption{The interactive prototype (front). Made with a wooden framework and thick white cardboard with cuts for flexibility.}
+		\label{fig:beomotion:proto_front}
+	\end{subfigure}%
+	\hspace{0.1cm}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/beomotion/prototype_back}
+		\caption{The interactive prototype (back). Arduino controlled LEDs and DC motors driving several fishing lines that pulling the cardboard shapes.}
+		\label{fig:beomotion:proto_back}
+	\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/beomotion/concept}
+		\caption{A concept illustration of the dynamic shapes.}
+		\label{fig:beomotion:concept}
+	\end{subfigure}%
+	\hspace{0.1cm}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/beomotion/concept_flat}
+		\caption{Illustration of the concept in flat state.}
+		\label{fig:beomotion:concept_flat}
+	\end{subfigure}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/beomotion/concept_lighting}
+		\caption{Concept illustration of interaction with the illumination feature.}
+		\label{fig:beomotion:concept_light}
+	\end{subfigure}%
+	\hspace{0.1cm}
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/beomotion/concept_backlight}
+		\caption{Concept illustration of the backlighting feature.}
+		\label{fig:beomotion:concept_backlight}
+	\end{subfigure}
+	\caption{BeoMotion product design, Innovation Project, Aarhus University 2011}
+	\label{fig:beomotion}
+\end{figure}
