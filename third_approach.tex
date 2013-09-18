@@ -11,18 +11,25 @@ But how do you go about making such a system?
 We have done a few, though a bit cursory, experiments to explore the concept.
 The main challenge has been to find materials, or a generic enough platform, that allows you to create objects or environments with interactive capabilities from \emph{whatever is immediately available}. 
 
-There exist various physical ``frameworks'' or assembly kits that incorporates at least some of the aspects that we see in this approach to creating AHIs, in the sense that they provide building blocks or a general platform for creating interactive interfaces that can be dismantled.
-For example physical computing platforms such as Arduino, which is a prototyping platform for electronics and one we have used a lot in our prototype work for this thesis, and LEGO Mindstorms which is a programmable robotics platform.
-Common for these two examples is the focus on digital programmability and less focus on the physical aspects of the specific build, in terms of where and how different parts are assembled.
-Of course wires, actuators, sensors, gears, wheels and so on have to be assembled correctly, but the underlying system does not care if your sensor in placed on a wheel or taped to the ground.
+There exist various physical ``frameworks'' or assembly kits that incorporates at least some of the aspects that we see in this approach to creating AHIs, in the sense that they provide building blocks or a general platform for creating interactive interfaces, that can be dismantled after use.
 
-More of an assembly approach is seen in for example Topobo and Siftables, where there is less focus on the digital programmability and more on the specific composition of the physical elements.
-Topobo, which is a physical 3D modelling system where the individual modules have kinetic memory. 
-The setup employs a mix of passive and active elements to m
-\todo{examples}
+Examples of the assembly kit approach can be seen in Topobo \citep{raffle2004topobo} and Block Jam \citep{newton2003block}, where the focus is on the topological assembly of the different components of the system. 
+Topobo is a physical 3D modelling system where the individual components have kinetic memory. 
+The setup employs a mix of passive and active elements where the active components can record kinetic movement and play it back.
+The kinetic outcome will then be based on how the different active and passive components are assembled.
+
+Block Jam is a system that uses an array of physical blocks to create a dynamic and tangible sequencer.
+In Block Jam the specific positioning of the individual blocks varies the auditive outcome, so while the blocks in themselves does nothing, the collection of blocks forms up an ad hoc dynamic sequencer.
+Common for these two examples is that the individual components in the systems, while being part of a larger collection, are non customizable stand-alone object and that it is the topology of the assembly that defines the interactive capabilities.
+
+A more general purpose approach is seen in physical computing platforms such as Arduino, which is a prototyping platform for electronics and one we have used a lot in our prototype work for this thesis, and LEGO Mindstorms\footnote{http://mindstorms.lego.com/en-us/default.aspx} which is a programmable robotics platform.
+Compared to Topobo and Block Jam, much less details are abstracted away on the two platforms and therefore gives an increased focus on digital programmability and on more generic components.
+As such a specific component does not have a specific application purpose in mind and the topological placement of components are not defined by the platform -- of course wires, actuators, sensors, gears, wheels, and so on, have to be assembled correctly to function.
+
+\todo{relevans til vores approach}
 
 \subsection{Exploration}
-We have explored the use of Bare Conductive, an electric water-based paint, as a material for creating ad hoc interfaces on the spot.
+We have explored the use of Bare Conductive, an electric water-based paint, as a material for creating AHIs on the spot.
 This electrical paint has some interesting properties as it is easily applied and dries quickly but at the same time, because it is water-based, can be removed with a wet cloth.
 This fits well with our idea of an interface that is quick to make and quick to erase.
 
@@ -37,7 +44,8 @@ Electrical wiring and plumbing are embedded into the building itself hindering e
 Our idea is to bring down these services to the layer of Stuff where continuous changes and adaptations can be made as needed.
 At the same time it is a move against the tendency of always hiding away the complexity of things behind polished surfaces, instead showing off the complexity as an aesthetic intellectual quality, combining the raw functionality of the service with the expressiveness of paints.
 
-We have taken an offset in the wiring of the house and envision a concept where the wires and switches in the house can be painted on the walls with both the traditional functionality of wires, but also the added ability to create visual interactive expressions where, at least in some fashion, the visual expression correlates with the interactive capabilities.
+We have taken an offset in the wiring of the house and envision a concept where the wires and switches in the house can be painted on the walls with both the traditional functionality of wires, but also the added ability to create visual interactive expressions.
+As the shape of the paint will affect the resistance, as mentioned earlier, this will provide the ability to, at least in some fashion, have the visual expression correlate with the interactive capabilities, combining aesthetic expression with functionality.
 
 We have made a simple video prototype showing the possibility of creating a dynamic light switch on the wall and removing it again.
 In figure \todo{ref} a room is shown with its wiring exposed to the inhabitants as a mix of functionality and wall art that can be remade or adapted as they see fit.
@@ -46,11 +54,14 @@ So can a paint like Bare Conductive provide ad hoc capabilities?
 
 \subsection{Discussion}
 When we started out our exploration of paint as a medium for AHIs we thought that it would be easy to conceptualize and show off some compelling and interesting examples of how this could be used.
+We wanted to focus less on the supporting infrastructure and more on the possibilities of using paint, more or less exclusively, as the interface and as the defining property for how the interaction worked. 
+However we quickly became severely limited by the fact that our material only supports conduction and resistance and therefore many of the usually given components in physical computing, such as transistors, gates, diodes etc., is not possible to make on the spot, without supporting infrastructure.  
 
 \todo{interesting stuff goes here}
 
-We still feel that the idea of creating the actual interface on the spot, where the interface is fashioned to your current needs and shaped to your liking, is wildly enticing, though not entirely realistic.
-In the end you will always be constrained by the underlying system as there will always be a need for infrastructure to realise real life versions of concepts such as the ones we have presented here.
+We still feel that the idea of creating the actual material interface on the spot, where the interface is fashioned to your current needs and shaped to your liking by yourself, is wildly enticing, though it might not be entirely realistic.
+There is a beauty in the idea of an interface constructed from a simple material, that can be washed away when it is no longer needed, but still provide interesting interacting capabilities.
+In the end though you will always be constrained by the underlying system as there will always be a need for infrastructure to realise real life versions of concepts such as the ones we have presented here.
 
 \begin{verbatim}
 physical programming - digital programming
