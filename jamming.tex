@@ -1,17 +1,24 @@
 %!TEX root = thesis.tex
 \todo{ref til ad hoc construction principle} 
-For our first \hl{prototype description} we will dig into the area of shape changing interfaces, SCIs.
+For our first \hl{prototype description} we will dig into the area of shape-changing interfaces, SCIs.
 We will do this to explore and illustrate the possibilities of creating AHIs based on shape-change.
 More specifically we will touch upon a specific approach to constructing SCIs called jamming.
 SCIs were introduced in the introduction of this thesis as interfaces that use physical change of shape as input or output.
 Jamming is special kind of technique that can be used to control the stiffness of a material which makes it possible to construct objects that can change their surface structure.
-What makes SCIs interesting to AHIs is it''s ability to dynamically change the physical properties of an interface element, be it shape, texture, stiffness, position ect.
-This change in physicality can then be the offset for a new temporary interaction possibility that is created for the specific situation, where afterwards it can return to it''s initial natural state.
-This aspect aligns well with the definition of AHIs that we presented earlier in section \todo{ref to AHI section} 
+
+What makes SCIs interesting to AHIs is it's ability to dynamically change the physical properties of an interface element, be it shape, texture, stiffness, position ect.
+This change in physicality can then be the offset for a new temporary interaction possibility that is created for the specific situation, where afterwards it can return to it's initial natural state.
+Compared to TUIs, SCIs have to ability to for a dynamic relationship between the physical objects and the digital state of the system, allowing both the user and the computer to change the physical state of an object to match its digital state.
+These aspect aligns well with the definition of AHIs that we presented earlier in section~\ref{adhoc:definition}.
+\blank
+The process of our exploration of SCIs has, at times, been somewhat discouraging as we have proceeded to learned the lesson of the difficulties of creating such interfaces.
+We have come to the conclusion that SCIs are indeed non-trivial to build or prototype, a lesson that we think everyone who has worked on SCIs must have experiences at some point, although it has not been widely mentioned in the literature. 
+
+There are some inherently difficult aspects of creating objects with kinetic movements, for example in our BeoMotion project the change from flat surface to edged surface proved difficult as the phase change, because we worked with non-elastic materials, caused a contraction
 
 \todo{procesbeskrivelse - udfordring i prototyping 15 linjer! what did you do and learn}
 
-\section{Shape-Changing Interfaces}
+\section{A vocabulary of shape-change}
 \label{ch:jamming:shape-change} 
 \input{jamming/shape-change.tex}
 
@@ -27,6 +34,5 @@ This aspect aligns well with the definition of AHIs that we presented earlier in
 \label{ch:jamming:concepts} 
 \input{jamming/concepts.tex}
 
-\section{Technicalities}
 \section{Discussion}
 \todo{Maybe some Gaver (research through design) and (Alternatives, conceptual design proposals )}
