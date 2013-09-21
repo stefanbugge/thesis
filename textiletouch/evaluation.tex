@@ -37,8 +37,14 @@ With a less powerful motor the subtle touch sensation of ones hand against the t
 
 A concern brought up by several participants was that there was a lack of indication of the stroke one had just applied.
 A promising visual feedback technique for display-oriented interaction was suggested by one of the participants.
-The idea was to get real-time feedback on a display when providing touch input by seeing the strokes made as an overlay on the display.
-In figure~\ref{fig:textiletouch:eval:overlay} we have made an example where two semi-transparent strokes are overlaying a TV programme. 
+The idea was to get real-time feedback on a display when providing touch input by seeing the strokes being made as an overlay on the display.
+The strokes would then quickly fade away again to not obstruct the viewing experience. 
+In figure~\ref{fig:textiletouch:eval:overlay} we have made an illustration of two semi-transparent strokes overlaying a TV programme. 
+
+This visual feedback technique could be very convenient when actions are directed towards a device with a digital display, but not possible in a display-less context.
+The single LED we installed beneath the prototype did not prove to be very useful by itself, but its ability to shine through the linen did show potential.
+We discussed a larger deployment where a low resolution LED grid could be embedded beneath the textile surface and follow movements by illuminating at touch points.
+In figure~\ref{fig:textiletouch:eval:backlighting} illustrates this.
 
 \begin{verbatim}
 taler til det indre dovendyr
@@ -49,12 +55,30 @@ skal i hvert fald ikke blive et komplekst nyt sprog man skal laere
 \end{verbatim}
 
 \begin{figure}[h]
-	\centering
-  		\includegraphics[width=3in]{figures/touch/evaluation/gesture_overlay}
-	\caption[Gesture input as an overlay for real-time feedback.]
-   {Gesture input as an overlay for real-time feedback. This ascending two stroke gesture could for instance mean \emph{volume up}.}
-   \label{fig:textiletouch:eval:overlay}
+  \centering
+  \begin{subfigure}[t]{.45\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/touch/evaluation/gesture_overlay}
+    \caption{The real-time overlay during touch. This ascending or descending two stroke gesture could for instance mean 'volume up' or 'down'.}
+  \end{subfigure}%
+  \hspace{1cm}
+  \begin{subfigure}[t]{.45\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{figures/touch/evaluation/gesture_overlay_2}
+    \caption{The indication that a 'volume' action was performed.}
+  \end{subfigure}
+  \caption{Gesture input as an overlay for real-time feedback.}
+  \label{fig:textiletouch:eval:overlay}
 \end{figure}
+
+\begin{figure}[h]
+  \centering
+      \includegraphics[width=3in]{figures/touch/evaluation/backlid_textile}
+  \caption[Illumination directly beneath touch points.]
+  {Illumination directly beneath touch points.}
+  \label{fig:textiletouch:eval:backlighting}
+\end{figure}
+
 
 \subsection{Potentials of alternative usages}
 
@@ -87,7 +111,7 @@ skal i hvert fald ikke blive et komplekst nyt sprog man skal laere
 
 There are several points about the prototype that are candidates for future work.
 We do see the prototyp
-
+% Multitouch
 On the technical side there is room for improvement.
 As the technology allows for multi-touch input it would be a great improvement for the user experience.
 Multi-touch provides a much richer interaction style \todo{reference?} compared to single-touch and has become a standard in modern smart phone displays and laptop touchpads, most notably for scrolling, zooming and rotation.
@@ -101,13 +125,10 @@ We have already taken steps to reduce this by implementing a simple averaging fi
 where a sample is an average of \emph{x} previous samples.
 There are also steps to be taken on the hardware side where a noise filter could reduce the signal-to-noise ratio before entering the software part.
 
-
-Mechanisms for providing direct feedback on the textile surface should be further investigated.
-Vibrations \todo{\dots}
-
 \todo{ting der er belyst fra evaluering \dots}
 
 \begin{verbatim}
 dette er ikke faerdig prototype - snakke om forskellige retninger
+Real-world implementation - e.g. a whole sofa, wall paper?
 \end{verbatim}
 
