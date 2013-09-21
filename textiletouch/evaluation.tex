@@ -30,6 +30,8 @@ In the following two sections we highlight some of the findings of the evaluatio
 \todo{\dots}
 \blank
 
+Controlling the
+
 The idea of a pulsating vibration during touch was well received as an indication of touch being recorded and to delimit for example the digital sofa from the physical sofa. \todo{what?}
 As we anticipated, the haptic feedback got some critique and it was pointed out that it should give a stronger sensation.
 We had placed the vibration motor in the center beneath the prototype and vibrations were therefore only noticeable in that area.
@@ -43,8 +45,10 @@ In figure~\ref{fig:textiletouch:eval:overlay} we have made an illustration of tw
 
 This visual feedback technique could be very convenient when actions are directed towards a device with a digital display, but not possible in a display-less context.
 The single LED we installed beneath the prototype did not prove to be very useful by itself, but its ability to shine through the linen did show potential.
-We discussed a larger deployment where a low resolution LED grid could be embedded beneath the textile surface and follow movements by illuminating at touch points.
-In figure~\ref{fig:textiletouch:eval:backlighting} illustrates this.
+We discussed a larger deployment where a low resolution LED grid could be embedded beneath the textile surface and follow movements by illuminating at touch points and get a direct visual feedback, see figure~\ref{fig:textiletouch:eval:backlighting}.
+This approach is again limited to applications where the surface material allows for illumination to shine through, but it does extend beyond textile materials.
+
+
 
 \begin{verbatim}
 taler til det indre dovendyr
@@ -79,8 +83,64 @@ skal i hvert fald ikke blive et komplekst nyt sprog man skal laere
   \label{fig:textiletouch:eval:backlighting}
 \end{figure}
 
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/in_sofa}
+                \caption{\dots}
+                \label{fig:textiletouch:eval:sebastian:sofa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/sofa_behind_seb}
+                \caption{\dots}
+                \label{fig:textiletouch:eval:sebastian:sofa_behind}
+        \end{subfigure}
+
+        \begin{subfigure}[b]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/sofa_infront_seb}
+                \caption{\dots}
+                \label{fig:textiletouch:eval:sebastian:sofa_front}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/table}
+                \caption{\dots}
+                \label{fig:textiletouch:eval:sebastian:table}
+        \end{subfigure}
+        \caption{Teenager during evaluation \dots}
+        \label{fig:textiletouch:eval:sebastian}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+      \includegraphics[width=3in]{figures/touch/evaluation/sebastian/feet}
+  \caption[Feet \dots]
+  {Feet \dots}
+  \label{fig:textiletouch:eval:sebastian:feet}
+\end{figure}
+
 
 \subsection{Potentials of alternative usages}
+
+The ideas for alternative usages were in general very different from the idea of controlling existing devices.
+The ideas were more characterised by sensor data being used in situations where meaning is open to interpretation as opposed to a one-to-one mapping between input gesture and function.
+For example, several ideas concerning safety and security were discussed.
+
+Parents of toddlers often have floor mats for their child to lay and play on, see figure~\ref{fig:textiletouch:eval:softtiles}.
+Instead of having parents checking up on their child every two minutes these mats could have touch fields embedded.
+The sensor data can then be abstracted to inform parents about the activity of their child by recording pressure and movement, giving the concerned parent room to do less frequent check ups.
+This is actually a very simple setup that does not require a high resolution of the sensor grid and the output required could be condensed to simple states such as, whether the toddler is on the mat and the level of movement activity.
+
+\begin{figure}[h]
+  \centering
+      \includegraphics[width=3in]{figures/touch/evaluation/softtiles}
+  \caption[Toddler on a foam floor mat with puzzle-like tiles for extensibility.]
+  {Toddler on a foam floor mat.}
+  \label{fig:textiletouch:eval:softtiles}
+\end{figure}
 
 \begin{verbatim}
 **** Paw + Morten ****
@@ -103,8 +163,6 @@ skal i hvert fald ikke blive et komplekst nyt sprog man skal laere
 		paa touch overfladen.
     * doermaatte
 \end{verbatim}
-
-
 
 \subsection{Future work}
 \label{ch:textiletouch:futurework}
