@@ -26,19 +26,30 @@ Surely they are accustomed to using touch interaction on the small surfaces of e
 \blank
 In the next section we will evaluate on the performance of our prototype and then continue on with the conceptual potentials in the subsequent two sections.
 
-\subsection{Performance}
+\subsection{Performance and feedback}
 
+In this section we will discuss the prototype concerning performance and feedback and some of the improvements suggested during evaluations.
+
+% refresh rate
+The limitations of the refresh rate of the hardware were noticed by all participants.
+The consequence was that they had to perform touch input in a more careful manner and with slower motions than they wanted to.
+The participants' touch strokes were in general much faster than anticipated, which is likely due to us having done much of our testing during development and therefore have been more careful.
+They were all able to adapt to it and perform their intended actions with success, but it did of course put a constraint on the interaction.
+
+% fb: vibrations
 The idea of a pulsating vibration during touch was well received as an indication of touch being recorded and to delimit for example the digital sofa from the physical sofa. \todo{what?}
 As we anticipated, the haptic feedback got some critique and it was pointed out that it should give a stronger sensation.
 We had placed the vibration motor in the center beneath the prototype and vibrations were therefore only noticeable in that area.
 With a less powerful motor the subtle touch sensation of ones hand against the texture of the linen could easily drown the vibrations as well.
 
+% fb: visual on display
 A concern brought up by several participants was that there was a lack of indication of the stroke one had just applied.
 A promising visual feedback technique for display-oriented interaction was suggested by one of the participants.
 The idea was to get real-time feedback on a display when providing touch input by seeing the strokes being made as an overlay on the display.
 The strokes would then quickly fade away again to not obstruct the viewing experience. 
-In figure~\ref{fig:textiletouch:eval:overlay} we have made an illustration of two semi-transparent strokes overlaying a TV programme. 
+In figure~\ref{fig:textiletouch:eval:overlay} we have made an illustration of two semi-transparent strokes overlaying a TV programme as example. 
 
+% fb: visual through LEDS
 This visual feedback technique could be very convenient when actions are directed towards a device with a digital display, but not possible in a display-less context.
 The single LED we installed beneath the prototype did not prove to be very useful by itself, but its ability to shine through the linen did show potential.
 We discussed a larger deployment where a low resolution grid of tiny LEDs could be embedded beneath the textile surface and follow movements by illuminating at touch points and get a direct visual feedback, see figure~\ref{fig:textiletouch:eval:backlighting}.
@@ -52,8 +63,9 @@ taler til det indre dovendyr (paw)
    rette paa gardiner
 skal i hvert fald ikke blive et komplekst nyt sprog man skal laere
    ensartet interaktion paa tvaers af applikationer
-teenager forstod med det samme
+teenager forstod med det samme - mega smart ;-)
   fandt det let at interagere med
+"fjernbetjening er en forlaengelse af min arm" (paw) - dette er dog et lidt vagt modargument
 \end{verbatim}
 
 \begin{figure}[h]
@@ -127,10 +139,21 @@ The ideas for alternative usages were in general very different from the idea of
 The ideas were more characterised by sensor data being used in situations where meaning is open to interpretation as opposed to a one-to-one mapping between input gesture and function.
 For example, several ideas concerning safety and security were discussed.
 
+% toddlers
 Parents of toddlers often have floor mats for their child to lay and play on, see figure~\ref{fig:textiletouch:eval:softtiles}.
 Instead of having parents checking up on their child every two minutes these mats could have touch fields embedded.
 The sensor data can then be abstracted to inform parents about the activity of their child by recording pressure and movement, giving the concerned parent room to do less frequent check ups.
 This is actually a very simple setup that does not require a high resolution of the sensor grid and the output required could be condensed to simple states such as, whether the toddler is on the mat and the level of movement activity.
+
+% elders
+Elderly people with a weak physic or people with Parkinson's disease have a tendency to fall over easily.
+One of the approaches in reducing the consequences of a fall is to give the elders assistive devices such as wearable fall detectors which can automatically release an alarm in the event of a fall.
+An alternative approach, which does not require body equipment, could be to prepare the home with sensitive impact sensitive floors or carpets.
+Some may base their sense of security in a physical wearable device while others find it inconvenient, a source of irritation, or maybe even an exceedance of personal privacy. 
+With safety measurements invisibly integrated into the home the sense of security may be directed towards to the scope of the home as a whole.
+
+% handicap
+\todo{Handicapped people}
 
 \begin{figure}[h]
   \centering
@@ -166,7 +189,7 @@ This is actually a very simple setup that does not require a high resolution of 
 \label{ch:textiletouch:futurework}
 
 There are several points about the prototype that are candidates for future work.
-We do see the prototyp
+
 % Multitouch
 On the technical side there is room for improvement.
 As the technology allows for multi-touch input it would be a great improvement for the user experience.
