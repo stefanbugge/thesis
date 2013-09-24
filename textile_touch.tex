@@ -8,10 +8,6 @@ In this prototype we have taken Weiser's vision very literally - how do you inte
 In the following sections we explore the possibilities of creating textile touch surfaces with advanced interaction capabilities as an exemplification of how surfaces can be used to interact in the home to create ad hoc interaction.
 We have chosen to work with textiles as an interactive platform as we see unused potential in this area, both for its tangible and aesthetic textural qualities compared to e.g. polymer solutions \cite{rosenberg2009unmousepad}, as well as for the interesting possibilities to allow for DIY solutions to creating interactive surfaces in the home.
 
-The prototype that we have made for this chapter serves to exemplify both the qualities and possibilities of textile interfaces in general but also as an example of how surfaces in our environment can be enhanced and used in new ways for ad hoc interaction.
-
-\todo{helt kort om hvad vi specifikt har lavet}
-
 \section{Related work and approaches}
 Before getting into detail with our implementation we will first give an overview of work and approaches that relates to our prototype and have inspired our solution.
 We are, of course, not the first ones to consider the surfaces that surrounds us as interactive potential.
@@ -30,32 +26,19 @@ One of the main obstacles for attaining this vision of the \emph{fabric as the c
 There are generally seen three ways to do it, either by computing \emph{offline}, on a separate system connected to the fabric, \emph{onto}, on components attached to the fabric or \emph{into} the fabric, embedded seamlessly into it \citep{marculescu2003}.
 Today computation is commonly done either offline or onto the fabric, or a combination of the two, but advances in organic electronics and nano technology, for example with organic transistors weaved into fabric \citep{lee2005weave}, suggests that computation embedded into the fabric is not far off.
 
-\begin{figure}[h]
-\centering
-\begin{minipage}[b]{.3\textwidth}
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/wearable_motherboard}
-  \captionof{figure}{The Wearable Motherboard, from \citep{gopalsamy1999wearable}}
-  \label{sofa_interaction:wearable_motherboard}
-\end{minipage}%
-\hspace{0.2cm}
-\begin{minipage}[b]{.3\textwidth}
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/shutters}
-  \captionof{figure}{Shutters, from \citep{coelho2009shutters}}
-  \label{sofa_interaction:shutters}
-\end{minipage}
-\hspace{0.2cm}
-\begin{minipage}[b]{.3\textwidth}
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/sprout}
-  \captionof{figure}{Sprout I/O, from \citep{coelho2009shutters}}
-  \label{sofa_interaction:sprout}
-\end{minipage}
-\end{figure}
 E-textile is often seen used as part of wearable computing systems, logically, since clothing as a medium is ever present when people are involved.
 An example of this is the Wearable Motherboard \citep{gopalsamy1999wearable} seen in figure~\ref{sofa_interaction:wearable_motherboard}, also called the ``Smart Shirt'', which is a lightweight monitoring `shirt' that can provide sensory data for use in medical and military contexts.
 The fabric here is used as data paths that facilitates routing of information from any point to any other point on the shirt through conductive fibers embedded in the fabric.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{.7\textwidth}
+    \centering
+    \includegraphics[width=.5\linewidth]{figures/touch/wearable_motherboard}
+  \captionof{figure}{The Wearable Motherboard, from \citep{gopalsamy1999wearable}}
+  \label{sofa_interaction:wearable_motherboard}
+  \end{minipage}
+\end{figure}
 
 E-textiles are not limited to wearable computing and clothing, and can just as well be part of interior design such as curtains, pillows, carpets, upholstery ect.
 Shutters by \citet{coelho2009shutters}, seen in figure~\ref{sofa_interaction:shutters}, is an example of this where shape-memory alloy (SMA) threads are woven into a felt surface creating a curtain-like structure capable change of shape in permeability, used for indoor ventilation control among other things.
@@ -63,16 +46,37 @@ Here the SMA allows for actuation in the shutters while retaining the look, feel
 Another example from \citet{coelho2008sprout} is Sprout I/O, see figure~\ref{sofa_interaction:sprout}, where a membrane filled with strands of SMA and felt provides textually rich input and actuated output capabilities.
 By measuring the capacitance between the users hand and the SMA threads touches can be registered, enabling stroke-like interaction, by creating an input matrix that register changes in each of the the individual SMA threads.
 
+\begin{figure}[h]
+\centering
+\begin{minipage}[b]{.45\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/touch/shutters}
+  \captionof{figure}{Shutters, from \citep{coelho2009shutters}}
+  \label{sofa_interaction:shutters}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[b]{.45\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/touch/sprout}
+  \captionof{figure}{Sprout I/O, from \citep{coelho2008sprout}}
+  \label{sofa_interaction:sprout}
+\end{minipage}
+\end{figure}
+
 We have gotten a lot of inspiration from the various ``Do It Yourself'' (DIY) on-line communities related to e-textile craft and crafts in general, notably KOBAKANT DIY\footnote{http://www.kobakant.at/DIY/} and Instructable\footnote{http://www.instructables.com/}.
 Both sites provides guides, tips, and tricks for materials, construction and techniques and have for us been a good starting point for doing an e-textile project.
 One of our inspirations has been rSkin\footnote{http://www.plusea.at/?p=2255 and http://www.instructables.com/id/rSkin-Open-Source-Robot-Skin/}, a project by Hannah Perner-Wilson, which attempts to create a `skin' for a robot arm, made out of textiles, that enables the arm to register intensity and location of touches on the whole arm, seen in figure~\ref{rskin}.
 
 \begin{figure}[h]
-	\centering
-  		\includegraphics[width=3in]{figures/rskin}
-	\caption{rSkin, Open Source Robot Skin}
-   \label{rskin}
+  \centering
+  \begin{minipage}[b]{.8\textwidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{figures/rskin}
+  	\caption{rSkin, Open Source Robot Skin}
+    \label{rskin}
+    \end{minipage}
 \end{figure}
+
 The `skin' is made of stretchy fabric and a 28 rows x 28 columns large pressure sensitive grid is embedded into the fabric using conductive thread.
 The skin is made out of three layers: first a non-conductive layer with 28 rows of conductive thread, then a layer piezoresistive fabric and lastly a non-conductive layer with 28 columns of conductive thread.
 The piezoresistive fabric acts as a pressure sensitive layer, as piezoresistive materials decrease their electrical resistivity under mechanical stress\footnote{http://en.wikipedia.org/wiki/Piezoresistive\_effect}.
@@ -116,21 +120,21 @@ Also from our own experience with the technology we have seen a lot of input sig
   \begin{subfigure}[b]{.3\textwidth}
     \centering
     \includegraphics[width=0.9\linewidth]{figures/touch/reactable}
-    \captionof{figure}{Optical sensing, reacTable}
+    \captionof{figure}{Optical sensing, reacTable \citep{jorda2007reactable}}
     \label{sofa_interaction:reactable}
   \end{subfigure}%
   \hspace{0.2cm}
   \begin{subfigure}[b]{.3\textwidth}
     \centering
     \includegraphics[width=0.9\linewidth]{figures/touch/ipad}
-    \captionof{figure}{Capacitive sensing, iPad}
+    \captionof{figure}{Capacitive sensing, standard Apple iPad}
     \label{sofa_interaction:ipad}
   \end{subfigure}
   \hspace{0.2cm}
   \begin{subfigure}[b]{.3\textwidth}
     \centering
     \includegraphics[width=0.9\linewidth]{figures/touch/unmousepad}
-    \captionof{figure}{Resistive sensing, UnMousePad} 
+    \captionof{figure}{Resistive sensing, UnMousePad \citep{rosenberg2009unmousepad}} 
     \label{sofa_interaction:unmousepad}
   \end{subfigure}
   \caption{Examples of different sensing systems.}
@@ -166,12 +170,10 @@ This family of recognizers are all geometric template matchers which means that 
 \end{itemize}
 We have implemented and experimented with the \$N and \$P recognizer as to determine which one performs the best with our data input, this will be discussed in \nameref{ch:textiletouch:gesture_implementation} in \ref{ch:textiletouch:gesture_implementation}.
 
-\todo{giver det mening at teste dollar-1?}
-
-\section{Concept (el. Design Principles som i Coelho)}
+\section{Design Principles}
 \input{textiletouch/concept.tex}
 
-\section{(Process and) Implementation}
+\section{Process and Implementation}
 \input{textiletouch/implementation.tex}
 
 \section{Evaluation and future work}

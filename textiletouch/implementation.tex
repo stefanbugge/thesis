@@ -4,6 +4,8 @@ This section will go though the process and implementation of our prototype.
 To give an insight into the prototype process as well as the final prototype, we have chosen to split the implementation into three overall iteration steps.
 Our hope is that this will give a better understanding of the rationale behind our construction decisions as well as ... something something 
 
+
+
 \todo{iterationer skal indeholder motivation for n\ae ste skridt \dots}
 
 \todo{iteration 1 is longer because we describes the basics osv. ??}
@@ -11,6 +13,7 @@ Our hope is that this will give a better understanding of the rationale behind o
 \subsection{Iteration 1}
 \label{ch:textiletouch:it1}
 The goal of our first iteration of the prototype was to ensure that the we had construction principles and the right materials for constructing a touch and pressure sensitive fabric, with only off-the-shelf materials and tools.
+So this first prototype serves more as a proof-of-concept construction.
 
 \subsubsection{Construction principles}
 As a first iteration of our prototype we applied the principles from Pressure Sensor Matrix\footnote{http://www.instructables.com/id/Pressure-Sensor-Matrix/}, to construct a simple 2x3 touch pad in neoprene, seen in figure~\ref{prototype_1}, and a bend sensor for simple testing, also seen in figure~\ref{prototype_1}.
@@ -18,7 +21,7 @@ The prototype consists of three layers as depicted in figure~\todo{ref}, connect
 
 \begin{figure}[h]
   \centering
-      \includegraphics[width=\textwidth]{figures/touch/process}
+  \includegraphics[width=0.9\linewidth]{figures/touch/process}
   \caption{Data process}
    \label{data-process}
 \end{figure}
@@ -34,14 +37,15 @@ The setup is illustrated in figure~\ref{layers_iteration1}.
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}[t]{.5\textwidth}
+\begin{subfigure}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/proto1_1}
+  \includegraphics[width=\linewidth]{figures/touch/proto1_1}
   \caption{On the left is our simple bend sensor and on the right our 2x3 pressure matrix.}
 \end{subfigure}%
-\begin{subfigure}[t]{.5\textwidth}
+\hspace{0.5cm}
+\begin{subfigure}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/proto1_2}
+  \includegraphics[width=\linewidth]{figures/touch/proto1_2}
   \caption{A close up of the materials.}
 \end{subfigure}
 \caption{First iteration of our touch prototype}
@@ -56,11 +60,14 @@ A single layer of our anti-static bags have resistance values from around 180-20
 Depending on the piezoresistive material and the construction of the sensor, these values will vary, \citep{rosenberg2009unmousepad} reports values between 1.2 MOhms and 2.2 kOhms for their FSR ink.
 
 \begin{figure}[h]
-	\centering
-  		\includegraphics[width=3in]{figures/touch/layers_it_1}
+  \centering
+  \begin{minipage}[b]{.8\textwidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{figures/touch/layers_it_1}
 	\caption[The three layers of our touch sensitive fabric, iteration 1.]
    {The three layers of our touch sensitive fabric showing the construction principle of iteration 1.}
    \label{layers_iteration1}
+  \end{minipage}
 \end{figure}
 
 Each of the cells acts in principle as a discrete sensor as they have their own individual output and are not influenced by each other.
@@ -89,11 +96,14 @@ To reduce the sensor noise non active rows and columns are connected to ground t
 Each finished sweep outputs a pressure map that is sent to our applications.
 
 \begin{figure}[h]
-	\centering
-  		\includegraphics[width=3in]{figures/touch/layers_it_23}
+  \centering
+  \begin{minipage}[b]{.8\textwidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{figures/touch/layers_it_23}
 	\caption[The three layers of our touch sensitive fabric, iteration 2 and 3.]
    {The three layers of our touch sensitive fabric showing the construction principle of iteration 2 and 3.}
    \label{layers_iteration2_and_3}
+   \end{minipage}
 \end{figure}
 
 As only one row and one column are active at a given time the micro-controller now only needs to have one I/O pin for input and one for output and can instead rely on multiplexers\footnote{http://en.wikipedia.org/wiki/Multiplexer} to shift the currently active row/column.
@@ -108,13 +118,14 @@ To allow the fabric to be bendable while attaining sensitivity we added a functi
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}[t]{.5\textwidth}
+\begin{subfigure}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/proto2_1}
+  \includegraphics[width=\linewidth]{figures/touch/proto2_1}
 \end{subfigure}%
-\begin{subfigure}[t]{.5\textwidth}
+\hspace{0.5cm}
+\begin{subfigure}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/proto2_2}
+  \includegraphics[width=\linewidth]{figures/touch/proto2_2}
 \end{subfigure}
 \caption{Second iteration of the prototype. The interactive area is a 7 x 7 grid with each row and column spaced approximately 1 cm apart from each other.}
 \label{prototype_2}
@@ -148,13 +159,13 @@ The new approximated point \(P_{approx}\) will, as a result of the radial spread
 \centering
 \begin{subfigure}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/p_map}
+  \includegraphics[width=\linewidth]{figures/touch/p_map}
   \caption{Visualization of the raw touch data, black indicate no pressure and white indicate high pressure.}
 \end{subfigure}%
 \hspace{0.5cm}
 \begin{subfigure}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/p_approximation}
+  \includegraphics[width=\linewidth]{figures/touch/p_approximation}
   \caption{The weight-approximated position, based on the raw touch data from (a). The blue circles indicates the intensity of the values of the sensor cells surrounding the \(P_{max}\).}
 \end{subfigure}
 \caption{Illustration of the interpolation process.}
@@ -172,7 +183,9 @@ Also the fact that the precision of the sewing are not machine-accurate somewhat
 
 \subsection{Iteration 3}
 \label{ch:textiletouch:it3}
-One of the focus areas of iteration 3 was build a larger and more precise version of iteration 2 as to get more reliable raw data from the sensor grid to use for gesture interaction.
+The focus of iteration 3 was twofold.
+First of all, we wanted a larger interactive area for touch input and for more realistic conditions in later evaluations.
+Secondly, we wanted to get more reliable raw data from the sensor grid to use for gesture interaction.
 As we were aware of the possibility of generating imprecise data, as we have discussed in the previous iterations, from physical deformation, construction imprecision, material variations and approximation errors, the second focus was to implement a basis for gesture recognition that would function under these constraints.
 
 \subsubsection{Construction Principles}
@@ -192,13 +205,13 @@ As the paint dries it functions like an adhesive but with the added ability of b
 \centering
 \begin{subfigure}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/barepaint}
+  \includegraphics[width=\linewidth]{figures/touch/barepaint}
   \caption{Bare Paint, an electrically conductive ink, found at www.bareconductive.com}
 \end{subfigure}%
 \hspace{0.5cm}
 \begin{subfigure}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/connectors}
+  \includegraphics[width=\linewidth]{figures/touch/connectors}
   \caption{Bare Paint, used for ``cold''-soldering wires to conductive thread.}
 \end{subfigure}
 \caption{One solution for the challenge of connecting conductive thread to wires.}
@@ -217,7 +230,7 @@ Next we will cover some additional steps in the data flow and the \emph{applicat
 
 \begin{figure}[b]
   \centering
-      \includegraphics[width=\textwidth]{figures/touch/dataflow}
+      \includegraphics[width=.9\textwidth]{figures/touch/dataflow}
   \caption[The data flow from sensor to application.]
    {Textile Touch data flow from sensor to application.}
    \label{fig:textiletouch:dataflow}
@@ -323,15 +336,15 @@ This has to some degree amended the issue but not fully.
 \centering
 \begin{minipage}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/intersections}
+  \includegraphics[width=\linewidth]{figures/touch/intersections}
   \caption[Pressing in between the intersection of two rows and two columns does not propagate enough pressure.]
   {Pressing in between the intersections of two rows and two columns (red dot) does not propagate enough pressure to the surrounding lines crossings (blue dots).}
   \label{fig:textiletouch:intersections}
 \end{minipage}%
-\hspace{1cm}
+\hspace{0.5cm}
 \begin{minipage}[t]{.45\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{figures/touch/wires}
+  \includegraphics[width=\linewidth]{figures/touch/wires}
   \caption[Breadboard crowded with wires.]
   {Breadboard crowded with wires.}
   \label{fig:textiletouch:wires}
