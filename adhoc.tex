@@ -1,13 +1,16 @@
 %!TEX root = thesis.tex
 
-In this thesis we will introduce the notion of \emph{Ad Hoc Interfaces} or AHIs.
+In this thesis we will introduce the notion of \emph{Ad Hoc Interfaces} or AHIs. \todo{based on \dots and \dots}
 
 This chapter will contain our initial thoughts on AHIs and the directions we will take to explore the concept.
 This initial presentation of the concept is based on the previous chapters where we take inspiration from various different fields and research areas to try and carve out our niche amongst the related computer science areas.
 
 While this part is based on a theory approach we will, after this chapter, take a `research through design' approach where we study the field, make prototypes and evaluations to hopefully shed more light on the matter of AHIs and most likely re-evaluate parts of our initial thoughts and definitions, based on our prototyping and design experiences. 
 
-\section{Defining Ad Hoc Interfaces}
+\todo{summarise directions from previous chapters \dots}
+
+\section{The meaning of ad hoc}
+
 Being \emph{ad hoc} generelly means something made for a specific task or creating meaning in changing contexts.
 The word itself originates from the Latin language and literally means \emph{for this} (situation). 
 In modern english the two word combination is regarded as a single word and the Oxford Dictionary\footnote{http://oxforddictionaries.com/definition/english/ad-hoc} defines it as
@@ -35,79 +38,10 @@ Change in peoples TV viewing habits have made streaming services such Netflix, H
 
 So, ad hoc is a prevalent characteristic within many activities and contexts and we see a tendency in the digital world to allow for ad hoc interaction where to better accommodate the needs and wishes of the user.
 The question is whether these qualities can be transferred into the world of physical objects and interfaces in a meaningful way, retaining the dynamic nature that is embedded in the definition of being ad hoc.
-
-Next we will give our own definition of being ad hoc when applied to the field of physical user interfaces and also compare this to other parts of the HCI research area.
-
-\subsection{Definition} 
-We define ad hoc interfaces as 
-
-\begin{quotation}\label{adhoc:definition}
-\emph{physical interfaces that can be created or accessed on} 
-
-\emph{demand for a particular purpose in mind. }
-\end{quotation}
-
-In this sense there is a degree of temporality embedded in the definition, in that the interaction is somewhat impromptu and the purpose is non-continuing.
-The interface can be accessed when needed and when the interaction and purpose has ended it ``disappears'' again, for example by slowly letting it perish when it is no longer used, either manually, over time, by natural forces or based on sensory data.
-This makes good sense in the digital realm as pixels on a screen can easily be controlled and abstracted to bring attention to different tasks.
-The questions is, how do we apply these ad hoc elements or characteristics to physical interfaces.
-The physical world comes with many constraints compared to the digital as we are limited by the characteristics of the materials we interact with and the general laws of physics.
-We can't just magically make physical objects appear and disappear which is possible, and easy, to do on a digital display.
-
-\todo{mere her}
-
-We have identified three overall approaches to creating physical interfaces with ad hoc capabilities that we would like to explore through prototyping.
-
-\begin{enumerate}
-	\item{Using shape change as the construction mechanism}
-	\item{Through invisible interfaces embedded into the physical environment}
-	\item{Literally constructing the interface on the spot}
-\end{enumerate}
-
-The three approaches do not exclude each other as they could surely be combined while still living up to our definition.
-In the following we will elaborate on our initial thoughts for each approach while we in chapters~\autoref{ch:jamming}--\ref{ch:prototype3}  explore each of the three approaches in a prototyping context.
  
 \begin{verbatim}
 introducerer muligheden for baade space- og time multiplexing??
 \end{verbatim}
-
-\subsubsection{Using shape change as the construction mechanism}
-To adhere to the dynamic nature that we propose for AHIs, using shape change is a particular drawing approach to creating such interfaces.
-In this case an objects shape changing capabilities lets it shift or morph into an particular interface with an accompanying set of functions, as form becomes function.
-The interface can either be changed by the user to suit a particular task or need, or by the computer in relation to changes to its digital state or as response to a user action.
-To control the change of shape sensors and actuators would be embedded for input and output control.
-
-Affordances are to a large extend dictated by the perceived action possibilities of the particular end-shape or the transition-phase into the end-shape and are therefore changing as the interface changes shape and function.
-
-In \autoref{ch:jamming} we explore this approach.
-
-\subsubsection{Embedding invisible interfaces into the physical environment}
-In this case an existing element of the environment will contain the interface.
-An element can be both a physical object, for example walls, furniture, devices etc., and also the ambient air \todo{there is a better word for this} that surrounds us.
-By embedding the interface into existing objects the object itself will retain its normal function while the interface is inactive, while the augmented interface will be active when needed. 
-The wall, for example, will still look and feel like a wall and retain its perceived affordances when the interface is inactive, but will gain additional functions when the interface is needed by the user.
-In this sense the interface is invisibly embedded into the environment until it is needed.
-
-The perceived action possibilities of the interface will be somewhat constrained by the affordances of the object which might be a challenge, depending on the intended use of the system.
-Where a wall might invite to be used as a touch surface it does not really invite to be used as a drum, as a pillow might do.
-
-The input and output possibilities will also depend on the materiality of the physical object as they are closely tied together but we envision that a variety of sensors and actuators can be used for input and output.
-
-In \autoref{ch:textile-touch} we explore this approach.
-
-\subsubsection{Constructing the interface on the spot}
-This approach originated from the idea of interfaces that was ``fashioned from whatever is immediately available''.
-While this may not be quite possible, the idea is engaging and intriguing as an embodiment of a very literal version of AHIs.
-
-Here we envision an approach to AHIs where the actual interface is constructed on the spot in a quick to make, quick to erase fashion.
-By using special materials, the form or composition of the constructed interface will define the associated functions.
-Again, this is an attempt to bring out digital qualities into the physical space as this construction of physical interfaces in a sense becomes a kind of physical programming.
-An approach like this is of course very restricted by the available materials, but also the fact that if we really want these interfaces to be quick to make, then the functions will be equally simple.
-Though like in normal programming, layers of abstraction could provide advanced capabilities but maybe at the cost of unnecessary complexity or at the cost of less flexibility.
-
-This approach is on our part the least explored of the three as it is has proven to be difficult with the materials of today, at least in the manifestation that was our initial point of origin. 
-
-In chapter \ref{ch:prototype3} we explore this approach.
 
 \subsection{Ad hoc characteristics in existing interfaces}
 Ad hoc characteristics in interfaces are not some novel invention and they an be found in several existing products.
@@ -134,6 +68,8 @@ So, the different interfaces are created on demand by the user and have very dif
 \todo{2-3 flere eksempler \dots} 
 
 \subsection{Relationship with other fields} 
+
+\todo{indledning: ad hoc relationer til UI omtalt i kap. 2}
 % CAC comparison
 It might seem that AHI overlaps with the concept of Context Aware Computing in that they both have a focus on environmental context.
 In context aware computing a system attempts to derive, through a variety of cues, what the current context of use is and as a result it adapts its behaviour \citep[chap. 8]{krumm2009ubiquitous}. 
@@ -164,19 +100,13 @@ This will be exemplified in \autoref{ch:textile-touch} where we prototype a gene
 Shape-changing interface have indeed been an inspiration to our notion of AHIs as shape-change is an obvious construction approach to building such interfaces.
 The dynamic nature of SCIs does well in supporting some of the properties of AHIs such as adaptability, malleability and a dynamic relationship between the physical and digital state of the interface.
 This does not mean that SCIs are, per definition, AHIs, as the purpose of an SCIs does not necessarily match the user focus and \emph{on-demand\'ness} and \emph{ad hoc'ness} that we envision in AHIs.
-Also AHIs are not, as can also be seen in our three proposed construction approaches, limited to the use of shape-change for implementing such interfaces.  
-
-\section{Summary}
-
-In this chapter we have given an introduction to ad hoc interfaces, a \todo{design approach} to user interfaces where the temporality of interaction is taken into account in the interface itself, and where the user is the initiator of action.
-We have \todo{discussed} how AHIs relate to established fields of research and how the \todo{design approach} brings together different aspects of various fields within HCI.
-Last but not least, we have identified three approaches to approaching AHIs that will be the guideline for our further explorations throughout this thesis.
-
-As an opening to our explorations of AHIs and as an ending to this chapter, we would like to start off with a review of a preceding project we made in a course at Aarhus Univerity that in many ways have motivated our initial ideas about AHIs.
+Also AHIs are not, as can also be seen in our three proposed construction approaches, limited to the use of shape-change for implementing such interfaces. 
 
 \section{Preceding project: BeoMotion}
 
-The project that we would like to \todo{review} was made during a masters course in 2011 called Innovation Project\footnote{https://services.brics.dk/java/courseadmin/Inno\_pro2011}.
+As an opening to our explorations of AHIs we would like to start off with a review of a preceding project we made in a course at Aarhus Univerity that in many ways have motivated our initial ideas about AHIs.
+
+The project that we would like to review was made during a masters course in 2011 called Innovation Project\footnote{https://services.brics.dk/java/courseadmin/Inno\_pro2011}.
 The course was provided in cooperation with the danish design company B\&O\footnote{http://www.bang-olufsen.com/} and the goal was to create novel concepts for B\&O for the purpose of unveiling technical, design and commercial potentials within home-automation systems.
 
 Our contribution was the concept BeoMotion, a dynamic shape shifting wall module with the ability to change its surface structure for acoustic regulation, i.e. diffusion, absorption and reflection for optimal conditions \cite{beomotionreportstefan, beomotionreporttore}, see figure~\ref{fig:beomotion}.
@@ -246,4 +176,80 @@ Both are examples of addressing the second approach we earlier labeled
 	\end{subfigure}
 	\caption{BeoMotion product design, Innovation Project, Aarhus University 2011}
 	\label{fig:beomotion}
-\end{figure}
+\end{figure} 
+
+\todo{Next we will give our own definition of being ad hoc when applied to the field of physical user interfaces and also compare this to other parts of the HCI research area.}
+
+\section{Defining Ad Hoc Interfaces} 
+\todo{indledning her ...}
+We define ad hoc interfaces as 
+
+\begin{quotation}\label{adhoc:definition}
+\emph{physical interfaces that can be created or accessed on} 
+
+\emph{demand for a particular purpose in mind. }
+\end{quotation}
+
+In this sense there is a degree of temporality embedded in the definition, in that the interaction is somewhat impromptu and the purpose is non-continuing.
+The interface can be accessed when needed and when the interaction and purpose has ended it ``disappears'' again, for example by slowly letting it perish when it is no longer used, either manually, over time, by natural forces or based on sensory data.
+This makes good sense in the digital realm as pixels on a screen can easily be controlled and abstracted to bring attention to different tasks.
+The questions is, how do we apply these ad hoc elements or characteristics to physical interfaces.
+The physical world comes with many constraints compared to the digital as we are limited by the characteristics of the materials we interact with and the general laws of physics.
+We can't just magically make physical objects appear and disappear which is possible, and easy, to do on a digital display.
+
+\todo{mere her}
+
+We have identified three overall approaches to creating physical interfaces with ad hoc capabilities that we would like to explore through prototyping.
+
+\begin{enumerate}
+	\item{Using shape change as the construction mechanism}
+	\item{Through invisible interfaces embedded into the physical environment}
+	\item{Literally constructing the interface on the spot}
+\end{enumerate}
+
+The three approaches do not exclude each other as they could surely be combined while still living up to our definition.
+In the following we will elaborate on our initial thoughts for each approach while we in chapters~\autoref{ch:jamming}--\ref{ch:prototype3}  explore each of the three approaches in a prototyping context.
+
+\subsubsection{Using shape change as the construction mechanism}
+To adhere to the dynamic nature that we propose for AHIs, using shape change is a particular drawing approach to creating such interfaces.
+In this case an objects shape changing capabilities lets it shift or morph into an particular interface with an accompanying set of functions, as form becomes function.
+The interface can either be changed by the user to suit a particular task or need, or by the computer in relation to changes to its digital state or as response to a user action.
+To control the change of shape sensors and actuators would be embedded for input and output control.
+
+Affordances are to a large extend dictated by the perceived action possibilities of the particular end-shape or the transition-phase into the end-shape and are therefore changing as the interface changes shape and function.
+
+In \autoref{ch:jamming} we explore this approach.
+
+\subsubsection{Embedding invisible interfaces into the physical environment}
+In this case an existing element of the environment will contain the interface.
+An element can be both a physical object, for example walls, furniture, devices etc., and also the ambient air \todo{there is a better word for this} that surrounds us.
+By embedding the interface into existing objects the object itself will retain its normal function while the interface is inactive, while the augmented interface will be active when needed. 
+The wall, for example, will still look and feel like a wall and retain its perceived affordances when the interface is inactive, but will gain additional functions when the interface is needed by the user.
+In this sense the interface is invisibly embedded into the environment until it is needed.
+
+The perceived action possibilities of the interface will be somewhat constrained by the affordances of the object which might be a challenge, depending on the intended use of the system.
+Where a wall might invite to be used as a touch surface it does not really invite to be used as a drum, as a pillow might do.
+
+The input and output possibilities will also depend on the materiality of the physical object as they are closely tied together but we envision that a variety of sensors and actuators can be used for input and output.
+
+In \autoref{ch:textile-touch} we explore this approach.
+
+\subsubsection{Constructing the interface on the spot}
+This approach originated from the idea of interfaces that was ``fashioned from whatever is immediately available''.
+While this may not be quite possible, the idea is engaging and intriguing as an embodiment of a very literal version of AHIs.
+
+Here we envision an approach to AHIs where the actual interface is constructed on the spot in a quick to make, quick to erase fashion.
+By using special materials, the form or composition of the constructed interface will define the associated functions.
+Again, this is an attempt to bring out digital qualities into the physical space as this construction of physical interfaces in a sense becomes a kind of physical programming.
+An approach like this is of course very restricted by the available materials, but also the fact that if we really want these interfaces to be quick to make, then the functions will be equally simple.
+Though like in normal programming, layers of abstraction could provide advanced capabilities but maybe at the cost of unnecessary complexity or at the cost of less flexibility.
+
+This approach is on our part the least explored of the three as it is has proven to be difficult with the materials of today, at least in the manifestation that was our initial point of origin. 
+
+In chapter \ref{ch:prototype3} we explore this approach.
+
+\section{Summary}
+
+In this chapter we have given an introduction to ad hoc interfaces, a \todo{design approach} to user interfaces where the temporality of interaction is taken into account in the interface itself, and where the user is the initiator of action.
+We have \todo{discussed} how AHIs relate to established fields of research and how the \todo{design approach} brings together different aspects of various fields within HCI.
+Last but not least, we have identified three approaches to approaching AHIs that will be the guideline for our further explorations throughout this thesis.
