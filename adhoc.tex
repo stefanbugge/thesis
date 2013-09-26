@@ -25,7 +25,7 @@ created or done for a particular purpose as necessary
 \end{quotation}
 
 The word is used in many different fields and context.
-For example, in society committees a formed on an ad hoc basis to deal with specific tasks, investigations or analyses.
+For example, in society committees are formed on an ad hoc basis to deal with specific tasks, investigations or analyses.
 
 In computer science wireless networking can be of an ad hoc nature, which means that that the network is not dependent on a preexisting infrastructure.
 Wireless ad hoc networks are highly dynamic and all participating nodes in the network graph are more or less doing routing for each other.
@@ -74,7 +74,7 @@ In \citet{lynggaard2012had} a selection of high-end smart homes are studied whic
 One of the findings of the paper is that there is a strong tendency in hiding physical products, while not in use.
 Figure~\ref{fig:ch:adhoc:dubai-notv}~and~\ref{fig:ch:adhoc:dubai-tv} gives an example of how a TV is hidden away into the walls of a room and figure~\ref{fig:ch:adhoc:dubai-mirror} shows how a display is integrated with a bathroom mirror.
 An additional property of the mirror display example is that the physical object itself has a dual purpose.
-If the display is off the physical object's core function is mirroring, but when turned on the physical object is a display container.
+If the display is turned off the physical object's core function is mirroring, but when turned on the physical object is a display container.
 In this way the embedded display can transition between foreground when active and background when not in use.
 Contrasting this with standard displays they have no apparent function when turned off and are just taking up space in the environment.
 
@@ -109,69 +109,56 @@ In the next section we would like continue with a review of a preceding project 
 
 \section{Preceding project: BeoMotion}
 
-The project that we would like to review was made during a masters course in 2011 called Innovation Project\footnote{https://services.brics.dk/java/courseadmin/Inno\_pro2011}.
+The project that we would like to examine was made during a masters course in 2011 called Innovation Project\footnote{https://services.brics.dk/java/courseadmin/Inno\_pro2011}.
 The course was provided in cooperation with the danish design company B\&O\footnote{http://www.bang-olufsen.com/} and the goal was to create novel concepts for B\&O for the purpose of unveiling technical, design and commercial potentials within home-automation systems.
 
-Our contribution was the concept BeoMotion, a dynamic shape shifting wall module with the ability to change its surface structure for acoustic regulation, i.e. diffusion, absorption and reflection for optimal conditions \cite{beomotionreportstefan, beomotionreporttore}, see figure~\ref{fig:beomotion}.
-The idea for the module was to retain the aesthetics of existing surroundings, so if the module was not in use, it would be ``invisible'' and flat like the wall (figure~\ref{fig:beomotion:concept_flat}).  
-The acoustic functionality and the aesthetics that follow were the primary features of the modules.
-Secondary, the modules had illumination features integrated into the modules.
-In this way different areas of the modules could light up, both on the front (figure\ref{fig:beomotion:concept_light}) and as backlighting (figure~\ref{fig:beomotion:concept_backlight}), and serve as an aesthetic lighting for the atmosphere of the room.
-
-We envisioned two scenarios of use for the wall.
-One where context awareness was the primary driver which meant that everything (acoustic and lighting conditions) would be automatically sensed and the wall module would modify itself accordingly and shift from flat to actively in motion.
-In the other scenario the user would, to a higher degree, be in control.
-The user could actively create deformations on the surface for aesthetic purposes and also control illuminated areas by interacting with the wall surface, see figure~\ref{fig:beomotion:concept_backlight}.
-In this scenario the interface was shaped and created by the user for the specific situation, i.e. current acoustic and lightning conditions, as well as the desired aesthetic expression. 
-
-This project has spurred our initial thoughts on ad hoc interfaces though the notion of ad hocness was not deliberate at the time.
-The ad hoc characteristics are \todo{twofold}.
-Firstly, the acoustic features are hidden when not needed and then highly \todo{prevalent} when active as the otherwise static nature of walls start going in motion providing an engaging aesthetic expression.
-Secondly, by using the surface of the wall as an interface in itself to control lighting conditions of the room. \todo{mere?}
-Both are examples of addressing the second approach we earlier labeled 
-
-\begin{quotation}
-	\emph{Through invisible interfaces embedded into the physical environment}.
-\end{quotation}
-
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
-	\begin{subfigure}{.45\textwidth}
+	\begin{subfigure}{.44\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figures/beomotion/prototype_front}
 		\caption{The interactive prototype (front). Made with a wooden framework and thick white cardboard with cuts for flexibility.}
 		\label{fig:beomotion:proto_front}
 	\end{subfigure}%
-	\hspace{0.1cm}
-	\vspace{0.5cm}
-	\begin{subfigure}{.45\textwidth}
+	\hspace{.02\textwidth}
+	\begin{subfigure}{.44\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figures/beomotion/prototype_back}
 		\caption{The interactive prototype (back). Arduino controlled LEDs and DC motors driving several fishing lines that pulling the cardboard shapes.}
 		\label{fig:beomotion:proto_back}
 	\end{subfigure}
-	\vspace{0.5cm}
-	\begin{subfigure}{.45\textwidth}
+\end{figure}
+
+Our contribution was the concept BeoMotion \cite{beomotionreportstefan, beomotionreporttore}, a dynamic shape shifting wall module with the ability to change its surface structure for acoustic regulation, i.e. diffusion, absorption and reflection for optimal conditions, see figure~\ref{fig:beomotion}.
+Acoustic regulation was obtained by creating fragmentations of different sizes and shapes in the wall module with the ability to contract and release programmatically.
+These dynamic shapes enable diffusion and reflection of sound at different frequencies in proportion to their size and when the shapes contract they open up for small gaps that provide the ability to absorb sound. 
+
+The idea for the module was to retain the aesthetics of existing surroundings, so if the module was not in use, it would be ``invisible'' and flat like the wall (figure~\ref{fig:beomotion:concept_flat}). 
+Then, when activated a series of dynamic shapes would emerge from the surface of the wall changing the aesthetics of the wall, while providing the acoustic regulation.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{.44\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figures/beomotion/concept}
 		\caption{A concept illustration of the dynamic shapes.}
 		\label{fig:beomotion:concept}
 	\end{subfigure}%
-	\hspace{0.1cm}
-	\begin{subfigure}{.45\textwidth}
+	\hspace{.02\textwidth}
+	\begin{subfigure}{.44\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figures/beomotion/concept_flat}
 		\caption{Illustration of the concept in flat state.}
 		\label{fig:beomotion:concept_flat}
 	\end{subfigure}
-	\begin{subfigure}{.45\textwidth}
+	\begin{subfigure}{.44\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figures/beomotion/concept_lighting}
 		\caption{Concept illustration of interaction with the illumination feature.}
 		\label{fig:beomotion:concept_light}
 	\end{subfigure}%
-	\hspace{0.1cm}
-	\begin{subfigure}{.45\textwidth}
+	\hspace{.02\textwidth}
+	\begin{subfigure}{.44\textwidth}
 		\centering
 		\includegraphics[width=\linewidth]{figures/beomotion/concept_backlight}
 		\caption{Concept illustration of the backlighting feature.}
@@ -181,48 +168,27 @@ Both are examples of addressing the second approach we earlier labeled
 	\label{fig:beomotion}
 \end{figure} 
 
-\section{Relationship with other fields} 
+The acoustic functionality and the aesthetics that follow were the primary features of the modules.
+Secondary, the modules had illumination features integrated into the modules.
+In this way different areas of the modules could light up, both on the front (figure~\ref{fig:beomotion:concept_light}) and as backlighting (figure~\ref{fig:beomotion:concept_backlight}), and serve as an aesthetic lighting for the atmosphere of the room.
 
-\todo{indledning: ad hoc relationer til UI omtalt i kap. 2}
-% CAC comparison
-It might seem that AHI overlaps with the concept of Context Aware Computing in that they both have a focus on environmental context.
-In context aware computing a system attempts to derive, through a variety of cues, what the current context of use is and as a result it adapts its behaviour \citep[chap. 8]{krumm2009ubiquitous}. 
-In this way it is the system itself that takes action autonomously while the user continues on, outside of the control loop.
-Exactly the topic of control is one of the points where context aware systems have received criticism \cite{erickson2002some}, \citep[chap. 8]{krumm2009ubiquitous}.
-The criticism has to do with a systems ability to make inference based on the analysis of quantitative contextual information available, something that can be quite difficult to do for a computer as contextual information is often subtle and implicit.
-As such there is a possibility for a mismatch between the user and the computers inference of a situation leading to conflicts.
-This is not to say that context aware systems are not useful or appropriate in some situations as they can offer a lot of convenience, if done with care and with the \emph{user} in mind, with all the complexity that follows it.
+We envisioned two scenarios of use for the wall.
+One where context awareness was the primary driver which meant that everything (acoustic and lighting conditions) would be automatically sensed and the wall module would modify itself accordingly and shift from flat to actively in motion.
+In the other scenario the user would, to a higher degree, be in control.
+The user could actively create deformations on the surface for aesthetic purposes and also control illuminated areas by interacting with the wall surface, see figure~\ref{fig:beomotion:concept_backlight}.
+In this scenario the interface was shaped and created by the user for the specific situation, i.e. current acoustic and lightning conditions, as well as the desired aesthetic expression. 
 
-An aspect of our AHI definition is \emph{on-demand} where the word \emph{demand} both implies a concious and specific need and an explicit interaction.
-This puts a focus on the user as the initiator of action and as such this might seem conflicting with context aware systems where the focus often is on implicit and autonomous actions.
-But this does not mean that context-aware systems and AHIs necessary are incompatible, since they are both elements or characteristics of a system and one does not exclude the other as a part of a complex system.
-
-It would seem quite natural to have an ad hoc system that also incorporates some context aware computing elements, as long as it does not put the user out of the control loop.
-An example could be to use context information to identify which user is currently using the interface, enabling customizable profiles or actions to the specific users, but without letting the system take action or determine the most proper action for the user.
-As with any successful context system this does however require reliable context information and a high degree of robustness to avoid it being a hindrance for the user experience.
-\blank
-% TUI comparison
-Tangible user interfaces, or TUIs, do generally not exhibit ad hoc characteristics. \todo{compare to ambient tangibles}
-They are mentioned here more for their nature of physical representation and their movement away from the standard GUI paradigm for human-computer interaction.
-TUIs demonstrate a inherently tight coupling between digital information and the associated physical representation, for example tangible tokens representing a \emph{specific} digital entity or mapping to a \emph{specific} function or action.
-There are numerous examples of these, for example, the ReacTable \cite{jorda2007reactable}, the Marble Answering Machine \todo{citation possible or link} to name a few.
-Furthermore, because of this tight coupling the physical representations are often created only for the specific purpose and are of no use outside of the TUI context. \todo{giv evt. eksempel}
-
-In contrast, ad hoc interfaces define a less strict coupling between digital content and physical objects, meaning that one physical object can serve several purposes.
-This will be exemplified in \autoref{ch:textile-touch} where we prototype a general purpose ad hoc interface called Textile Touch, which can augment existing household objects by adding a digital layer. \todo{overvej lige hvordan det bliver augmented}
-\blank
-Shape-changing interface have indeed been an inspiration to our notion of AHIs as shape-change is an obvious construction approach to building such interfaces.
-The dynamic nature of SCIs does well in supporting some of the properties of AHIs such as adaptability, malleability and a dynamic relationship between the physical and digital state of the interface.
-This does not mean that SCIs are, per definition, AHIs, as the purpose of an SCIs does not necessarily match the user focus and \emph{on-demand\'ness} and \emph{ad hoc'ness} that we envision in AHIs.
-Also AHIs are not, as can also be seen in our three proposed construction approaches, limited to the use of shape-change for implementing such interfaces. 
-
-\todo{Next we will give our own definition of being ad hoc when applied to the field of physical user interfaces and also compare this to other parts of the HCI research area.}
+This project has spurred our initial thoughts on ad hoc interfaces though the notion of ad hoc'ness was not deliberate at the time.
+The ad hoc characteristics are twofold.
+Firstly, the acoustic features are hidden and not physically present when not needed, and then highly prevalent when active as the otherwise static wall start going in motion and providing an engaging aesthetic expression.
+Secondly, by using the surface of the wall as an interface in itself to control lighting conditions of the room. \todo{mere?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Defining Ad Hoc Interfaces} 
 
-\todo{indledning her ...}
-We define ad hoc interfaces as 
+We have now covered both the evolution and future directions of user interfaces and pointed to a potential of dynamic interfaces that puts the user in the center of action.
+This has been supplemented with examples of ad hoc characteristics in existing technology and a previous project.
+On the grounds of this we define ad hoc interfaces as 
 
 \begin{quotation}\label{adhoc:definition}
 \emph{Tangible interfaces that can be created or accessed on demand for a particular purpose and with the user as the initiator of action. When in use the interface will temporarily emerge to the foreground after which it disappears into the background, either physically or perceptually.}
@@ -286,6 +252,44 @@ Though like in normal programming, layers of abstraction could provide advanced 
 This approach is on our part the least explored of the three as it is has proven to be difficult with the materials of today, at least in the manifestation that was our initial point of origin. 
 
 In chapter \ref{ch:prototype3} we explore this approach.
+
+\section{Discussion} 
+
+% We have earlier covered different directions within HCI and mentioned our work as inspired by these.
+% In this section we 
+\todo{indledning: ad hoc relationer til UI omtalt i kap. 2}
+% CAC comparison
+It might seem that AHI overlaps with the concept of Context Aware Computing in that they both have a focus on environmental context.
+In context aware computing a system attempts to derive, through a variety of cues, what the current context of use is and as a result it adapts its behaviour \citep[chap. 8]{krumm2009ubiquitous}. 
+In this way it is the system itself that takes action autonomously while the user continues on, outside of the control loop.
+Exactly the topic of control is one of the points where context aware systems have received criticism \cite{erickson2002some}, \citep[chap. 8]{krumm2009ubiquitous}.
+The criticism has to do with a systems ability to make inference based on the analysis of quantitative contextual information available, something that can be quite difficult to do for a computer as contextual information is often subtle and implicit.
+As such there is a possibility for a mismatch between the user and the computers inference of a situation leading to conflicts.
+This is not to say that context aware systems are not useful or appropriate in some situations as they can offer a lot of convenience, if done with care and with the \emph{user} in mind, with all the complexity that follows it.
+
+An aspect of our AHI definition is \emph{on-demand} where the word \emph{demand} both implies a conscious and specific need and an explicit interaction.
+This puts a focus on the user as the initiator of action and as such this might seem conflicting with context aware systems where the focus often is on implicit and autonomous actions.
+But this does not mean that context-aware systems and AHIs necessary are incompatible, since they are both elements or characteristics of a system and one does not exclude the other as a part of a complex system.
+
+It would seem quite natural to have an ad hoc system that also incorporates some context aware computing elements, as long as it does not put the user out of the control loop.
+An example could be to use context information to identify which user is currently using the interface, enabling customizable profiles or actions to the specific users, but without letting the system take action or determine the most proper action for the user.
+As with any successful context system this does however require reliable context information and a high degree of robustness to avoid it being a hindrance for the user experience.
+\blank
+% TUI comparison
+Tangible user interfaces, or TUIs, do generally not exhibit ad hoc characteristics. \todo{compare to ambient tangibles}
+They are mentioned here more for their nature of physical representation and their movement away from the standard GUI paradigm for human-computer interaction.
+TUIs demonstrate a inherently tight coupling between digital information and the associated physical representation, for example tangible tokens representing a \emph{specific} digital entity or mapping to a \emph{specific} function or action.
+There are numerous examples of these, for example, the ReacTable \cite{jorda2007reactable}, the Marble Answering Machine \todo{citation possible or link} to name a few.
+Furthermore, because of this tight coupling the physical representations are often created only for the specific purpose and are of no use outside of the TUI context. 
+For example, a physical token from the ReacTable is the core object for interaction but without its digital properties it serves no purpose and is just a mere plastic brick.
+
+In contrast, ad hoc interfaces define a less strict coupling between digital content and physical objects, meaning that one physical object can serve several purposes.
+This will be exemplified in \autoref{ch:textile-touch} where we prototype a general purpose ad hoc interface called Textile Touch, which can augment existing household objects by adding a digital layer. \todo{overvej lige hvordan det bliver augmented}
+\blank
+Shape-changing interface have indeed been an inspiration to our notion of AHIs as shape-change is an obvious construction approach to building such interfaces.
+The dynamic nature of SCIs does well in supporting some of the properties of AHIs such as adaptability, malleability and a dynamic relationship between the physical and digital state of the interface.
+This does not mean that SCIs are, per definition, AHIs, as the purpose of an SCIs does not necessarily match the user focus and \emph{on-demand\'ness} and \emph{ad hoc'ness} that we envision in AHIs.
+Also AHIs are not, as can also be seen in our three proposed construction approaches, limited to the use of shape-change for implementing such interfaces. 
 
 \section{Summary}
 
