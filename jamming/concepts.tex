@@ -1,16 +1,29 @@
 %!TEX root = ../thesis.tex
 This section will focus on describing and discussing a selection of concepts for ad hoc interfaces based on the jamming technique.
-As mentioned in the beginning of this chapter we were not successful at implementing a working jamming system where we could control air/liquid flow. \todo{make sure this is actually addressed. Suggestions: complexity, price of equipment: mechanics is one thing, the other is materials, i.e. ecoflex rubber etc.}
+As mentioned in the beginning of this chapter we were not successful at implementing a working jamming system where we could effectively control air/liquid flow.
 Therefore we concentrate on conceptual prototypes which we envisioned before taking the decision to move in other directions.
 Each of these concepts have different focal points.
-The first one, \emph{ \nameref{ch:jamming:concepts:dynamic_input} }, strives to achieve on-demand standard interfaces for input control.
-The second, \emph{ \nameref{ch:jamming:concepts:playful_blobs} }, seeks to draw on known interaction metaphors from the digital world and  expose them to physical objects.
-The third, \emph{ \nameref{ch:jamming:concepts:improvised_furniture} }, scales up the dimensions and focuses on a living environment with highly configurable components.
-\blank
-\todo{Afsnit hvor der n\o gternt bliver redegjort for kompleksiteten og vores misl\o kkede fors\o g.}
+The first one, \emph{\nameref{ch:jamming:concepts:dynamic_input}}, strives to achieve on-demand standard interfaces for input control.
+The second, \emph{\nameref{ch:jamming:concepts:playful_blobs}}, seeks to draw on known interaction metaphors from the digital world and expose them to physical objects.
+The third, \emph{\nameref{ch:jamming:concepts:improvised_furniture}}, scales up the dimensions and focuses on a living environment with highly configurable components.
 
 \subsection{Dynamic input controls} 
 \label{ch:jamming:concepts:dynamic_input}
+
+This concept was our starting point for our first endeavours with jamming.
+
+The concept resembles the work of \citet{harrison2009providing} mentioned in the related work section and our intentions were also to create physical input controls with the dynamic qualities of the digital counterpart.
+But we were of the opinion that by using the jamming technique we could overcome some of the constraints of their approach and offer even more flexibility.
+The limitations of the approach taken by \citet{harrison2009providing} were primarily the reliance on a backing layer where cut-out areas determined the position and shape of the buttons.
+They were able to show a button either in convex or concave form or not at all, but the buttons were locked in their positions and the shapes were also not modifiable.
+
+Instead, we propose using the jamming technique with a cell-based approach.
+The composition of cells makes it possible to make forms of heterogeneous shapes emerge anywhere on the plane.
+
+... similar to the composition of polygons in computer graphics
+
+
+
 
 \todo{what's the problem with static dashboards}\\
 
@@ -23,14 +36,6 @@ Their approach is not based on jamming but also on a pneumatic actuation which a
 This approach makes it possible to programmatically modify input control between three states: positive, neutral and negative, see figure~\ref{fig:ch:jamming:concepts:harrisonhudson}.
 Though input controls are deformable and have tactile qualities, the displays are still in a very static configuration.
 The positioning and shape of input controls are based on a acrylic backing layer with cut-out areas which cannot be changed.
-
-\begin{figure}[h]
-  \centering
-      \includegraphics[width=.9\textwidth]{figures/jamming/concepts/harrisonhudson}
-  \caption[A tactile display in various interfaces states. All buttons are statically positioned.]
-  {A tactile display in various interfaces states. All buttons are statically positioned.}
-  \label{fig:ch:jamming:concepts:harrisonhudson}
-\end{figure}
 
 \begin{figure}[h]
   \centering

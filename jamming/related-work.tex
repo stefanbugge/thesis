@@ -55,6 +55,22 @@ These different examples from other fields of research illustrate how creative i
 Jamming has also been explored in the area of HCI though to a limited extent.
 Must of the examples here are very recent contributions (2012) but they do show promising applications.
 
+\paragraph{Dynamically changeable physically buttons (\citeyear{harrison2009providing})} 
+\label{ch:jamming:related-work:hci:dynbuttons}
+This first example is actually not based on jamming but on some of the same principles, where pneumatic actuation is used to enable deformations on a latex surface.
+The project presents a visual display which contains deformable areas able to create physical buttons.
+An acrylic backing layer with cut-out areas for the shapes and positions of the buttons are placed under an upper latex surface.
+With pneumatic control it is possible to dynamically make physical buttons appear at the cut-out areas as either convex, concave, or flat forms, see figure~\ref{fig:ch:jamming:concepts:harrisonhudson}.
+Though button states can be modified they are still in a very static configuration due to the cut-out areas which cannot be changed.
+
+\begin{figure}[h]
+  \centering
+      \includegraphics[width=.9\textwidth]{figures/jamming/concepts/harrisonhudson}
+  \caption[A tactile display in various interfaces states. All buttons are statically positioned.]
+  {A tactile display in various interface states. All buttons are statically positioned.}
+  \label{fig:ch:jamming:concepts:harrisonhudson}
+\end{figure}
+
 \paragraph{The HoverMesh (\citeyear{mazzone2004hovermesh})}
 \label{ch:jamming:related-work:hci:hovermesh}
 \citet{mazzone2004hovermesh} did some early work on creating a deformable structure with the jamming technique. 
@@ -121,7 +137,7 @@ The shape, captured in real-time, is shown as a virtual 3D model on both an exte
 
 \subparagraph{Transparent Haptic Lens} is small tangible puck to be used as a haptic information channel on a tabletop display (basic jamming approach), see figure~\ref{fig:ch:jamming:jui-lens}.
 It has a transparent lens in the center which is a transparent hydraulic jamming volume which can change its stiffness according to the texture beneath it.
-A user presses \todo{a/his/hers} finger into the lens to get a haptic sensation about the underlying texture of the image directly underneath. 
+By pressing ones finger into the lens the user can get a haptic sensation through stiffness about the underlying texture of the image directly underneath. 
 
 \subparagraph{Behind-the-Tablet Jamming} is a tablet computer which has a pneumatic jamming volume mounted on the backside (basic jamming approach), see figure~\ref{fig:ch:jamming:jui-tablet}.
 The system senses malleable input with capacitive shape sensing.
@@ -166,7 +182,7 @@ Ideas are presented for integrating various sensing techniques such as capacitiv
         \label{fig:ch:jamming:jui-collection}
 \end{figure}
 
-\subsection{Summary}
+\subsection{Summary of related work}
 
 In the previous sections we have given an introduction to the mechanics of jamming and an overview of different research applications of jamming.
 These applications show two primary approaches to jamming.
@@ -176,15 +192,14 @@ The other is the more complicated cell-based approach where each cell is an inde
 As the cells exist on the perimeter of the volume some other compound must constitute the body of the volume and stabilise the form.
 In \emph{The HoverMesh} this was air inside a cubicle and in \emph{JSEL} it was fluid, see figure~\ref{fig:ch:jamming:approaches:cell}.
 
-
-
+The related work demonstrate different potentials for the use of jamming through implementations based on mechanics, direct manipulation, shape-change, and as a feedback channel.
 Table \ref{ch:jamming:table:applications_overview} summarises and categorises the mentioned applications according to their characteristics.
 In the next we will move on to our own concepts that support the notion of ad hoc interfaces.
 
 \begin{landscape}
   \thispagestyle{empty}
   \centering 
-  \captionof{table}{An overview of jamming in HCI}
+  \captionof{table}{An overview and categorisation of related jamming work}
   \label{ch:jamming:table:applications_overview} 
   \begin{tabularx}{\linewidth}{|l|c|c|c|c|c|X|}
     \hline
@@ -204,8 +219,7 @@ In the next we will move on to our own concepts that support the notion of ad ho
   \end{tabularx}
 
   \begin{flushleft}
-  This table is an overview of the prototypes presented in the papers covered in this section. It should be mentioned that in categorising \textit{input} and \textit{output} features we are only considering whether input or output is enabled using the jamming technique. For example, \textit{Tunable Clay} does have output in the form a image projection but it does not utilise the jamming technique.
-  \todo{information is of course retrieved from the papers but some parts are not available. Check other sources: web pages, videos, email author??}
+  This table is an overview and categorisation of the prototypes presented in the papers covered in this section. It should be mentioned that in categorising \textit{input} and \textit{output} features we are only considering whether input or output is enabled using the jamming technique. For example, \textit{Tunable Clay} does have output in the form a image projection but it does not utilise the jamming technique.
   \end{flushleft}
 
 \end{landscape}
