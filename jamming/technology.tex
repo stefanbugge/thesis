@@ -1,5 +1,5 @@
 %!TEX root = ../thesis.tex
-Before continuing on the topic of jamming, let's first give an introduction to the mechanics of jamming.
+Before continuing on the topic of jamming interfaces, let us first give an introduction to the mechanics of jamming.
 
 Jamming is a mechanism that can enable granular material to transition between solid-like and liquid-like states. 
 These states are achieved by varying an external stress on the material.
@@ -25,13 +25,12 @@ Figure~\ref{fig:ch:jamming:particles:jam_unjam} illustrates the behaviour of gra
 \label{fig:ch:jamming:particles:jam_unjam}
 \end{figure}
 
-This is due to something called \todo{Jamming, Force chains and Fragile matter}
-
 You might have noticed how some coffee packagings at the local super market are like a rigid container, see figure~\ref{fig:ch:jamming:coffee-packaging}. 
 In this kind of packaging, after filling it with coffee, all excess air has been sucked out by applying a vacuum, thereby jamming the coffee grains and making it almost rock solid. 
+After opening the packaging the form and viscosity of the structure change instantly as air is let in releasing coffee grains from their jammed state.
 Another example is a regular bean bag which exhibits some of the same properties, see figure~\ref{fig:ch:jamming:bean-bag}. 
 When no force is applied to it, i.e. no one is sitting in it, it resembles the liquid-like state mentioned earlier. 
-Then, when a person then sits down in it, air will be pressed out and the particles (most often polystyrene foam) will be pushed tightly together filling voids and thereby jamming the particles making it resemble a solid.
+Then, when a person sits down in it, air will be pressed out and the particles (most often polystyrene foam) will be pushed tightly together filling voids and thereby jamming the particles making it resemble a solid.
 
 \begin{figure}[h]
 \centering
@@ -54,10 +53,11 @@ Then, when a person then sits down in it, air will be pressed out and the partic
 \label{ch:jamming:particles}
 The granular material, also called the particles, can be any material that has the physical properties that allow for jamming to occur. 
 But parameters such as particle size, shape and compressibility have an impact on the jamming transition. 
-This has been investigated by several researchers, e.g. \cite{cheng2012design} and \cite{steltz2010jamming}, where the stress to strain ratio \todo{explain this} of different granular materials are evaluated. 
+This has been investigated by several researchers, e.g. \cite{cheng2012design} and \cite{steltz2010jamming}, where the stress to strain ratio of different granular materials are evaluated. 
 Ground coffee (fine and coarse) and glass beads of varying size are recurring across these tests, the first being an irregular shape with a rough surface as opposed to the plain shape and smooth surface of the second, see figure~\ref{fig:ch:jamming:particles-close-up}. 
 Particles of same size and with a smooth surface will tend to be more fluid-like when unjammed as they flow more freely. 
 Irregular particles with rough surfaces will create more friction between the particles thus being less fluid-like in the unjammed state.
+Furthermore, the bigger the particles the more influence on the surface structure of the container they will have in terms of surface texture.
 
 The conclusion is that the choice of granular material is very much dependent on the application in question. 
 
@@ -97,27 +97,57 @@ An external vacuum pump can then suck out the air of the container, creating a n
 The speed of this transition of course depends on the suction power of the pump.
 When the vacuum is released the form will gradually transition back to the liquid state. 
 In this way, the transition allows for states in between the two extremes; solid and liquid.
-
+By sensing and adjusting the pressure inside a jamming volume the stiffness can be controlled and thereby be in any intermediate state in between solid and liquid giving complete control of the viscosity of the volume.
+Changing the stiffness of a volume by jamming also affects other types of shape-change than viscosity.
+Viscosity change affects the bearing ability of the volume which in turns has an effect on the form, like in the previous coffee bag example.
+Additionally, when approaching maximum stiffness the inner particles can begin to appear on the surface and thereby affect the texture of the object.
 \begin{figure}[h]
   \centering
-      \includegraphics[width=.9\textwidth]{figures/jamming/jamming-basics}
-	\caption{A basic pneumatic jamming system.}
-   \label{fig:ch:jamming:jamming-basics}
+  \includegraphics[width=.9\textwidth]{figures/jamming/jamming-basics.pdf}
+  \caption{A basic pneumatic jamming system.}
+  \label{fig:ch:jamming:jamming-basics}
 \end{figure}
 
 Jamming makes it possible to deform an object by hand while in the liquid state and then apply the vacuum and make the deformed object solid - in a sense the form is \emph{saved} as long as the vacuum is maintained.
-Figure~\ref{fig:ch:jamming:jamming-transition} shows a transition where a form has been molded and solified into a shape.
+Figure~\ref{fig:ch:jamming:jamming-transition} shows a transition where a form has been molded and solidified into a shape.
 When the pressure is released the form gradually changes shape as seen in the individual steps of the figure.
 In this setup we used a balloon as the membrane and ground coffee within as particles.
 Pressure was applied with a vacuum cleaner and a coffee filter prevents the particles from being sucked out.
 In the example it can be seen that the object (balloon) returns to its initial state which is a requirement for SCIs as stated earlier in section \ref{ch:jamming:vocabulary}.
-In this example it is the tension of the latex of the balloon that forces it back but it could as well have been an actuation done with the jamming technique itself. 
+In this example it is the tension of the rubber latex of the balloon that forces it back but it could as well have been an actuation done with the jamming technique itself. 
 
 \begin{figure}[h]
   \centering
-      \includegraphics[width=.9\textwidth]{figures/jamming/jamming-transition}
+  \includegraphics[width=.9\textwidth]{figures/jamming/jamming-transition}
   \caption[A jamming transition setup.]
-   {Jamming transition with a balloon, ground coffee, vacuum cleaner and a coffee filter.}
-   \label{fig:ch:jamming:jamming-transition}
+  {Jamming transition with a balloon, ground coffee, vacuum cleaner and a coffee filter.}
+  \label{fig:ch:jamming:jamming-transition}
+\end{figure}
+
+Until now we have talked about jamming as changing stiffness of a single volume, see figure~\ref{fig:ch:jamming:approaches:basic}.
+There are examples, which we present in the next section, that apply a more advanced technique with multiple jamming volumes.
+In this case a volume is divided into series of cells each of which operate as an individual jamming volume.
+The division allows for stiffness control of separate areas on the surface of the entire volume and thus broadens the shape-changing capabilities.
+This approach is most often combined with an extra means of actuation to affect the combined volume area typically by pressure by gas or by an inner expanding volume. 
+Figure~\ref{fig:ch:jamming:approaches:cell} illustrates the cell-based jamming approach with an inner actuator.
+This technique furthermore extends the types of shape-change possible due to its ability to affect the volume by expansion and contraction. 
+
+\begin{figure}
+  \centering
+  \begin{minipage}[t]{.44\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/jamming/basic_jamming}
+    \caption[The basic jamming approach.]
+    {Illustrates the basic approach with a single jammable volume.}
+    \label{fig:ch:jamming:approaches:basic}     
+  \end{minipage}
+  \hspace{0.02\textwidth}
+  \begin{minipage}[t]{.44\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/jamming/cell_jamming}
+    \caption[The cell-based jamming approach.]
+    {Illustrates the cell-based approach where each cell functions as an independent jammable volume. An inner actuator can contract and expand to control pressure on the cell.}
+    \label{fig:ch:jamming:approaches:cell}
+  \end{minipage}%
 \end{figure}
 
