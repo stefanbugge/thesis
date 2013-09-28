@@ -19,6 +19,11 @@ They were able to show a button either in convex or concave form or not at all, 
 
 Instead, we propose using the jamming technique with a cell-based approach.
 Individual cells can be used to create deformations on different areas of the surface and the composition of multiple cells makes it possible to make forms of heterogeneous shapes emerge anywhere on the plane, see figure \ref{fig:ch:jamming:concepts:button-cells}.
+The idea of composition is quite similar to the that of computer graphics where polygons are used to compose images that are appear three-dimensional.
+In this way, not only can we make input controls appear and disappear, we can also change the shape and position of them for an even more dynamic interface.
+
+As a simple example we made mocked up a prototype to demonstrate simple shapes by jamming.
+Due to our issues with a jamming, this was again an vacuum cleaner setup with a plastic bag as the membrane and ground coffee as the particles, see figure \ref{fig:ch:jamming:concepts:inputs-prototype}.
 
 \begin{figure}[h]
   \centering
@@ -27,39 +32,25 @@ Individual cells can be used to create deformations on different areas of the su
   \label{fig:ch:jamming:concepts:button-cells}
 \end{figure}
 
-... similar to the composition of polygons in computer graphics
+%We conceptualize on household appliances such as radios, clock alarms, house alarms heating, ventilation and air conditioning (HVAC), \todo{etc}.
+%In general physical products with standard input controls such as buttons, knobs, switches and sliders.
+
 \begin{figure}[h]
 \centering
 \begin{subfigure}[t]{.44\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{figures/jamming/jamming-inputs-flat}
+  \includegraphics[width=\linewidth]{figures/jamming/concepts/inputs/jamming-inputs-flat}
     \caption{A flat surface with the absence of any input controls.}
 \end{subfigure}%
 \hspace{0.02\textwidth}
 \begin{subfigure}[t]{.44\textwidth}
   \centering
-  \includegraphics[width=\linewidth]{figures/jamming/jamming-inputs-buttons}
+  \includegraphics[width=\linewidth]{figures/jamming/concepts/inputs/jamming-inputs-buttons}
   \caption{Four buttons have emerged and an elongated input control for e.g. sliding or grabbing and pulling.}
 \end{subfigure}
 \caption{A primitive exploratory prototype with basic jamming of a single volume. Ground coffee is enclosed withing a transparent plastic bag. Wrinkles occur due to the plastic bag not being very flexible.}
-\label{fig:ch:jamming:particles:balloon}
+\label{fig:ch:jamming:concepts:inputs-prototype}
 \end{figure}
-
-\todo{what's the problem with static dashboards}\\
-
-Cell-based jamming, as mentioned in \ref{ch:jamming}, allows for deformations of individual cells.
-This technique \hl{opens up} for a new and very dynamic approach to inputs, such as buttons, knobs, etc.
-These input controls could emerge from the otherwise flat surface when needed, see figure~.
-Other than being able to hide input controls when not needed this approach also opens up for a configurable interface adapted to a specific user's preference.
-\citet{harrison2009providing} (\citeyear{harrison2009providing}) have previously made a contribution to physically changeable visual displays.
-Their approach is not based on jamming but also on a pneumatic actuation which allow deformations of a latex surface.
-This approach makes it possible to programmatically modify input control between three states: positive, neutral and negative, see figure~\ref{fig:ch:jamming:concepts:harrisonhudson}.
-Though input controls are deformable and have tactile qualities, the displays are still in a very static configuration.
-The positioning and shape of input controls are based on a acrylic backing layer with cut-out areas which cannot be changed.
-
-
-We conceptualize on household appliances such as radios, clock alarms, house alarms heating, ventilation and air conditioning (HVAC), \todo{etc}.
-In general physical products with standard input controls such as buttons, knobs, switches and sliders.
 
 \subsection{Playful blobs}
 \label{ch:jamming:concepts:playful_blobs}
@@ -68,36 +59,60 @@ The focal point of this next concept is on bringing input and output into the sa
 As can be seen in table~\ref{ch:jamming:table:applications_overview} on page~\pageref{ch:jamming:table:applications_overview} only one of the listed projects from the related work section have both input and output in same object. \todo{what does that say?}
 
 \nameref{ch:jamming:concepts:playful_blobs} is a toy concept for children.
-The blobs are tangible clay-like objects meant to be molded into creative forms.
+The blobs are tangible clay-like objects meant to be moulded into creative forms.
 Each blob makes a selection of commands available otherwise known from digital interface metaphors, such as \emph{save, open, undo, delete, copy, and paste} which can actuate the blob in different ways.
 These commands give a physical blob a notion of form memory where state is kept over time.
+If needed previously saved forms can be recalled and further work on the form can done.
 More specifically each command means (see also figure~\todo{ref}:
 \begin{itemize}
 	\item{\emph{Save}: The current form of a blob is saved in memory for later retrieval.}
 	\item{\emph{Open}: A previously saved form can be recalled and the blob actuates itself into the saved state.}
-	\item{\emph{Undo}: Negate the latest molding of the form.}
+	\item{\emph{Undo}: Negate the latest moulding of the form.}
 	\item{\emph{Copy}: Make a copy of the state of a specific blob. The copied state could be saved in a blob or in an external object.}
 	\item{\emph{Paste}: Set the state of a blob to that of which has been copied.} 
 	\item{\emph{Delete}: Reset a blob so that all state is forgotten.} 
 \end{itemize}
-The commands are made possible via a cell-based jamming structure.
+The commands are made possible via a cell-based jamming structure and the amount of detail a moulded blob can have is dictated by the resolution of the jamming cells.
 As mentioned earlier this jamming approach makes it possible to separately control the stiffness of each cell.
 So, for example, the \emph{save} command is done by storing a map of the current pressure states of each cell.
 A subsequent \emph{open} or \emph{paste} command would set the correct pressure values of the cells and thereby restore the \emph{saved} or \emph{copied} physical form.
 Lastly, a \emph{delete} command would release all negative pressure in cells and thereby collapse the form.
+A simple prototype is shown figure~\ref{fig:ch:jamming:concepts:blobs:gloves} made with the basic jamming approach.
+The actuation process would have to be done in a correct sequence in order for specific curvatures to become possible, which presumably could be done by computation.
 
-Applying these digital features to the physical blobs brings about ad hoc qualities.
-If needed previously saved forms can be recalled and further work on the form can done.
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[t]{.28\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/jamming/concepts/blobs/glove-1.jpg}
+    \captionof{figure}{The blob in collapsed state, i.e. no pressure is upheld.}
+    \label{fig:ch:jamming:concepts:blobs:g1}
+  \end{subfigure}%
+  \hspace{0.03\textwidth}
+  \begin{subfigure}[t]{.28\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/jamming/concepts/blobs/glove-2}
+    \captionof{figure}{The blob being molded into a custom shape.}
+    \label{fig:ch:jamming:concepts:blobs:g2}
+  \end{subfigure}
+  \hspace{0.03\textwidth}
+  \begin{subfigure}[t]{.28\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/jamming/concepts/blobs/glove-3}
+    \captionof{figure}{The shape of the blob is maintained.} 
+    \label{fig:ch:jamming:concepts:blobs:g3}
+  \end{subfigure}
+  \caption{An exploratory prototype of playful blobs. Created with a rubber latex glove, ground coffee, and a vacuum cleaner. For a video of the above steps see appendix~\ref{app:videos:jamming} which also shows the rigidity of the shape when jammed.}
+  \label{fig:ch:jamming:concepts:blobs:gloves}
+\end{figure}
 
-The amount of detail a molded blob can have is dictated by the resolution of the jamming cells.
-\blank
-\todo{ad hoc qualities \dots}
-\begin{verbatim}
-tool tankegang. bringe en gammel form frem.
-digitale kvaliteter der overfoeres. arbejde videre paa formen. formsprog
-gengive forloebet formgivningen.
-den rigtige jamming raekkefoelge
-\end{verbatim}
+We envision that the blobs can be used in a clay-like manner for kids to explore moulding of material into various forms and where particular interesting forms can be saved, duplicated and so on.
+Furthermore, we also envision that these blobs could be used as the foundation for a new kind of dynamic building block for construction toys.
+A concept that takes products such as Lego\footnote{http://www.lego.com/} a step further by having building blocks that are deformable and can be locked into any shape by the use of jamming.
+This allows for block shapes that are no more limited to the supply of the production company but which allow for custom moulded blocks that are adapted to the needs of the user.
+
+Applying these digital features to the physical blobs exhibits ad hoc qualities where the shape itself forms the interface and where shapes can be created on an ad hoc basis.
+When a particular shape is no longer needed it can disappear again by remoulding it or letting it collapse (jamming-wise).
 
 \subsection{Improvised furniture}
 \label{ch:jamming:concepts:improvised_furniture}
