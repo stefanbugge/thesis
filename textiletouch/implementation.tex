@@ -74,7 +74,7 @@ Each of the cells acts in principle as a discrete sensor as they have their own 
 This approach is simple, both in terms of Arduino setup and coding, and can attain the fastest possible update rates as no computation is needed to determine the location of the touch. 
 The data received from the sensors is sent to Processing for visualization as can be seen in figure~\todo{ref} which we have used for testing.
 
-\subsubsection{Conclusion}
+\subsubsection{Iteration 1 conclusion}
 This quite simple prototype showed us that the basic principles for constructing a textile touch surface with the materials we have had access to, is indeed possible.
 One of the major obstacles we found though was the transition from soft electronics (thread and anti-static bags) to hard electronics, as the conductive metal in the threads are woven into normal cotton thread, making soldering extremely hard.
 For this first iteration we made due with glued on tin foil connectors as a quick-and-dirty solution.
@@ -153,8 +153,6 @@ The new approximated point \(P_{approx}\) will, as a result of the radial spread
 
 \todo{maaske lidt mere her}
 
-\todo{lav en af ligning interpolationen?}
-
 \begin{figure}[h]
 \centering
 \begin{subfigure}[t]{.44\textwidth}
@@ -172,7 +170,7 @@ The new approximated point \(P_{approx}\) will, as a result of the radial spread
 \label{interpolation}
 \end{figure}
 
-\subsubsection{Conclusion}
+\subsubsection{Iteration 2 conclusion}
 For this type of application where a large number of individual sensor cells are needed the construction approach we have used in this iteration is by far superior to the one from iteration 1.
 It is a more complex setup both in software and hardware but it does in turn enable much larger sensor arrays than before as we showed before with the amount of I/O pins needed.
 As it scales up it is of course more computational heavy on the Arduino CPU as the multiplexers and, in our case, 49 sensor cells needs to be controlled, but as this is still only a 7 x 7 grid we did not experience performance problems.
@@ -271,20 +269,23 @@ In this way, the harder the touch pressure the more increase in volume.
 
 The dollar family of recognizers were presented earlier in \ref{ch:textiletouch:gesture_recognition}.
 Initially we experimented with the \$N implementation which was able to recognise gestures but with some limitations.
-First of all, the recogniser was sensitive to the ordering of the strokes which meant that the it could fail on the same gesture if drawn from different starting points. \todo{Tore, yes?}
+First of all, the recogniser was sensitive to the ordering of the strokes which meant that the it could fail on the same gesture if drawn from different starting points.
 Secondly, there was a considerable amount of delay before a resulting gesture was found.
 We measured this to be in the area of \(800\) to \(1000 ms\), a latency which in our opinion does influence the user experience.
+This, we found out, is due to the complexity of the template matching in the \$N where the complexity is exponential to the number of strokes made in a gesture, as well as generally more complex algorithm than \$P.
+
 After changing to the \$P implementation we got this delay down to \(< 10 ms\) which is quite an improvement.
 This is because \$P avoids a combinatorial overhead of \$N where \$N matches up against every possible combination of stroke order and direction.
-
 Furthermore, the \$P implementation does not distinguish the order of the strokes which allows for subjective ways of drawing specific shapes.
 
 One limitation of both implementations is that they do not take in to account the orientation of the input. 
-This means that, for example, for a line to be recognised in both a vertical, horizontal and diagonal version they all need to have a predefined template. \todo{say something about the complexity of writing templates? P vs N}
+This means that, for example, for a line to be recognised in both a vertical, horizontal and diagonal version they all need to have a predefined template. 
 
-\subsubsection{Feedback} 
+Also common to both is the ease of adding and removing new gesture templates which is a great benefit for enabling users to generate their own individual gestures.
 
-For haptic feedback we have used a vibration motor mounted on the rear of the prototype, see \todo{fig:ch:textiletouch:feedback:haptic??}.
+\subsubsection{Interaction feedback} 
+
+For haptic feedback we have used a vibration motor mounted on the rear of the prototype.
 We have tested different patterns of vibration as feedback to find a suitable feedback approach.
 For instance having the motor vibrate shortly for a haptic sensation in response to a matched gesture input. \todo{tell about ``touch hard to begin'' ??}
 Also, using a firm press to active the system with a subsequent short vibration on activation.
@@ -292,10 +293,10 @@ Besides this, we have also tested the motor continuously vibrating in response t
 This continuous vibration seems promising, in our opinion, especially if it is divided in to small intervals of on/off pulsations.
 We are aware that the current vibration motor is not powerful enough to propagate vibrations to the entire surface of our prototype but we believe it will suffice for our evaluation.
 But we also interpret it as being a balance between motor power and material.
-The ability to propagate vibration is also constrained by the choice of materials, and the linen (textile) we have used might not excel in this.
-The ability is limited even further by the linen not being stretched out completely.
+The ability to propagate vibration is also constrained by the choice of materials, and the linen (textile) we have used does not excel in this.
+The ability is limited even further by the linen not being stretched out completely in our prototype.
 
-For visual feedback we have installed a single LED which comes up through the textile, see \todo{fig:ch:textiletouch:feedback:visual??}.
+For testing simple visual feedback on the prototype itself we have installed a single LED which comes up through the textile.
 As a variation of the continuous vibration of the motor we have tested the LED in similar manner where it blinks as an indication of input.
 Additionally, the LED will blink to indicate that it has stopped recording strokes and will instead find a matching gesture.
 
@@ -316,7 +317,7 @@ Additionally, the LED will blink to indicate that it has stopped recording strok
 % \end{subfigure}
 % \end{figure}
 
-\subsubsection{Conclusion} 
+\subsubsection{Iteration 3 conclusion} 
 
 Although the 3rd iteration overcame some of the limitations of the 2nd iteration it still has some constraints that we would like to address.
 
@@ -352,11 +353,14 @@ This has to some degree amended the issue but not fully.
 \end{figure}
 
 An alternative approach is to reduce the spacing again to \(1cm\) or less but that would require quite a few extra wires which we already have quite a few of (see figure~\ref{fig:textiletouch:wires}).
-Furthermore increasing the grid resolution would result in an exponential growth in the amount of data to be transmitted by the microcontroller.
+Furthermore increasing the grid resolution would result in an exponential growth in the amount of data to be transmitted by the micro controller.
 With a \(16x16\) grid we are sending 256 values every frame (\(10ms\)),
 If we were to lower the spacing to \(1cm\) we would get a grid resolution of \(24x24\) which in turn would require a transmission of 576 values for every frame.
-As our microcontroller is already running at over capacity this out of the question for now, but by replacing the microcontroller with a more powerful one, as mentioned before, increasing the resolution could become relevant again.
+As our micro controller is already running at over capacity this out of the question for now, but by replacing the micro controller with a more powerful one, as mentioned before, increasing the resolution could become relevant again.
 Therefore we see it as a balance between the size of the touch area and the complexity of the hardware setup.
+
+Our exploration of possible interaction feedback has been limited, so further work on this would be appropriate.
+We do envision that the application that is interacted with through the Textile Touch will provide some of the feedback, but more/better, both haptic and visual, feedback on the prototype could improve the user experience. 
 
 \begin{verbatim}
 Flere punkter i konklusionen?
