@@ -18,18 +18,38 @@ The limitations of the approach taken by \citet{harrison2009providing} were prim
 They were able to show a button either in convex or concave form or not at all, but the buttons were locked in their positions and the shapes were also not modifiable.
 
 Instead, we propose using the jamming technique with a cell-based approach.
-The composition of cells makes it possible to make forms of heterogeneous shapes emerge anywhere on the plane.
+Individual cells can be used to create deformations on different areas of the surface and the composition of multiple cells makes it possible to make forms of heterogeneous shapes emerge anywhere on the plane, see figure \ref{fig:ch:jamming:concepts:button-cells}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/jamming/concepts/jamming-inputs-concept.pdf}
+  \caption{A cross-sectional view of a cell-based button and a composition multiple cells with different pressures for complex forms.}
+  \label{fig:ch:jamming:concepts:button-cells}
+\end{figure}
 
 ... similar to the composition of polygons in computer graphics
-
-
-
+\begin{figure}[h]
+\centering
+\begin{subfigure}[t]{.44\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/jamming/jamming-inputs-flat}
+    \caption{A flat surface with the absence of any input controls.}
+\end{subfigure}%
+\hspace{0.02\textwidth}
+\begin{subfigure}[t]{.44\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/jamming/jamming-inputs-buttons}
+  \caption{Four buttons have emerged and an elongated input control for e.g. sliding or grabbing and pulling.}
+\end{subfigure}
+\caption{A primitive exploratory prototype with basic jamming of a single volume. Ground coffee is enclosed withing a transparent plastic bag. Wrinkles occur due to the plastic bag not being very flexible.}
+\label{fig:ch:jamming:particles:balloon}
+\end{figure}
 
 \todo{what's the problem with static dashboards}\\
 
 Cell-based jamming, as mentioned in \ref{ch:jamming}, allows for deformations of individual cells.
 This technique \hl{opens up} for a new and very dynamic approach to inputs, such as buttons, knobs, etc.
-These input controls could emerge from the otherwise flat surface when needed, see figure~\ref{fig:ch:jamming:concepts:button}.
+These input controls could emerge from the otherwise flat surface when needed, see figure~.
 Other than being able to hide input controls when not needed this approach also opens up for a configurable interface adapted to a specific user's preference.
 \citet{harrison2009providing} (\citeyear{harrison2009providing}) have previously made a contribution to physically changeable visual displays.
 Their approach is not based on jamming but also on a pneumatic actuation which allow deformations of a latex surface.
@@ -37,13 +57,6 @@ This approach makes it possible to programmatically modify input control between
 Though input controls are deformable and have tactile qualities, the displays are still in a very static configuration.
 The positioning and shape of input controls are based on a acrylic backing layer with cut-out areas which cannot be changed.
 
-\begin{figure}[h]
-  \centering
-      \includegraphics[width=.9\textwidth]{figures/jamming/concepts/jamming_button}
-  \caption[A cell-based jammable button.]
-  {A cell-based jammable button.}
-  \label{fig:ch:jamming:concepts:button}
-\end{figure}
 
 We conceptualize on household appliances such as radios, clock alarms, house alarms heating, ventilation and air conditioning (HVAC), \todo{etc}.
 In general physical products with standard input controls such as buttons, knobs, switches and sliders.
