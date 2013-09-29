@@ -1,15 +1,15 @@
 %!TEX root = thesis.tex
 As a way of introduction we will here give an overview of the evolution of computer interfaces and how they have interacted and integrated with the users using them.
-We will use this a starting point as to situate ourself in relation to the various fields of research in computer science and as a pointer to the future prospects of user interfaces, both in terms of what visions other researchers have proposed, and in relation to our own proposition for ad hoc interfaces.
+We will use this as a starting point to situate ourselves in relation to the various fields of research in computer science and as a pointer to the future prospects of user interfaces, both in terms of what visions other researchers have proposed, and in relation to our own proposition for ad hoc interfaces.
 We will first give a historical look back in time based on \citet{grudin1990computer}, from the early computers to the 1990s, which will both give an insight as to how the relationship between the user and computers has evolved, as well as point to a paradigm shift away from the terminal based computer.
-We will follow this paradigm shift to the vision of ubiquitous computer, presented by \citet{weiser1991computer}, and look at some of the relevant related research area that has followed this vision.
+We will follow this paradigm shift to the vision of ubiquitous computing, presented by \citet{weiser1991computer}, and look at some of the relevant related research areas that have followed this vision.
 Lastly we will point to an area where we see unused potential for future work, an area that throughout this thesis will be further articulated and conceptualised.   
 
 \section{The computer reaches out}
-There is of course many ways to look at the evolution of the computer and the user interface, and although it is hard to draw a straight line as to how the development has occurred, as much of the developments has happened in parallel, we try to outline the broad picture and give a pointer to the future.
-As a start we have chosen to take an offset in \citeauthor{grudin1990computer}'s article about the historical continuity of interface design \citep{grudin1990computer} and along with that, the type of interaction that has been defining for each of \citeauthor{grudin1990computer}'s levels.
+There are of course many ways to look at the evolution of the computer and the user interface, and although it is hard to draw a straight line as to how the development has occurred, as much of the development has happened in parallel, we try to outline the broad picture and give a pointer to the future.
+As a start we have chosen to take an offset in \citeauthor{grudin1990computer}'s article about the historical continuity of interface design \citep{grudin1990computer} and along with that, the types of interaction that has been defining for each of \citeauthor{grudin1990computer}'s levels.
 
-\citeauthor{grudin1990computer} describes the evolution of the user interface from the 1950's to the 1990's though five overall development foci or `levels' for researchers, along with the principle user group for each level.
+\citeauthor{grudin1990computer} describes the evolution of the user interface from the 1950's to the 1990's through five overall development foci or `levels' for researchers, along with the principle user group for each level.
 The five levels can be seen visualised in figure~\ref{foci-interface}.
 
 \begin{figure}[h]
@@ -19,60 +19,60 @@ The five levels can be seen visualised in figure~\ref{foci-interface}.
    {The development of user interfaces, from \citep{grudin1990computer}.}
    \label{foci-interface}
 \end{figure}
-The levels should not be seen as isolated entities, as there exists interdependencies between the levels, for example before progress can be made to level 2, there might have to be made improvements to the hardware at level 1.
+%The levels should not be seen as isolated entities, as there exists interdependencies between the levels, for example before progress can be made to level 2, there might have to be made improvements to the hardware at level 1.
 
 \subsubsection{Level 1: Interface as hardware}
-At the first level (-1950s) the interface is seen as hardware, understood in the way that the interaction between the user and the computer is defined by the workings of the hardware.
+At the first level (-1950s) the interface is seen as hardware, in the sense that the interaction between the user and the computer is defined by the workings of the hardware.
 So for engineers and programmers, which are the principal users, a central part of the user interaction involves the inner workings of the hardware.
-A common way to interact at the time were, besides modifying the hardware, was though punch cards.
-Punch cards represents digital information by the presence or absence of holes on the card, based on a predefined pattern which the computer can then read.
-The user would use a machine to punch holes in the cards which could contain programming commands or it could be used as an analogue data storage that could later be read by the computer.
+%A common way to interact at the time was, besides modifying the hardware, was through punch cards.
+%Punch cards represents digital information by the presence or absence of holes on the card, based on a predefined pattern which the computer can then read.
+%The user would use a machine to punch holes in the cards which could contain programming commands or it could be used as an analogue data storage %that could later be read by the computer.
 From a human perspective the interaction at the time was very much on the premises of the computer, as the language of interaction was based on things like binary numbers, hexadecimals and memory locations.
 
 \subsubsection{Level 2: Interface as software}
 The second level (1960s-1970s) defines the interface as software.
-As the hardware level is abstracted away by advancements in software and programming languages programmers and the interface they interacts with moves away from the physical inner workings of the computer and onto software.
-The main users now mostly programmers and the interface focus is on the computer, so the user interaction is still on the premises of the computer, with a lack of attention to human factors like legibility of code.
-Programmers interacted with the computer though assembly code, compilers and mathematics as the main focus of the computer was on computations. The notion of a \emph{user interface} was still unarticulated as interface development was focused on programmer efficiency, not human factors.
+As the hardware level is abstracted away by advancements in software and programming languages, programmers, and the interface they interact with, moves away from the physical inner workings of the computer and onto software.
+The main users are now mostly programmers and the interface focus is on the computer, so the user interaction is still on the premises of the computer, with a lack of attention to human factors like legibility of code.
+Programmers interacted with the computer through assembly code, compilers and mathematics as the main focus of the computer was on computations. The notion of a \emph{user interface} was still unarticulated as interface development was focused on programmer efficiency, not human factors.
 
 \subsubsection{Level 3: Interface as terminal}
 At the third level (1970s-1990s) the interface focus moves away from the programming task and onto the terminal where the dominant user is no longer necessarily programmers or engineers, but seen more broadly as \emph{end-users}.
 Grundin also marks this as the start of the discipline of human-computer interaction, including the `human' in the computer interaction.
 The move to the terminals was made possible by advances in visual displays and interactive capabilities, letting the user, to a larger degree than before, interact on more human terms where the interface aids the user in the interaction.
 
-With the emergence of the computer mice and more powerful computers, Graphical User Interfaces (GUIs) became, and still is, the most popular method of interacting with the computer.
-One of the main aspects of the GUI is the use of visual metaphors, inspired by the real world, to guide the users actions and understanding of the system.
-The most well knows being the desktop metaphor that links the office space to the computer with digital folders, documents, trash bins and so on, simulating a physical desktop on the monitor.
+With the emergence of the computer mouse and more powerful computers, Graphical User Interfaces (GUIs) became a popular method of interacting with the computer.
+One of the main aspects of the GUI is the use of visual real-world metaphors, to guide the users actions and understanding of the system.
+The most well-known being the desktop metaphor that links the office space to the computer with digital folders, documents, trash bins and so on, simulating a physical desktop on the monitor.
 The central components of the desktop metaphor being windows, icons, menus and pointers, also known as the WIMP paradigm \citep[chap. 6]{krumm2009ubiquitous}. 
-Using metaphors in this way can ease the user's annexation into the digital world as they, if done properly, creates logical links between knows physical actions and potential digital actions.
+Using metaphors in this way can ease the user's annexation into the digital world as they, if done properly, create logical links between known physical actions and potential digital actions.
 
 \subsubsection{Level 4: Interface as dialogue}
-The use of metaphors as described in level 3 does also somewhat fit into the this level since the GUI, in the previous example, is adapting physical attributes (the office) into the virtual space and in that way incorporates the surrounding environment, though in a static way.
-The fourth level (1980s-) focus on the interface as an interaction dialogue where the interface can be adapted and tailored, by the computer, to the specific user.
-This could for example be computer systems, over time, gathers information about the users interaction patterns enabling it to possibly foresee a user action, and maybe by making it easier to execute the action, assisting the user.
-Grundin sees it as the computer \emph{``is extending its grasp beyond the keyboard and the display surface''} in the sense that the computer now has some knowledge about the user which lets it partake in a two-way dialogue.
+The use of metaphors as described in level 3 does also somewhat fit into this level since the GUI, in the previous example, is adapting physical attributes (the office) into the virtual space and in that way incorporates the surrounding environment, though in a static way.
+The fourth level (1980s-) focuses on the interface as an interaction dialogue where the interface can be adapted and tailored, by the computer, to the specific user.
+This could for example be computer systems that over time gather information about the users interaction pattern enabling it to possibly foresee a user action, and maybe by making it easier to execute the action, assisting the user.
+Grundin sees it as the computer \emph{``is extending its grasp beyond the keyboard and the display surface''}, in the sense that the computer now has knowledge about the user which lets it partake in a two-way dialogue.
 
 \subsubsection{Level 5: Interface as work setting}
 The fifth level (1990s-) takes the interaction dialogue to the work or social setting, moving the interface further away from the computer.
 The principal user is now a group of ``end-users'' and as the interaction takes place in a social setting it is increasingly necessary for the computer to have information about the surrounding environment.
 Social settings are generally complex structures where environment, culture, social structures, group dynamics, and context all play a role in the dynamics of social interaction.
-All of these aspects needs, to some degree, to be design for in a user interface aimed at the work or social setting, increasing the complexity of the system.
+All of these aspects need, to some degree, to be accorded for in a user-interface aimed at the work or social setting, increasing the complexity such a system.
 \blank
-Grundins five levels describes a movement where the interface separates itself from the physical enclosure of the hardware and into the cognitive and social structures of humans.
+Grundins five levels describe a movement where the interface separates itself from the physical enclosure of the hardware and into the cognitive and social structures of humans.
 \citeauthor{grudin1990computer} himself describes it as a continuously \emph{``outward movement of the computer's interface to its external environment''}.
-A concequence of this is that a move in the interaction language also happens, from abstract to natural, in terms of the human readability, as the focus of the interface moves from the computer to its user.
+A consequence of this is that a move in the interaction language also happens, from abstract to natural, in terms of the human readability, as the focus of the interface moves from the computer to its user.
 
-Grundin points out that as of 1990 most work has been focused on the third level but he sees a future where the interface dialogue and the social setting is increasingly influential in the design of computing systems.
+Grundin points out that as of 1990 most work has focused on the third level but he sees a future where the interface dialogue and the social setting is increasingly influential in the design of computing systems.
 This notion is not far away from what \citeauthor{weiser1991computer} presents a year later in his vision of ubiquitous computing \citep{weiser1991computer}.
 
 \subsection{Ubiquitous computing}
-In traditional computer systems there has generally been a strong separation between the physical and the digital, but with ubiquitous computing, not only does the computer's interface move to its external environment, as Grundin pointed to, we also see that the computer itself moves into the environment, creating a stronger link between the physical world and the digital world.
+In traditional computer systems there has generally been a strong separation between the physical and the digital, where with ubiquitous computing, not only does the computer's interface move to its external environment, as Grundin pointed to, we also see that the computer itself moves into the environment, creating a stronger link between the physical world and the digital world.
 A consequence of ubiquitous computing is also a change in the relationship between the user and computers.
-This change can be seen by looking at the evolution of the relationship, which can be roughly split into three generations or eras \citep{weiser1997coming,abowd2012next}.
+This change can be seen by looking at the evolution of the relationship, which can be split into three generations or eras \citep{weiser1997coming,abowd2012next}.
 \begin{itemize}
 \item[] \textbf{1\textsuperscript{st} generation} being terminal based computing where multiple users share the same computer in a many-to-one relationship.
 \item[] \textbf{2\textsuperscript{nd} generation} where the personal computing revolution happens and it becomes possible to have \emph{your} computer, in a one-to-one relationship between the computer and the user.
-\item[] \textbf{3\textsuperscript{rd} generation} being ubiquitous computing, here a one-to-many relationship becomes possible as computers move out into the world and multiple computers now shares and interacts with a single person.
+\item[] \textbf{3\textsuperscript{rd} generation} being ubiquitous computing, here a one-to-many relationship becomes possible as computers move out into the world and multiple computers now share and interact with a single person.
 \end{itemize}
 
 The idea of ubiquitous computing, as presented in \citep{weiser1991computer}, is that a multitude of interconnected computers are embedded seamlessly into the environment as to become invisible, both physical and metaphorical, and integrate into the everyday life of people.
@@ -80,22 +80,23 @@ In contrast to terminal based computing, interactions with these systems can hap
 This points to two key aspects of attaining this vision, \emph{location} and \emph{scale}.
 The purpose of location is to be able to inform the user and adapt to the need of the user based on the location context available to system. 
 The aspect of scale is relevant for creating \emph{``machines that fit the human environment, instead of
-forcing humans to enter their''}, as \citeauthor{weiser1991computer} puts it, where different sized computers can fit into different environments, contexts or functions. 
+forcing humans to enter theirs''}, as \citeauthor{weiser1991computer} puts it, where different sized computers can fit into different environments, contexts or functions. 
 
 This vision of moving a multitude of computers and their user interface out into the world has been the basis inspiration for an array of related research areas, each with a specific focus or approach, but with the shared purpose of going beyond the situated use of the desktop computer, and its WIMP interface, and move into the environment.
 
-We will limit ourself to present only a selected few areas following the ubiquitous vision that we find relevant to our own work and which will be further discussed throughout the thesis.
+We will limit ourself to present only a few selected areas following the ubiquitous vision that we find relevant to our own work and which will be further discussed throughout the thesis.
 
 \subsection{Context Aware Computing}
-As mentioned a key part of ubiquitous computing is location and this has laid the basis for the research area of context awareness.
-There has been many definition of context and context aware computing, the first being by \citet{schilit1994context}, but here we will stick to the definition proposed by \citeauthor{abowd1999towards} as we find it more encompassing. 
+As mentioned, a key part of ubiquitous computing is location and this has laid the basis for the research area of context awareness.
+There have been many definitions of context and context aware computing, the first being by \citet{schilit1994context}, but here we will stick to the definition proposed by \citet{abowd1999towards} as we find it more encompassing. 
 
-\citet{abowd1999towards} defines context-aware computing as \emph{``the use of context to
-provide task-relevant information and/or services to a user''}, where context is \emph{``any information that can be used characterize the situation of an entity''} and entity describing anything that is relevant for the application or user.
+\citet{abowd1999towards} define context-aware computing as \emph{``the use of context to
+provide task-relevant information and/or services to a user''}, where context is \emph{``any information that can be used to characterize the situation of an entity''} and entity describing anything that is relevant for the application or user.
 \citeauthor{abowd1999towards} describe the control loop of context aware applications as three-parted. 
-First the application looks at the incoming context, this is the \emph{who's, where's, when's and what's} and based on this information decides on a \emph{why} the situation is occurring and when the \emph{why} is decided, the application should act accordingly with an appropriate \emph{action}.
+First the application looks at the incoming context, this is the \emph{who's, where's, when's and what's}.
+Based on this information the system decides on \emph{why} the situation is occurring and when the \emph{why} is decided, the application should act accordingly with an appropriate \emph{action}.
 
-One of the main challenges of making such systems is to define which parts of the context that is relevant in a given situation and how it should translate into an action. 
+One of the main challenges of making such systems is to define which parts of the context that are relevant in a given situation and how they should translate into an action. 
 As this is something that the application designer has to encode into the application this can potentially result in conflicting notions of what is relevant context between the user and the application, leading to unwanted actions being executed or unneeded information being shown.
 
 \subsection{Physical Computing}
@@ -103,7 +104,7 @@ As this is something that the application designer has to encode into the applic
 The second key part of ubiquitous computing is scale and the possibility to put computers out into the environment.
 This has led the way for an increasing focus on the physical aspects of computer interaction.
 
-\citet{o2004physical}'s depiction of the user as finger with one eye and two ears, seen in figure~\ref{finger-eye}, illustrates how, in traditional first and second generation computing, the computer sees us based on the way we interact. 
+O'Sullican and Igoe's \citep{o2004physical} depiction of the user as finger with one eye and two ears, seen in figure~\ref{finger-eye}, illustrates how, in traditional first and second generation computing, the computer sees us based on the way we interact. 
 
 \begin{figure}[h]
   \centering
@@ -114,39 +115,39 @@ This has led the way for an increasing focus on the physical aspects of computer
 So how do we go beyond the mouse, keyboard, monitor and speakers and create interfaces that are more fitting for the whole body and its plethora of senses and motor skills? 
 
 \subsubsection{Tangible User Interfaces}
-To better bridge the gaps between the digital and physical world, TUIs attempts to create physical representations of the digital state of the computer, embedding a digital layer into physical objects and environments.
+To better bridge the gap between the digital and physical world, TUIs attempt to create physical representations of the digital state of the computer, embedding a digital layer into physical objects and environments.
 The term was first coined by \citet{ishii1997tangible}, building on Weiser's vision of the ubiquitous and invisible computer.
-\citeauthor{ishii1997tangible} states two main aspects of TUIs as:
+\citeauthor{ishii1997tangible} state two main aspects of TUIs as:
 \begin{itemize}
     \item{allowing users to ``grasp and manipulate'' foreground bits by coupling bits with physical objects, and}
     \item{enabling users to be aware of background bits at the periphery using ambient media in an augmented space}
 \end{itemize}
 The overall goal is to make \emph{bits} tangible by integrating interactive surfaces, graspable objects and ambient media into the everyday physical environment.
-By embodying digital information into tangible objects, TUI systems takes advantage of humans ability to sense, interact and manipulate the physical world. 
+By embodying digital information into tangible objects, TUI systems take advantage of the humans ability to sense, interact and manipulate the physical world. 
 
-Although TUIs provides an interesting connection between the digital bits and physical objects the connection is still limited in the sense that the physical objects generally lacks the dynamic and malleable nature of digital bits.
-So while it is possible for the physical objects to manipulate the digital bit is it not possible for the system to manipulate the physical aspects of the tangibles.
-As so the boundaries between the digital and physical world are not entirely blurred out, but it does definitely let the computer reach out into the world to larger degree than seen before in GUI systems. 
+Although TUIs provide an interesting connection between the digital bits and physical objects the connection is still limited in the sense that the physical objects generally lack the dynamic and malleable nature of digital bits.
+So while it is possible for the physical objects to manipulate the digital bits it is not possible for the system to manipulate the physical aspects of the tangible objects.
+As so the boundaries between the digital and physical world are not entirely blurred out, but it does definitely let the computer reach out into the world to a larger degree than seen before in GUI systems. 
 
 \subsubsection{Shape-changing interfaces}
-Shape-changing interfaces are a relative new subject in the area of tangibles and human-computer interfaces, although the interest in shape-change and actuation itself it not new, as we touched upon in the thesis introduction.
-Interfaces that involves shape-change has been discussed under various different headings such as Kinetic Interaction \citep{parkes2008designing}, Organic User Interfaces \citep{parkes2008designing,holman2008organic}, Actuated Interfaces \citep{poupyrev2007actuation} and Shape-Changing Interfaces \citep{coelho2011shape,rasmussen2012shape}.
-We will use the term Shape-Changing Interfaces (SCIs) as defined by \citeauthor{rasmussen2012shape}, as we see this the most expressive term.
+Shape-changing interfaces are a relatively new subject in the area of tangibles and human-computer interfaces, although the interest in shape-change and actuation itself is not new, as we touched upon in the thesis introduction.
+Interfaces that involve shape-change have been discussed under various different headings such as Kinetic Interaction \citep{parkes2008designing}, Organic User Interfaces \citep{parkes2008designing,holman2008organic}, Actuated Interfaces \citep{poupyrev2007actuation} and Shape-Changing Interfaces \citep{coelho2011shape,rasmussen2012shape}.
+We will use the term Shape-Changing Interfaces (SCIs) as defined by \citet{rasmussen2012shape}, as we see this the most expressive term.
 
-\citeauthor{rasmussen2012shape} defines shape-changing interfaces as
+\citeauthor{rasmussen2012shape} define shape-changing interfaces as
 \begin{quotation}
-  \emph{A shape-changing interface uses physical change of shape as input or output.}
+  \emph{``A shape-changing interface uses physical change of shape as input or output.''}
 \end{quotation}
 and further
 \begin{quotation}
-  \emph{[\ldots] the self-actuation must be controllable so that the object can return to its initial state and repeat the shape change. }  
+  \emph{``[\ldots] the self-actuation must be controllable so that the object can return to its initial state and repeat the shape change.''}  
 \end{quotation}
 
 This enables physical objects to change form in response to either implicit or explicit input and by that, allowing them to physically adapt their form to accommodate new functions or contexts.
 \citep{parkes2008designing} puts it elegantly as ``\emph{No longer does form follow function, form becomes function}'', describing the new possibilities for form changes to define new functions.
 
 Compared to TUIs, SCIs have the ability to let the digital layer affect physical aspects of the interface.
-This is interesting as it allows for a tangible approach that is two-way where the digital state can alter the physical state and visa-versa.
+This is interesting as it allows for a tangible approach that is two-way where the digital state can alter the physical state and vice-versa.
 
 It is, of course, not trivial to design computers that can attain any shape or form with the limitations of conventional materials and the laws of physics setting in.
 In chapter~\ref{ch:jamming} we will further elaborate on SCIs and explore a concrete approach to the challenge of building such systems called jamming.
@@ -155,11 +156,11 @@ In chapter~\ref{ch:jamming} we will further elaborate on SCIs and explore a conc
 As \citet{grudin1990computer} mentions, the computer is reaching out.
 As we have seen throughout our account of the evolution of interfaces there is a clear tendency that the computer has both an increasing amount of information about the environment, but also an increasing potential to affect the environment and the objects in it.  
 
-The vision of ubiquitous computing has had a remarkable influence on a wide range of different technological areas in the last two decades, as a vision that seeks the possibilities of the future in terms of how humans and computers interacts and integrates with each other.
+The vision of ubiquitous computing has had a remarkable influence on a wide range of different technological areas in the last two decades, as a vision that seeks the possibilities of the future in terms of how humans and computers interact and integrate with each other.
 Looking at the current literature about the future of computing there seems to be an increasing consensus that the era of ubiquitous computing, as the dominant vision for the future of computing, is now more becoming a vision of the past.
 
-\citet{bell2007yesterday} calls Weiser's vision from 1989 a vision of yesterday's tomorrow to note that, from our present day perspective, the vision is outdated and builds on a past that is no longer timely.
-\citeauthor{bell2007yesterday} sees ubiquitous computing as a vision already come true, but in a different form than what was envisioned by Weiser.
+\citet{bell2007yesterday} call Weiser's vision from 1989 a vision of yesterday's tomorrow to note that, from our present day perspective, the vision is outdated and builds on a past that is no longer timely.
+\citeauthor{bell2007yesterday} see ubiquitous computing as a vision already come true, but in a different form than what was envisioned by Weiser.
 The radical transformation of the role of computers and the relationship between computers and people, as Weiser envisioned, is already here as computers permeate our everyday life, both invisibly, as almost all electrical objects today have embedded chips, and visible in mobile phones, laptop and desktops, GPS's, smart watches ect.
 
 \citet{abowd2012next} also notes that Weiser's vision has to some extend become reality and that we are beginning to pass the 3\textsuperscript{rd} generation of computing.
@@ -168,32 +169,34 @@ This is of course a complex and difficult question to answer.
 
 \citeauthor{abowd2012next} suggests a future where the human-computer experience is more conjoined than ever, blurring the boundaries between them.
 One aspect of this could be in cloud computing\footnote{http://en.wikipedia.org/wiki/cloud\_computing} that broadly seen refers to services and applications that are made available over a network.
-Examples could be data storage, computing power, back-up services or applications which makes traditional desktop applications available through the Internet.
-In this sense, future devices will be able to adapt to whoever is currently using it, as all relevant information will available from the cloud.
-Following this, devices and their services no longer have to be closely tied together, leading the way for genetic multi purpose devices that delivers services on demand.
+Examples could be data storage, computing power, back-up services or applications which make traditional desktop applications available through the Internet.
+In this sense, future devices will be able to adapt to whoever is currently using them, as all relevant information will be available from the cloud.
+Following this, devices and their services no longer have to be closely tied together, leading the way for genetic multi-purpose devices that deliver services on demand.
 Taking this further he notes that in the future
 \begin{quote}
 \emph{[\ldots] our own physical being and our sense of identity is no longer easily distinguished from elements of computing.}
 \end{quote}
 Adding to the suggestion that the boundaries between computers and people, to a large degree, will disappear.
 
-\citet{ishii2012radical} presents an alternative vision for the future, though not entirely unrelated.
-\citeauthor{ishii2012radical} presents the idea of \textit{Radical Atoms}, a vision for the future of \textit{human-material interaction} or what they call \textit{material user interfaces}.
+\citet{ishii2012radical} present an alternative vision for the future, though not entirely unrelated.
+\citeauthor{ishii2012radical} present the idea of \textit{Radical Atoms}, a vision for the future of \textit{human-material interaction} or what they call \textit{material user interfaces}.
 The vision is that, when interacting with tangibles, all digital information should have a physical manifestation to allow direct interaction, by having dynamic physical materials that, bidirectionally coupled, can reflect the digital states physically and translate physical states into digital state.
 
 \begin{figure}[h]
   \centering
       \includegraphics[width=0.9\linewidth]{figures/radicalatoms}
-  \caption{Ishii's view on the relationship of digital and physical bits from GUI through TUI to Radical Atoms \citep{ishii2012radical}.}
+  \caption{Ishii et al.'s view on the relationship of digital and physical bits from GUI through TUI to Radical Atoms \citep{ishii2012radical}.}
    \label{radicalatoms}
 \end{figure}
 
 Figure~\ref{radicalatoms} aptly illustrates the changing relationship between the physical and digital world from GUI to TUI to Radical Atoms, where SCIs could be placed somewhere between TUI and Radical Atoms.
 
-Both \citeauthor{ishii2012radical} and \citeauthor{abowd2012next} points to adaptability a key point in the future of computing.
+Both \citeauthor{ishii2012radical} and \citeauthor{abowd2012next} point to adaptability as a key point in the future of computing.
 \citeauthor{abowd2012next} focuses on the more software-related aspects of a future-to-come and properly a more ``approximate-future'' than \citeauthor{ishii2012radical}'s material based adaptability.
 As the vision of Radical Atoms bases itself on a hypothetical material that has yet to come, this vision must be seen as further out in the future, even though we today are a large step closer compared to when Sutherland envisioned his Ultimate Display in 1965. 
 \blank
-In this thesis we try to give a contribution to one of the directions that future computing can take, a direction that, from our view, is ubiquitous in spirit but focus on new materials and interaction possibilities, and new relationships between computers and humans.
+\todo{marianne: bullet-list}
+In this thesis we try to give a contribution to one of the directions that future computing can take, a direction that, from our view, is ubiquitous in spirit but focuses on new materials and interaction possibilities, and new relationships between computers and humans.
 We see potential in interfaces that are able to adapt, both in form, function, and construction and behave on the premises of the user, giving the user functions on-demand.
-We argue this fits nicely into both the vision of \citeauthor{abowd2012next} and \citeauthor{ishii2012radical}, perhaps putting our contribution somewhere into the yet to be defined 4\textsuperscript{rd} generation of computing.
+We argue this fits nicely into both the vision of \citeauthor{abowd2012next} and \citeauthor{ishii2012radical}, perhaps putting our contribution somewhere into the yet to be defined 4\textsuperscript{th} generation of computing.
+
