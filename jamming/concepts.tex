@@ -64,7 +64,7 @@ The blobs are tangible clay-like objects meant to be moulded into creative forms
 Each blob makes a selection of commands available otherwise known from digital interface metaphors, such as \emph{save, open, undo, delete, copy, and paste} which can actuate the blob in different ways.
 These commands give a physical blob a notion of form memory where state is kept over time.
 If needed previously saved forms can be recalled and further work on the form can done.
-More specifically each command means (see also figure~\todo{ref}:
+More specifically each command means (see also figure~\ref{fig:ch:jamming:concepts:blobs:states}):
 \begin{itemize}
 	\item{\emph{Save}: The current form of a blob is saved in memory for later retrieval.}
 	\item{\emph{Open}: A previously saved form can be recalled and the blob actuates itself into the saved state.}
@@ -73,6 +73,14 @@ More specifically each command means (see also figure~\todo{ref}:
 	\item{\emph{Paste}: Set the state of a blob to that of which has been copied.} 
 	\item{\emph{Delete}: Reset a blob so that all state is forgotten.} 
 \end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/jamming/concepts/blobs/state-transitions.pdf}
+  \caption{A visualisation of the different commands}
+  \label{fig:ch:jamming:concepts:blobs:states}
+\end{figure}
+
 The commands are made possible via a cell-based jamming structure and the amount of detail a moulded blob can have is dictated by the resolution of the jamming cells.
 As mentioned earlier this jamming approach makes it possible to separately control the stiffness of each cell.
 So, for example, the \emph{save} command is done by storing a map of the current pressure states of each cell.
