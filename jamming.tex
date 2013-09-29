@@ -14,7 +14,7 @@ Jamming is special kind of technique that can be used to control the stiffness o
 What makes SCIs interesting to AHIs is it's ability to dynamically change the physical properties of an interface element, be it shape, texture, stiffness, position ect.
 This change in physicality can then be the offset for a new temporary interaction possibility that is created for the specific situation, where afterwards it can return to it's initial natural state.
 Compared to TUIs, SCIs have the ability to form a dynamic relationship between the physical objects and the digital state of the system, allowing both the user and the computer to change the physical state of an object to match its digital state.
-These aspect aligns well with the definition of AHIs that we presented earlier in section~\ref{adhoc:definition}.
+These aspect align well with the definition of AHIs that we presented earlier in section~\ref{adhoc:definition}.
 \blank
 The process of our exploration of SCIs has, at times, been somewhat discouraging as we have proceeded to learned the lessons of the difficulty of creating such interfaces.
 We have come to the conclusion that SCIs are indeed non-trivial to build and prototype, a lesson that we think everyone who has worked on SCIs must have experiences at some point, although it has not been widely mentioned in the literature. 
@@ -54,15 +54,46 @@ So while we did not end up with a finished, ready-to-test prototype we did still
 
 \section{Discussion}
 
-In this chapter we have introduced jamming as an enabling technology for shape changing interfaces.
+
 * types of shape-change
 
 * covered related work - egenskaber og problematikker + hvad vi har laert
 
+As mentioned in the introduction working with SCIs is intrinsically complex and the jamming technique is no exception.
+One thing that we do find convenient and positive about the technique is that is quite easy to make simple mock-up prototypes that do exhibit the shape-change qualities.
+On top of that, these simple prototypes can be assembled from everyday household equipment such as coffee, plastic bags, cleaning gloves, balloons, vacuum cleaner, sticky tape, and other accessories.
+In many ways this makes it straight forward to explore jamming qualities such as shape and viscosity change which gives a good insight to the potentials of jamming.
+But when more sophisticated setups are needed, for instance cell-based jamming, and when the individual elements need to be controlled and interact in the right way, things get complicated.
+
+Jamming allows for many of the types of shape-change categorised by \citet{rasmussen2012shape}.
+In its simplest form, namely basic jamming (cf. figure~\ref{fig:ch:jamming:approaches:basic}) viscosity, texture and form are the primary types of shape-change possible with jamming.
+But when the technique is combined with other means of actuation that can affect the jamming volume (cf. cell-based jamming in figure~\ref{fig:ch:jamming:approaches:cell}) the types of shape-change possible are expanded to include volume and orientation (as output) as well as accentuating the primary types.
+Other types such as spatiality and the non-topological types adding/subtracting and permeability are not directly possible with jamming as the technique requires a bounded and non-perforated volume to function.
+
+\citet{follmer2012jamming} demonstrated that jamming also has the potential for providing rich user feedback. 
+Haptic feedback through stiffness control (viscosity) was presented in the projects Transparent Haptic Lens and Behind-The-Tablet.
+These examples were both done with basic jamming volumes which shows that it is a simple and straight-forward approach to this kind of haptic feedback compared to a mechanical alternative.
+
+
 
 
 \todo{Maybe some Gaver (research through design) and (Alternatives, conceptual design proposals )}
-\todo{gentag at SCIs er svaere at konstruere}
+%\todo{gentag at SCIs er svaere at konstruere}
 \todo{jamming er en interessant approach til AHIs, men andre approaches kunne ogsaa vaere interessante at undersoege}
-\todo{jamming er bedst til nogle transformationer, pil til SCI}
+%\todo{jamming er bedst til nogle transformationer, pil til SCI}
+%\todo{hvad har vi laert ift jamming}
 \todo{hvad har vi laert ifht AHIs}
+
+\section{Conclusions}
+In this chapter we have introduced jamming as an enabling technology for shape changing interfaces and explained the mechanics of particle jamming.
+The current range of research projects with jamming within mechanical engineering and HCI has been covered.
+Though the number of jamming-related contributions are few, promising applications and potentials have been presented.
+In any case, we are certain that the contributions from researchers such as \citet{follmer2012jamming} and \citet{matoba2012claytricsurface} are not the last we have seen of the jamming technique within HCI.
+
+Our own explorations with the jamming technique has resulted in three concepts that address the first of three approaches to constructing ad hoc interfaces, which we presented in \autoref{ch:adhoc:defining-ahi}:
+\begin{enumerate}
+	\item{\emph{Using shape change as the construction mechanism.}}
+\end{enumerate}
+The first concept, \emph{\nameref{ch:jamming:concepts:dynamic_input}}, was an exploration of dynamic and flexible interfaces for input controls, such as buttons, sliders, and knobs.
+The second, \emph{\nameref{ch:jamming:concepts:playful_blobs}}, looked into physical objects with digital qualities which could change shape to fit a specific purpose, be it for clay-like moulding or as dynamic building blocks.
+The third concept, \emph{\nameref{ch:jamming:concepts:improvised_furniture}}, explored the concept of highly configurable home where otherwise static components allow of surface deformation.
