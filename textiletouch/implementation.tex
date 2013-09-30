@@ -12,11 +12,11 @@ Our hope is that this will give a better understanding of the rationale behind o
 
 \subsection{Iteration 1}
 \label{ch:textiletouch:it1}
-The goal of our first iteration of the prototype was to ensure that the we had construction principles and the right materials for constructing a touch and pressure sensitive fabric, with only off-the-shelf materials and tools.
+The goal of our first iteration of the prototype was to ensure that we had construction principles and the right materials for constructing a touch and pressure sensitive fabric, with only off-the-shelf materials and tools.
 So this first prototype serves more as a proof-of-concept construction.
 
 \subsubsection{Construction principles}
-As a first iteration of our prototype we applied the principles from Pressure Sensor Matrix\footnote{http://www.instructables.com/id/Pressure-Sensor-Matrix/}, to construct a simple 2x3 touch pad in neoprene, seen in figure~\ref{prototype_1}, and a bend sensor for simple testing, also seen in figure~\ref{prototype_1}.
+As a first iteration of our prototype we applied the principles from Pressure Sensor Matrix\footnote{http://www.instructables.com/id/Pressure-Sensor-Matrix/}, to construct a simple 2x3 touch pad in neoprene, as seen in figure~\ref{prototype_1}, and a bend sensor for simple testing, also seen in figure~\ref{prototype_1}.
 The prototype consists of three layers as depicted in figure~\todo{ref}, connected to an Arduino\footnote{http://www.arduino.cc/} for input/output data that is sent to Processing\footnote{http://processing.org/} for data visualization.
 
 \begin{figure}[h]
@@ -27,10 +27,10 @@ The prototype consists of three layers as depicted in figure~\todo{ref}, connect
 \end{figure}
 
 The top layer is made of 3 mm thick neoprene from an old mouse pad with one long conductive thread, made of stainless steel fibers, sewn into it.
-Neoprene is easy to work with and gives a natural force-feedback when touched because of its thickness, \hl{but lacks the naturalness and flexibility of normal fabric used for clothing}.
-The middle layer made from anti-static polymer bags that are normally used to protect electronics. 
-Some types of anti-static bags, such as the ones we have used, acts as semi-conductors with piezoresistive capabilities and therefore fits in a FSR sensor.
-We have tested three different types of anti-static bags, two  transparent and one black, but only black ones are piezoresistive.
+Neoprene is easy to work with and gives a natural force-feedback when touched because of its thickness, but lacks the naturalness of normal fabric used for clothing.
+The middle layer is made from anti-static polymer bags that are normally used to protect electronics. 
+Some types of anti-static bags, such as the ones we have used, act as semi-conductors with piezoresistive capabilities and therefore fits in a FSR sensor.
+We have tested three different types of anti-static bags, two transparent and one black, but only black ones are piezoresistive.
 We do not know if this is the general case as we only had a limited number of samples.
 The bottom layer is another layer of neoprene, but with separate conductive stitchings for each of the 2 x 3 cells.
 The setup is illustrated in figure~\ref{layers_iteration1}.
@@ -56,8 +56,9 @@ By sending a 5V signal into the single top layer stitch, each of the six (\(2*3\
 As pressure is applied to the different sections the voltage drop at the individual grid locations can now be measured with the analog input pins on the Arduino.
 The ADC on the Arduino then translates the measured voltage, between 0--5V, into the amount of pressure that is applied to each of the cells, as a number between 0--1023.
 The measured numbers will never reach the extremes as there is always some amount of resistance in the material.
-A single layer of our anti-static bags have resistance values from around 180-200 KOhms, with little to no pressure applied, down to around 1.8 kOhms when pressed hard.
-Depending on the piezoresistive material and the construction of the sensor, these values will vary, \citep{rosenberg2009unmousepad} reports values between 1.2 MOhms and 2.2 kOhms for their FSR ink.
+A single layer of our anti-static bags has resistance values from around 180-200 KOhms, with little to no pressure applied, down to around 1.8 kOhms when pressed hard.
+Depending on the piezoresistive material and the construction of the sensor, these values will vary.
+\citet{rosenberg2009unmousepad} report values between 1.2 MOhms and 2.2 kOhms for their FSR ink.
 
 \begin{figure}[h]
   \centering
@@ -72,20 +73,20 @@ Depending on the piezoresistive material and the construction of the sensor, the
 
 Each of the cells acts in principle as a discrete sensor as they have their own individual output and are not influenced by each other.
 This approach is simple, both in terms of Arduino setup and coding, and can attain the fastest possible update rates as no computation is needed to determine the location of the touch. 
-The data received from the sensors is sent to Processing for visualization as can be seen in figure~\todo{ref} which we have used for testing.
+The data received from the sensors are sent to Processing\footnote{The data visualisation program mentioned earlier} for visualisation as can be seen in figure~\todo{ref} which we have used for testing.
 
 \subsubsection{Iteration 1 conclusion}
 This quite simple prototype showed us that the basic principles for constructing a textile touch surface with the materials we have had access to, is indeed possible.
 One of the major obstacles we found though was the transition from soft electronics (thread and anti-static bags) to hard electronics, as the conductive metal in the threads are woven into normal cotton thread, making soldering extremely hard.
-For this first iteration we made due with glued on tin foil connectors as a quick-and-dirty solution.
+For this first iteration we settled for a simple approach with glued on tin foil connectors as a quick-and-dirty solution.
 
-A major downsides to making touch surfaces as a grid of discrete sensors, as we did in this iteration, is the lack scalability.
+A major disadvantage to making touch surfaces as a grid of discrete sensors, as we did in this iteration, is the lack of scalability.
 There has to be an input pin for each cell in the touch grid you create, so for a given number of rows \(i\) and columns \(j\) you need hardware I/O pins equal to \(i*j\), which is not a suitable for normal micro-controllers which usually have 10--20 I/O pins.
 So with this approach we would, just barely, be able to make a 4 x 4 grid with our Arduino Uno. 
 
 \subsection{Iteration 2}
 \label{ch:textiletouch:it2}
-To combat the lack of scalability in iteration 1 we build a new version of the prototype.
+To combat the lack of scalability in iteration 1 we built a new version of the prototype.
 To increase our touch surface resolution we improved the prototype in two ways, first by an improved construction and sewing approach inspired by rSkin (mentioned in \ref{ch:textiletouch:related:etextiles}) and secondly with interpolating post-processing of the input data inspired by \citep{rosenberg2009unmousepad}. 
 
 \subsubsection{Construction principles}
@@ -93,7 +94,7 @@ For the second iteration we made a new 7 x 7 grid prototype, as seen in figure~\
 We used the same basic three layer principle from iteration 1, but in order to solve the scalability issue the conductive thread is sewn in rows and columns as illustrated in figure~\ref{layers_iteration2_and_3}.
 The principle is to first activate row 0, then read the output on each of the columns, then activate row 1 and read output on all columns, and so on, contentiously scanning the grid one row/column at a time.
 To reduce the sensor noise non active rows and columns are connected to ground throughout the sweep.
-Each finished sweep outputs a pressure map that is sent to our applications.
+Each finished sweep provide a pressure map that is sent to our applications.
 
 \begin{figure}[h]
   \centering
@@ -114,7 +115,7 @@ So for a \emph{j} x \emph{i} grid, the amount of pins needed would be \(\sqrt{j*
 
 As mentioned earlier, if pressure is applied to the piezoresistive material the resistance decreases.
 So if the fabric is bend or deformed in any way, this will happen, as the deformation puts stress on the material.
-To allow the fabric to be bendable while attaining sensitivity we added a function to `reset' the pressure map by taking a snapshot of the pressure map in its bended state and use this snapshot to subtract from the outputted pressure map.
+To allow the fabric to be bendable while attaining sensitivity we added a function to `reset' the pressure map by taking a snapshot of the pressure map in its bended state and use this snapshot to subtract from the active pressure map output.
 
 \begin{figure}[h]
 \centering
@@ -136,20 +137,20 @@ To increase this even further we now go from hardware to software.
 
 \subsubsection{Peak detection and interpolating FSR}
 \label{ch:textiletouch:it2-ifsr}
-If a touch is made between two rows or columns or current approach will register the touch at the closest row/column intersection instead of the true position.
-To improve on this aspect, \citet{rosenberg2009unmousepad} presents a new approach to making FRS sensors called IFSR, or Interpolating Force Sensitive Resistance, in their UnMousePad project. The basic principle is to utilize that each sensor cell has overlapping regions of sensitivity with its neighbours.
-This overlapping sensitivity is due to the fact that pressure at some position would also affect the surrounding neighbours as they are connected though the resistive middle layer.
+If a touch is made between two rows or columns our current approach will register the touch at the closest row/column intersection instead of the true position.
+To improve on this aspect, \citet{rosenberg2009unmousepad} present a new approach to making FRS sensors called IFSR, or Interpolating Force Sensitive Resistance, in their UnMousePad project. The basic principle is to utilize that each sensor cell has overlapping regions of sensitivity with its neighbours.
+This overlapping sensitivity is due to the fact that pressure at some position would also affect the surrounding neighbours as they are connected through the resistive middle layer.
 This causes a spatial drop-off in sensitivity at the surrounding neighbours that is near linear for both the X and Y axis.
 The fact that it is linear on both axes allows for bilinear interpolation to determine the location of touches between the conductive row/column lines, effectively increasing the resolution. 
 
 Compared to the UnMousePad, which uses printed conductors, our fabric approach is a lot less `perfect' in its construction precision.
-At the same time the fabric can bend and twist a lot more that a sheet of polymer, all in all generating a less precise pressure map which translates into less precise interpolation.
+At the same time the fabric can bend and twist a lot more than a sheet of polymer, all in all generating a less precise pressure map which translates into less precise interpolation.
 As a result we have taken a slightly more simple approach to the interpolation than \citep{rosenberg2009unmousepad} and in turn sacrificed some of the possible resolution gain.
 \blank
 For a given touch we first find the max value of the nearest intersection of the touch, point \(P_{max}\).
 Because a touch gives a radial spread of current around itself, the precise location of the touch will always be in the region of the \(P_{max}\).
-As there is a linear drop-off we can now take the readings from the surrounding \((X_{max}\pm1,Y_{max}\pm1))\) and use them them to do a weighted average on both axes to approximate the correct position.
-The new approximated point \(P_{approx}\) will, as a result of the radial spread, have a higher weight than the sensed \(P_{max}\) so we scale the value of \(P_{approx}\) with a factor according to the euclidean distance to \(P_{max}\). 
+As there is a linear drop-off we can now take the readings from the surrounding \((X_{max}\pm1,Y_{max}\pm1))\) and use them to do a weighted average on both axes to approximate the correct position.
+The new approximated point \(P_{approx}\) will, as a result of the radial spread, have a higher weight than the sensed \(P_{max}\) so we scale the value of \(P_{approx}\) with a factor according to the Euclidean distance to \(P_{max}\). 
 
 \todo{maaske lidt mere her}
 
@@ -173,11 +174,11 @@ The new approximated point \(P_{approx}\) will, as a result of the radial spread
 \subsubsection{Iteration 2 conclusion}
 For this type of application where a large number of individual sensor cells are needed the construction approach we have used in this iteration is by far superior to the one from iteration 1.
 It is a more complex setup both in software and hardware but it does in turn enable much larger sensor arrays than before as we showed before with the amount of I/O pins needed.
-As it scales up it is of course more computational heavy on the Arduino CPU as the multiplexers and, in our case, 49 sensor cells needs to be controlled, but as this is still only a 7 x 7 grid we did not experience performance problems.
+As it scales up it is of course more computational heavy on the Arduino CPU as the multiplexers and, in our case, 49 sensor cells need to be controlled, but as this is still only a 7 x 7 grid we did not experience performance problems.
 
 The interpolation point approximation was, to some degree, a success as it enabled us to up-scale the resolution with a factor 5 with only few approximation errors, but when scaled with a factor 10, which was the goal, quite a few errors appeared.
 Many of these errors are due to the sewing of the conductive thread as it, because of the close seams, protrudes a bit where the stitches are, which can be seen by looking at figure~\ref{prototype_2}.
-Also the fact that the precision of the sewing are not machine-accurate somewhat eliminates the linearity that we base our interpolation on, creating errors in the raw data that are hard to even out in the software.
+Also the precision of the sewing, as it is not machine-accurate, eliminates some of the linearity that we base our interpolation on, creating errors in the raw data that are hard to even out in the software.
 
 \subsection{Iteration 3}
 \label{ch:textiletouch:it3}
@@ -187,8 +188,8 @@ Secondly, we wanted to get more reliable raw data from the sensor grid to use fo
 As we were aware of the possibility of generating imprecise data, as we have discussed in the previous iterations, from physical deformation, construction imprecision, material variations and approximation errors, the second focus was to implement a basis for gesture recognition that would function under these constraints.
 
 \subsubsection{Construction Principles}
-We used the same setup of iteration 3 but scaled to a 16 x 16 grid, providing 256 sensor cells after software upscaling, compared to the 49 of iteration 1.
-The prototype was made in linen which is robust but a lot finer and thinner that the sofa textile and the conductive thread was sewed with less close seams to avoid some of the problems from iteration 2.
+We used the same setup for iteration 3 but scaled to a 16 x 16 grid, providing 256 sensor cells after software upscaling, compared to the 49 sensor cells in iteration 2.
+The prototype was made in linen which is robust but a lot finer and thinner than the sofa textile and the conductive thread was sewed with less close seams to avoid some of the problems from iteration 2.
 The prototype can be seen in figure~\todo{ref} and the schematics for the final hardware setup as well as links to the software implementation can be found in appendix \ref{app:textile-touch}.
 
 One of the main challenges in the construction of this iteration was the attachment of the wires to the conductive thread.
@@ -196,8 +197,8 @@ In iteration 1 we tried with glued on tin foil which only worked because we only
 The 14 connections in iteration 2 were connected with alligator clips which, besides not looking elegant, tend to cause deformation of the fabric as they close upon it.
 As we now had 32 connections to deal with we found that using ribbon cables would give a better structure.
 Furthermore, as alligator clips were out of the question and as tin and textile do not work well together we needed to find an alternative for the connection.
-Conductive paint turned out to be a good substitute and worked as a kind ``cold''-soldering method - a secondary feature of the paint.
-As the paint dries it functions like an adhesive but with the added ability of being conductive so you avoid the risk of the glue get in between the two conductors severing the connection, see figure~\ref{fig:ch:textiletouch:barepaint}.
+Conductive paint turned out to be a good substitute and worked as a kind of ``cold''-soldering method - a secondary feature of the paint.
+As the paint dries it functions like an adhesive but with the added ability of being conductive so you avoid the risk of the glue getting in between the two conductors severing the connection (see figure~\ref{fig:ch:textiletouch:barepaint}).
 
 \begin{figure}[t]
 \centering
@@ -221,8 +222,8 @@ In figure~\ref{fig:textiletouch:dataflow} we illustrate each major step in the d
 of our prototype.
 The flow of data starts from sensor data in the \emph{physical layer} read by the Arduino.
 Thereafter it is converted to digital data and streamed to the \emph{processing layer}.
-In the \emph{processing layer} the data goes through several filter stages to optimise the data.
-Lastly the filtered data is delivered to \emph{application layer} where data can be translated into gestures or visualisations.
+In the \emph{processing layer} the data go through several filter stages for optimisation of the data.
+Lastly the filtered data are delivered to the \emph{application layer} where data can be translated into gestures or visualisations.
 We have already covered the principles of the physical layer in \ref{ch:textiletouch:it1} and peak detection and interpolation in \ref{ch:textiletouch:it2}.
 Next we will cover some additional steps in the data flow and the \emph{application layer}.
 
@@ -242,11 +243,11 @@ We have found that averaging over the past \(x = 2\) frames gives the best resul
 In this way noise such as sudden spikes will be reduced while preserving the actual touch values of the frame.
 
 \subsubsection{Peak detection and interpolation}
-The algorithm for detecting touch input and interpolation has generally not changed since iteration 2, see~\nameref{ch:textiletouch:it2-ifsr} in \ref{ch:textiletouch:it2-ifsr}.
+The algorithm for detecting touch input and interpolation has generally not changed since iteration 2 (see~\nameref{ch:textiletouch:it2-ifsr} in \ref{ch:textiletouch:it2-ifsr}).
 
 The new part is that we in iteration 3 also have introduced multi-touch input.
 This is more a proof of concept feature which will not be fully functional and stable for interaction. The reason for this is that our code needs some adjustments to be able to provide proper stroke data to the recognition framework which would require too much implementation time.
-So for now we can visualise multi-touch input and basically use it for drawing, see figure~\ref{fig:textiletouch:multitouch}.
+So for now we can visualise multi-touch input and basic multi-touch drawing (see figure~\ref{fig:textiletouch:multitouch}).
 
 An alternative would be to serve all recorded touch points to the \$N implementation, as opposed to \$P, \todo{but as noted earlier} this would be unsatisfactory slow.
 
@@ -268,7 +269,7 @@ In this way, the harder the touch pressure the more increase in volume.
 
 The dollar family of recognizers were presented earlier in \ref{ch:textiletouch:gesture_recognition}.
 Initially we experimented with the \$N implementation which was able to recognise gestures but with some limitations.
-First of all, the recogniser was sensitive to the ordering of the strokes which meant that the it could fail on the same gesture if drawn from different starting points.
+First of all, the recogniser was sensitive to the ordering of the strokes which meant that it could fail on the same gesture if drawn from a different starting point.
 Secondly, there was a considerable amount of delay before a resulting gesture was found.
 We measured this to be in the area of \(800\) to \(1000 ms\), a latency which in our opinion does influence the user experience.
 This, we found out, is due to the complexity of the template matching in the \$N where the complexity is exponential to the number of strokes made in a gesture, as well as generally more complex algorithm than \$P.
@@ -287,12 +288,12 @@ Also common to both is the ease of adding and removing new gesture templates whi
 For haptic feedback we have used a vibration motor mounted on the rear of the prototype.
 We have tested different patterns of vibration as feedback to find a suitable feedback approach.
 For instance having the motor vibrate shortly for a haptic sensation in response to a matched gesture input. \todo{tell about ``touch hard to begin'' ??}
-Also, using a firm press to active the system with a subsequent short vibration on activation.
-Besides this, we have also tested the motor continuously vibrating in response to touch as an indication of touch being recorded.
+Also, using a firm press to activate the system with a subsequent short vibration on activation.
+Besides this, we have also tested the motor continuously vibrating in response to a touch as an indication of a touch being recorded.
 This continuous vibration seems promising, in our opinion, especially if it is divided in to small intervals of on/off pulsations.
 We are aware that the current vibration motor is not powerful enough to propagate vibrations to the entire surface of our prototype but we believe it will suffice for our evaluation.
 But we also interpret it as being a balance between motor power and material.
-The ability to propagate vibration is also constrained by the choice of materials, and the linen (textile) we have used does not excel in this.
+The ability to propagate vibration is also constrained by the choice of materials, and the linen (textile) we have used does not excel in this respect.
 The ability is limited even further by the linen not being stretched out completely in our prototype.
 
 For testing simple visual feedback on the prototype itself we have installed a single LED which comes up through the textile.
@@ -352,10 +353,10 @@ This has to some degree amended the issue but not fully.
 \end{figure}
 
 An alternative approach is to reduce the spacing again to \(1cm\) or less but that would require quite a few extra wires which we already have quite a few of (see figure~\ref{fig:textiletouch:wires}).
-Furthermore increasing the grid resolution would result in an exponential growth in the amount of data to be transmitted by the micro controller.
-With a \(16x16\) grid we are sending 256 values every frame (\(10ms\)),
+Furthermore, increasing the grid resolution would result in an exponential growth in the amount of data to be transmitted by the micro controller.
+With a \(16x16\) grid we are sending 256 values for every frame (\(10ms\)).
 If we were to lower the spacing to \(1cm\) we would get a grid resolution of \(24x24\) which in turn would require a transmission of 576 values for every frame.
-As our micro controller is already running at over capacity this out of the question for now, but by replacing the micro controller with a more powerful one, as mentioned before, increasing the resolution could become relevant again.
+As our micro controller is already running at overcapacity this is out of the question for now, but by replacing the micro controller with a more powerful one, as mentioned before, increasing the resolution could become relevant again.
 Therefore we see it as a balance between the size of the touch area and the complexity of the hardware setup.
 
 Our exploration of possible interaction feedback has been limited, so further work on this would be appropriate.
