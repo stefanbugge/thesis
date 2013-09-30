@@ -162,14 +162,14 @@ A standardized interaction model for gesture interfaces is still a long way off 
 The increase in mainstream use of touch input devices of various types and sizes such as tablets, tabletops and smart phones has resulted in some easily accessible frameworks for doing gesture recognition.
 This is a relatively new thing as earlier gesture recognition was reserved for experts in pattern matching and therefore not quite suitable for user interface prototyping, unless you were able to put a large amount of work into it \citep{wobbrock2007gestures}.  
 
-The dollar family of recognizers \citep{anthony2010lightweight,vatavu2012gestures,wobbrock2007gestures} are some of the most popular frameworks for doing easily implementable 2-D gesture recognition.
-This family of recognizers are all geometric template matchers, which means that they match the user input against a predefined template, and based on an Euclidean distance scoring function, selects the best match between template and input.
+The dollar family of recognisers \citep{anthony2010lightweight,vatavu2012gestures,wobbrock2007gestures} are some of the most popular frameworks for doing easily implementable 2-D gesture recognition.
+This family of recognisers are all geometric template matchers, which means that they match the user input against a predefined template, and based on an Euclidean distance scoring function, selects the best match between template and input.
 \begin{itemize}
-  \item \emph{\$1-recognizer \citep{wobbrock2007gestures}:} is a fast single-stroke recognizer where gestures are represented as ordered series of points (strokes).
-  \item \emph{\$N-recognizer \citep{anthony2010lightweight}:} is an extension of the \$1-recognizer and provides multi-stroke support at a cost in speed and performance.
-  \item \emph{\$P-recognizer \citep{vatavu2012gestures}:} is a point-cloud recognizer, meaning that gestures are represented as unordered clouds of points, which provides support for both single and multi-stroke but with faster performance than \$N. 
+  \item \emph{\$1-recogniser \citep{wobbrock2007gestures}:} is a fast single-stroke recogniser where gestures are represented as ordered series of points (strokes).
+  \item \emph{\$N-recogniser \citep{anthony2010lightweight}:} is an extension of the \$1-recogniser and provides multi-stroke support at a cost in speed and performance.
+  \item \emph{\$P-recogniser \citep{vatavu2012gestures}:} is a point-cloud recogniser, meaning that gestures are represented as unordered clouds of points, which provides support for both single and multi-stroke but with faster performance than \$N. 
 \end{itemize}
-We have implemented and experimented with the \$N and \$P recognizer to determine which one performs the best with our data input, this will be discussed in \nameref{ch:textiletouch:gesture_implementation} in \ref{ch:textiletouch:gesture_implementation}.
+We have implemented and experimented with the \$N and \$P recogniser to determine which one performs the best with our data input, this will be discussed in \nameref{ch:textiletouch:gesture_implementation} in \ref{ch:textiletouch:gesture_implementation}.
 
 \section{Design principles}
 \input{textiletouch/concept.tex}
