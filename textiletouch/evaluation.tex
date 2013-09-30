@@ -59,16 +59,94 @@ We discussed a larger deployment where a low resolution grid of tiny LEDs could 
 This approach is again limited to applications where the surface material allows for illumination to shine through, but it does extend beyond textile materials.
 
 \subsection{The prototype as a controller for existing devices}
+
+Several participants pointed out the ``coolness'' of being able to control devices in the environment without having to find the appropriate remote control or having to approach the specific device.
+Most participants were quick to come up with their own examples of what could be controlled by the prototype, as their imagination was spurred by the interaction.
+For example, being able to control the curtains or the radiator for heating adjustments from ones current position by using the nearest touch sensitive surface.
+We interpret this creativity as being due to the open-ended nature of the prototype.
+Figure~\ref{fig:textiletouch:eval:kaia-gitte-troels} contains a selection of photos from an initial small test-evaluation at the office with some friends.
+
+\begin{figure}[t]
+        \centering
+        \begin{subfigure}[b]{0.44\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/touch/evaluation/kaia-gitte-troels/alle}
+                \label{fig:textiletouch:eval:kaia-gitte-troels:alle}
+        \end{subfigure}%
+        \hspace{0.02\textwidth}
+        \begin{subfigure}[b]{0.44\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/touch/evaluation/kaia-gitte-troels/kaia-gitte2}
+                \label{fig:textiletouch:eval:kaia-gitte-troels:kaia-gitte2}
+        \end{subfigure}
+
+        \begin{subfigure}[b]{0.9\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/touch/evaluation/kaia-gitte-troels/kaia-gitte}
+                \caption{The prototype and audio/video applications is being tested.}
+                \label{fig:textiletouch:eval:kaia-gitte-troels:kaia-gitte}
+        \end{subfigure}
+        \caption{An initial evaluation at the office.}
+        \label{fig:textiletouch:eval:kaia-gitte-troels}
+\end{figure}
+
+Our teenager participant was quite eager to try out the prototype.
+He had an intuitive understanding of the interaction and went about exploring the possibilities as soon as he sat down with it.
+This resulted in him finding and making sense of some of the gesture-mappings without us instructing him beforehand, such as ``if this means volume up, this must be down \dots''.
+Figure~\ref{fig:textiletouch:eval:sebastian} contains a selection of images from the evaluation with him.
+He was also fond of trying alternative ways of creating touch input, for example by moving the prototype to the floor and using his feet, see figure~\ref{fig:textiletouch:eval:sebastian:feet}.
+This was must for the fun of it and not really a serious contribution.
+
+\begin{figure}[t]
+    \centering
+    \begin{subfigure}[t]{0.44\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/table}
+        \caption{Using the prototype as a tablecloth.}
+        \label{fig:textiletouch:eval:sebastian:table}
+    \end{subfigure}%
+    \hspace{0.02\textwidth}
+    \begin{subfigure}[t]{0.44\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/sofa_behind_seb}
+        \caption{Teenager using the video application.}
+        \label{fig:textiletouch:eval:sebastian:sofa_behind}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.44\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/sofa_infront_seb}
+        \caption{Teenager trying the prototype.}
+        \label{fig:textiletouch:eval:sebastian:sofa_front}
+    \end{subfigure}%
+    \hspace{0.02\textwidth}
+    \begin{subfigure}[t]{0.44\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/feet}
+        \caption{Testing foot input on the floor.}
+        \label{fig:textiletouch:eval:sebastian:feet}
+    \end{subfigure}
+    \caption{Evaluation with teenager during.}
+    \label{fig:textiletouch:eval:sebastian}
+\end{figure}
+
+One participant pointed out that he at home considers his TV remote as an ``extension of his arm'' meaning that he can use it and push the right buttons without having to pay visual attention to it. 
+After playing around with the prototype and the audio/video application for a while he \emph{mentioned} that he could imagine this kind of touch interaction be even more intuitive as ``the remote is in a sense always at the tip of my finger'' after which he commented that his finger doesn't normally disappear.
+\blank
+A general concern regarding the use of gestures is that care must be taken when designing interactions based on gestures.
+As brought up by several participants, they do not want the complexity of having to learn a completely new interaction language.
+In our setup the amount of gesture-based functions implemented was less than 10 which meant that the participants had little or no difficulty in remembering the specific gestures, but in a more complex system problems would definitely arise.
+Our chosen gestures were quite simple (lines, crosses, arrows, etc) and functions in the audio and the video application that were similar used the same gesture.
+An example hereof is of course volume control but also a function such as \emph{skip forward} in the audio application was gesture-wise the same as \emph{channel forward} in the video application.
+Another initiative that could lower the learning curve of such a system is to base gestures on the familiarity from other devices such as smart phones, tablets and touchpads.
+A lot of people are familiar with gestures such as swipe, pinch, and two-finger scrolls from other devices but as the dollar family of recognisers do not handle real-time interpretation we have not gone further with this.
+
+
 \todo{\dots}
 \blank
 \begin{verbatim}
 taler til det indre dovendyr (paw)
    rette paa gardiner
-skal i hvert fald ikke blive et komplekst nyt sprog man skal laere
-   ensartet interaktion paa tvaers af applikationer
-teenager forstod med det samme - mega smart ;-)
-  fandt det let at interagere med
-"fjernbetjening er en forlaengelse af min arm" (paw) - dette er dog et lidt vagt modargument
 \end{verbatim}
 
 \begin{figure}[h]
@@ -97,76 +175,6 @@ teenager forstod med det samme - mega smart ;-)
   {Illumination directly beneath touch points.}
   \label{fig:textiletouch:eval:backlighting}
   \end{minipage}
-\end{figure}
-
-\begin{figure}
-        \centering
-        \begin{subfigure}[b]{0.44\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/in_sofa}
-                \caption{\dots}
-                \label{fig:textiletouch:eval:sebastian:sofa}
-        \end{subfigure}%
-        \hspace{0.02\textwidth}
-        \begin{subfigure}[b]{0.44\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/sofa_behind_seb}
-                \caption{\dots}
-                \label{fig:textiletouch:eval:sebastian:sofa_behind}
-        \end{subfigure}
-
-        \begin{subfigure}[b]{0.44\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/sofa_infront_seb}
-                \caption{\dots}
-                \label{fig:textiletouch:eval:sebastian:sofa_front}
-        \end{subfigure}%
-        \hspace{0.02\textwidth}
-        \begin{subfigure}[b]{0.44\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/table}
-                \caption{\dots}
-                \label{fig:textiletouch:eval:sebastian:table}
-        \end{subfigure}
-        \caption{Teenager during evaluation \dots \todo{ret tekst}}
-        \label{fig:textiletouch:eval:sebastian}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-  \begin{minipage}[b]{.8\textwidth}
-    \centering
-    \includegraphics[width=.7\linewidth]{figures/touch/evaluation/sebastian/feet}
-  \caption[Feet \dots]
-  {Feet \dots}
-  \label{fig:textiletouch:eval:sebastian:feet}
-  \end{minipage}
-\end{figure}
-
-\begin{figure}
-        \centering
-        \begin{subfigure}[b]{0.44\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{figures/touch/evaluation/kaia-gitte-troels/alle}
-                \caption{\dots}
-                \label{fig:textiletouch:eval:kaia-gitte-troels:alle}
-        \end{subfigure}%
-        \hspace{0.02\textwidth}
-        \begin{subfigure}[b]{0.44\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{figures/touch/evaluation/kaia-gitte-troels/kaia-gitte2}
-                \caption{\dots}
-                \label{fig:textiletouch:eval:kaia-gitte-troels:kaia-gitte2}
-        \end{subfigure}
-
-        \begin{subfigure}[b]{0.9\textwidth}
-                \centering
-                \includegraphics[width=\textwidth]{figures/touch/evaluation/kaia-gitte-troels/kaia-gitte}
-                \caption{\dots}
-                \label{fig:textiletouch:eval:kaia-gitte-troels:kaia-gitte}
-        \end{subfigure}
-        \caption{Teenager during evaluation \dots \todo{ret tekst}}
-        \label{fig:textiletouch:eval:kaia-gitte-troels}
 \end{figure}
 
 \subsection{Potentials of alternative usages}
