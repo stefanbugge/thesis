@@ -82,6 +82,13 @@ We have explored the use of Bare Conductive, an electric water-based paint, as a
 This electrical paint has some interesting properties as it is easily applied and dries quickly but at the same time, because it is water-based, can be removed with a wet cloth.
 This fits well with our idea of an interface that is quick to make and quick to erase.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/proto3/light-variable-res}
+  \caption{Frames from a video (appendix~\ref{app:videos:cpaint}) where a custom dimmer (variable resistor) is created on the spot, then used to dim the lights, and lastly the dimmer is removed again from the surface of the wall.}
+  \label{fig:ch:proto3:variable}
+\end{figure}
+
 Inspired by Brand's earlier mentioned six S's \citep{brand1995buildings} we have envisioned a concept where we, instead of hiding it, try to expose the infrastructures of the house.
 It is the norm to hide as much of the ``working guts'' of a building from sight.
 Electrical wiring and plumbing are embedded into the building itself hindering easy change or modification to these systems.
@@ -90,19 +97,6 @@ At the same time it is a move against the tendency of always hiding away the com
 
 We have taken an offset in the wiring of the house and envision a concept where the wires and switches in the house can be painted on the walls with both the traditional functionality of wires, but also the added ability to create visual interactive expressions.
 As the shape of the paint will affect the resistance, as mentioned earlier, this will provide the ability to, at least in some fashion, to have the visual expression correlate with the interactive capabilities, combining aesthetic expression with functionality.
-
-We have made a simple video prototype showing the possibility of creating a dynamic light switch on the wall and removing it again, see figure~\ref{fig:ch:proto3:variable} and also a video in appendix~\ref{app:videos:cpaint}.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=.9\textwidth]{figures/proto3/light-variable-res}
-  \caption{Frames from a video (appendix~\ref{app:videos:cpaint}) where a custom dimmer (variable resistor) is created on the spot, then used to dim the lights, and lastly the dimmer is removed again from the surface of the wall.}
-  \label{fig:ch:proto3:variable}
-\end{figure}
-
-Frames from two other video prototypes are shown in figure~\ref{fig:ch:proto3:wallpaint}.
-In these videos a room is shown with its wiring exposed to the inhabitants as a mix of functionality and wall art that can be remade or adapted as the user fit.
-Please refer to our videos that these frames where taken from, see appendix~\ref{app:videos:cpaint}.
 
 \begin{figure}[h]
   \centering
@@ -121,15 +115,29 @@ Please refer to our videos that these frames where taken from, see appendix~\ref
   \label{fig:ch:proto3:wallpaint}
 \end{figure}
 
-So can a paint like Bare Conductive provide ad hoc capabilities?
+We have made a simple video prototype showing the possibility of creating a dynamic light switch on the wall and removing it again, see figure~\ref{fig:ch:proto3:variable} and also a video in appendix~\ref{app:videos:cpaint}.
+
+Frames from two other video prototypes are shown in figure~\ref{fig:ch:proto3:wallpaint}.
+In these videos a room is shown with its wiring exposed to the inhabitants as a mix of functionality and wall art that can be remade or adapted as the user fit (please refer to our videos that these frames where taken from, see appendix~\ref{app:videos:cpaint}).
+The videos and figures shows both the functional aspect conductive paint and the possibility for artistic expressiveness in the creation of the interface.
+
+On a more technical note we noticed a high shift in conductivity in relation to the dryness of the paint.
+While we had anticipated some variation in resistivity, we had not anticipated the degree of variation that we saw between wet, semi-dry and dry paint.
+A couple of minutes after the paint was applied we measured resistance around 200k Ohm on a 1 meter long and just under 2 cm wide line, which iwas far more than anticipated and too much for practical use.
+After around fifteen minutes the paint was totally dry and the same stretch of paint measured 7k Ohm and was therefore usable, even with low voltages.
 
 \section{Discussion}
 When we started out our exploration of paint as a medium for AHIs we thought that it would be easy to conceptualize and show off some compelling and interesting examples of how this could be used.
 We wanted to focus less on the supporting infrastructure and more on the possibilities of using paint, more or less exclusively, as the interface and as the defining property for how the interaction worked. 
 However, we quickly became severely limited by the fact that our material only supports conduction and resistance and therefore many of the usually given components in physical computing, such as transistors, gates, diodes etc., are not possible to make on the spot, without supporting infrastructure.  
 
-\todo{interesting stuff goes here}
+The approach of painted interfaces show promise in the aspect of combining functionality and aesthetics.
+This also points back to our goals of creating interfaces that has an inherent function while not in use, as the concept that we have shown here has an aesthetic functionality even when no interaction occurs.
 
-We still \todo{stuff here needs fixing} that the idea of creating the actual material interface on the spot, where the interface is fashioned to your current needs and shaped to your liking, is wildly enticing, though it might not be entirely realistic.
-There is a beauty in the idea of an interface constructed from a simple material, that can be washed away when it is no longer needed, but still provide interesting interacting capabilities.
-In the end though you will always be constrained by the underlying system as there will always be a need for infrastructure to realise real life versions of concepts such as the ones we have presented here.
+An unforeseen aspect of conductive paint is the forced delay that emerges between the construction of the interface and when the interface is ``ready'', as the paint has to dry in order to function.
+This limits the on-demand'ness of this approach as it is not possible to use the interface at once. 
+
+We still think that the idea of creating the actual material interface on the spot, where the interface is fashioned to your current needs and shaped to your liking, is wildly enticing, though it might not be entirely realistic.
+There is a beauty in the idea of an interface constructed from a simple material, that can be removed or washed away when it is no longer needed, and yet still provide interesting interacting capabilities.
+
+In this chapter we have explored just one approach to creating interfaces on the spot and other, possibly more fitting, approaches can surely be found, though we do believe that conductive paint has some interesting qualities, as we have pointed throughout this chapter.
