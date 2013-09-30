@@ -52,11 +52,39 @@ The idea was to get real-time feedback on a display when providing touch input b
 The strokes would then quickly fade away again to not obstruct the viewing experience. 
 In figure~\ref{fig:textiletouch:eval:overlay} we have made an illustration of two semi-transparent strokes overlaying a TV programme as example. 
 
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[t]{.44\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/touch/evaluation/gesture_overlay}
+    \caption{The real-time overlay during touch. This ascending or descending two stroke gesture could for instance mean `volume up' or `down'.}
+  \end{subfigure}%
+  \hspace{0.02\textwidth}
+  \begin{subfigure}[t]{.44\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/touch/evaluation/gesture_overlay_2}
+    \caption{The indication that a `volume' action was performed.}
+  \end{subfigure}
+  \caption{Gesture input as an overlay for real-time feedback.}
+  \label{fig:textiletouch:eval:overlay}
+\end{figure}
+
 % fb: visual through LEDS
 This visual feedback technique could be very convenient when actions are directed towards a device with a digital display, but not possible in a display-less context.
 The single LED we installed beneath the prototype did not prove to be very useful by itself, but its ability to shine through the linen did show potential.
 We discussed a larger deployment where a low resolution grid of tiny LEDs could be embedded beneath the textile surface and follow movements by illuminating at touch points and get a direct visual feedback (see figure~\ref{fig:textiletouch:eval:backlighting}).
 This approach is again limited to applications where the surface material allows for illumination to shine through, but it does extend beyond textile materials.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{.8\textwidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{figures/touch/evaluation/backlid_textile}
+  \caption[Illumination directly beneath touch points.]
+  {Illumination directly beneath touch points.}
+  \label{fig:textiletouch:eval:backlighting}
+  \end{minipage}
+\end{figure}
 
 \subsection{The prototype as a controller for existing devices}
 
@@ -93,9 +121,9 @@ Figure~\ref{fig:textiletouch:eval:kaia-gitte-troels} contains a selection of pho
 Our teenager participant was quite eager to try out the prototype.
 He had an intuitive understanding of the interaction and went about exploring the possibilities as soon as he sat down with it.
 This resulted in him finding and making sense of some of the gesture-mappings without us instructing him beforehand, such as ``if this means volume up, this must be down \dots''.
-Figure~\ref{fig:textiletouch:eval:sebastian} contains a selection of images from the evaluation with him.
+Figure~\ref{fig:textiletouch:eval:sebastian} contains a selection of photos from the evaluation with him.
 He was also fond of trying alternative ways of creating touch input, for example by moving the prototype to the floor and using his feet, see figure~\ref{fig:textiletouch:eval:sebastian:feet}.
-This was must for the fun of it and not really a serious contribution.
+This was however mostly for the fun of it.
 
 \begin{figure}[t]
     \centering
@@ -109,7 +137,7 @@ This was must for the fun of it and not really a serious contribution.
     \begin{subfigure}[t]{0.44\textwidth}
         \centering
         \includegraphics[width=\textwidth]{figures/touch/evaluation/sebastian/sofa_behind_seb}
-        \caption{Teenager using the video application.}
+        \caption{Teenager controlling the video application.}
         \label{fig:textiletouch:eval:sebastian:sofa_behind}
     \end{subfigure}
 
@@ -126,7 +154,7 @@ This was must for the fun of it and not really a serious contribution.
         \caption{Testing foot input on the floor.}
         \label{fig:textiletouch:eval:sebastian:feet}
     \end{subfigure}
-    \caption{Evaluation with teenager during.}
+    \caption{An selection of photos from an evaluation with a young teenager.}
     \label{fig:textiletouch:eval:sebastian}
 \end{figure}
 
@@ -141,42 +169,6 @@ An example hereof is of course volume control but also a function such as \emph{
 Another initiative that could lower the learning curve of such a system is to base gestures on the familiarity from other devices such as smart phones, tablets and touchpads.
 A lot of people are familiar with gestures such as swipe, pinch, and two-finger scrolls from other devices but as the dollar family of recognisers do not handle real-time interpretation we have not gone further with this.
 
-
-\todo{\dots}
-\blank
-\begin{verbatim}
-taler til det indre dovendyr (paw)
-   rette paa gardiner
-\end{verbatim}
-
-\begin{figure}[h]
-  \centering
-  \begin{subfigure}[t]{.44\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/touch/evaluation/gesture_overlay}
-    \caption{The real-time overlay during touch. This ascending or descending two stroke gesture could for instance mean `volume up' or `down'.}
-  \end{subfigure}%
-  \hspace{0.02\textwidth}
-  \begin{subfigure}[t]{.44\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/touch/evaluation/gesture_overlay_2}
-    \caption{The indication that a `volume' action was performed.}
-  \end{subfigure}
-  \caption{Gesture input as an overlay for real-time feedback.}
-  \label{fig:textiletouch:eval:overlay}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-  \begin{minipage}[b]{.8\textwidth}
-    \centering
-    \includegraphics[width=.7\linewidth]{figures/touch/evaluation/backlid_textile}
-  \caption[Illumination directly beneath touch points.]
-  {Illumination directly beneath touch points.}
-  \label{fig:textiletouch:eval:backlighting}
-  \end{minipage}
-\end{figure}
-
 \subsection{Potentials of alternative usages}
 
 The ideas for alternative usages were in general very different from the idea of controlling existing devices.
@@ -189,6 +181,17 @@ Instead of having parents checking up on their child every two minutes these mat
 The sensor data can then be abstracted to inform parents about the activity of their child by recording pressure and movement, giving the concerned parent room to do less frequent check ups.
 This is actually a very simple setup that does not require a high resolution of the sensor grid and the output required could be condensed to simple states such as, whether the toddler is on the mat and the level of movement activity.
 
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{.8\textwidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{figures/touch/evaluation/softtiles}
+  \caption[Toddler on a foam floor mat with puzzle-like tiles for extensibility.]
+  {Toddler on a foam floor mat.}
+  \label{fig:textiletouch:eval:softtiles}
+  \end{minipage}
+\end{figure}
+
 % elders
 Elderly people with limited physical abilities or people with Parkinson's disease have a tendency to fall over easily.
 One of the approaches in reducing the consequences of a fall is to give the elders assistive devices such as wearable fall detectors which can automatically release an alarm in the event of a fall.
@@ -196,9 +199,6 @@ An alternative approach, which does not require body equipment, could be to prep
 Some may base their sense of security in a physical wearable device while others find it inconvenient, a source of irritation, or maybe even an exceedance of personal privacy. 
 With safety measurements invisibly integrated into the home the sense of security may be directed towards the scope of the home as a whole.
 
-% handicap
-Some disabled people with hindered mobility \todo{mere eller slet}
-\blank
 % Home security
 During the evaluations we also discussed a scenario of home security regarding the front door of ones home.
 In this scenario we imagined a blank door with no handle and no lock and thereby no need for a key.
@@ -224,57 +224,32 @@ Being integrated as part of a madras or a bed sheet it would be unnoticeable for
 
 This application does not really fall under the category of AHIs, but it is mentioned here for the potential of a discrete and unobtrusive product as a continuation of the self-tracking movement.
 
-
-\begin{figure}[h]
-  \centering
-  \begin{minipage}[b]{.8\textwidth}
-    \centering
-    \includegraphics[width=.7\linewidth]{figures/touch/evaluation/softtiles}
-  \caption[Toddler on a foam floor mat with puzzle-like tiles for extensibility.]
-  {Toddler on a foam floor mat.}
-  \label{fig:textiletouch:eval:softtiles}
-  \end{minipage}
-\end{figure}
-
-\begin{verbatim}
-**** Paw + Morten ****
-* tegning paa overflader: "hvis danmark nu er her ... og holland her, saa ..." 
-	- for at forklare ting.
-* boernevaerelse - legemaatte, hvor foraeldre kan se aktivitetsniveau for 
-	deres unger og dermed ikke behoever at tjekke op paa dem hele tiden.
-* handikaphjem
-	* vildt mange ting der skal styres
-    * mobilitet er begraenset
-* aeldrehjem
-    * crash taeppe - folk med parkison der ofte vaelter eller lign.
-        * eller alle flader
-    * "hvis man ikke har noget paa kan det ikke tages" - nuvaerende situation 
-		hvor aeldre faar "halsbaand" (falde-detektor) paa, som de tager af i tide og utide.
-* Sikkerhed. Den usynlig noegle - man skal vide hvor man input delen er for 
-	at kunne lave en "adgangsgestik".
-    * Eller det, at mennesker har en unik "haandskrift" der kan anvendes 
-		paa touch overfladen.
-    * doermaatte
-\end{verbatim}
-
 \section{Conclusions and future work for Textile Touch}
 \label{ch:textiletouch:futurework}
 
+In this chapter we have explored the second of three approaches to constructing ad hoc user interfaces, namely
+
+\begin{quotation}
+  \emph{2. Through invisible interfaces embedded into the physical environment.}
+\end{quotation}
+
+This exploration has resulted in the prototype Textile Touch which is a textile-based generic touch surface.
+Textile Touch was constructed to be embedded into the surfaces of the home environment to enhance with a digital layer for interaction.
+To explore more advanced touch interactions the prototype was programmed to recognise various gestures which we exemplified by a scenario of controlling existing devices of the home. These gestures are then mapped to control specific functions of an implemented audio/video application as a real-world scenario.
+
+We do not consider Textile Touch as a final prototype but more an explorative prototype which should be used to explore and reveal potential applications and use-contexts.
+These potentials have been addressed during three evaluations where both our test application and the call for alternative activities have been discussed.
+The evaluations have shown that the prototype worked well enough to be tested 
+
+
+
 There are several points about the prototype that are candidates for future work.
 
-% Multitouch
-On the technical side there is room for improvement.
-As the technology allows for multi-touch input it would be a great improvement for the user experience.
-Multi-touch provides a much richer interaction style \todo{reference?} compared to single-touch and has become a standard in modern smart phone displays and laptop touchpads, most notably for scrolling, zooming and rotation.
-The gesture recognition framework used for the prototype, \$P, will work just fine with multi-touch and will not require further adjustment as the method of input is totally decoupled from the recognition framework. \todo{though gestures or symbols are not the same as real-time gestures on a mouse-pad such as zooming}
-Instead it is our peak detection algorithms that need to be reimplemented and take multiple peaks in to account.
-Figure~\todo{ref} shows a frame of input where several peaks made by finger inputs are detected. \todo{provide reason for not implementing multi-touch in the firstplace?}
+On the technical side we have already touched upon areas that could benefit from improvement.
+Introducing multi-touch would greatly improve the user experience with a richer interaction style compared to that of single-touch.
+Combining multi-touch with a more real-time based gesture framework would also allow for a more familiar interaction style as pointed out in the evaluation.
+Lastly, feedback through vibrations as a response to touch movements was positively received but the strength and thereby quality of it should very much be improved.
 
-As can be seen in the figure every peak is surrounded by some noise created by finger pressure propagating away from the peak spot.
-It should be noted that we do not consider values in the immediate proximity of a peak to be noise as we use these values to make interpolation and thereby scale the resolution by a factor of 10x.
-We have already taken steps to reduce this by implementing a simple averaging filter in the software 
-where a sample is an average of \emph{x} previous samples.
-There are also steps to be taken on the hardware side where a noise filter could reduce the signal-to-noise ratio before entering the software part.
 
 \todo{ting der er belyst fra evaluering \dots}
 

@@ -254,6 +254,10 @@ The algorithm for detecting touch input and interpolation has generally not chan
 The new part is that we in iteration 3 also have introduced multi-touch input.
 This is more a proof of concept feature which will not be fully functional and stable for interaction. The reason for this is that our code needs some adjustments to be able to provide proper stroke data to the recognition framework which would require too much implementation time.
 So for now we can visualise multi-touch input and basic multi-touch drawing (see figure~\ref{fig:textiletouch:multitouch}).
+As can be seen in the figure every peak is surrounded by some noise created by finger pressure propagating away from the peak spot.
+It should be noted that we do not consider values in the immediate proximity of a peak to be noise as we use these values to make interpolation and thereby scale the resolution by a factor of 10x.
+We have already taken steps to reduce this by implementing a simple averaging filter in the software 
+where a sample is an average of \emph{x} previous samples.
 
 An alternative would be to serve all recorded touch points to the \$N implementation, as opposed to \$P, but as noted earlier this would be unsatisfactory slow.
 
@@ -306,23 +310,6 @@ For testing simple visual feedback on the prototype itself we have installed a s
 As a variation of the continuous vibration of the motor we have tested the LED in similar manner where it blinks as an indication of input.
 Additionally, the LED will blink to indicate that it has stopped recording strokes and will instead find a matching gesture.
 
-% \begin{figure}[t]
-% \centering
-% \begin{subfigure}[t]{.44\textwidth}
-%   \centering
-%   \includegraphics[width=.9\linewidth]{figures/touch/feedback_haptic}
-%   \caption{A vibration motor mounted on the rear side of the prototype for haptic feedback.}
-%   \label{fig:ch:textiletouch:feedback:haptic}
-% \end{subfigure}%
-% \hspace{0.02\textwidth}
-% \begin{subfigure}[t]{.44\textwidth}
-%   \centering
-%   \includegraphics[width=.9\linewidth]{figures/touch/feedback_haptic}
-%   \caption{A LED for visual feedback.}
-%   \label{fig:ch:textiletouch:feedback:visual}
-% \end{subfigure}
-% \end{figure}
-
 \subsubsection{Iteration 3 discussion} 
 
 Although the 3rd iteration overcame some of the limitations of the 2nd iteration it still has some constraints that we would like to address.
@@ -335,7 +322,6 @@ A newer and exceedingly faster Arduino Due\footnote{http://arduino.cc/en/Main/Ar
 One of the reasons for scaling up the prototype was to get a larger area for touch input.
 In the process of tripling the dimensions of the prototype (from approximately \(8x8cm\) to \(25x25cm\)) we also increased the amount of rows and columns but with a little extra spacing (\(1.5cm\)) between the individual lines.
 It seems that this spacing has become a bit too large, meaning that pressing in between the intersections of two rows and two columns does not propagate quite enough pressure to the surrounding line crossings, resulting in smaller pressure values (see figure~\ref{fig:textiletouch:intersections}).
-
 We have tried to improve this in our approximation algorithm by multiplying the value with a factor relative to distance away from the line in both axes.
 This has to some degree amended the issue but not fully.
 
