@@ -1,17 +1,17 @@
 %!TEX root = thesis.tex
 Our second prototype will move away from the world of jammable shape changing interfaces and into the surfaces of our environment.
-In this chapter we will take a look at our second construction approach that we suggest for AHIs in chapter~\ref{ch:adhoc} where AHIs are embedded into the surfaces of our environment, ready to emerge when the user has a need for it.
+In this chapter we will take a look at our second construction approach that we suggest for AHIs in chapter~\ref{ch:adhoc} where AHIs are embedded into the surfaces of our environment, ready to emerge when the user has a need for them.
 
-Since the vision of ubiquitous computing was presented researchers have sought to integrate interactive technology into our everyday environment in variety of ways, which can be seen from the diverse selection of research fields that has stemmed from ubiquitous computing such as context awareness, tangible computing and shape changing interfaces.
-In this prototype we have taken Weiser's vision very literally - how do you integrate interaction into the fabric of our everyday environment, i.e. the surfaces that surrounds us?
+Since the vision of ubiquitous computing was presented researchers have sought to integrate interactive technology into our everyday environment in a variety of ways, which can be seen from the diverse selection of research fields that has stemmed from ubiquitous computing such as context awareness, tangible computing and shape changing interfaces.
+In this prototype we have taken Weiser's vision very literally - how do you integrate interaction into the fabric of our everyday environment, i.e. the surfaces that surround us?
 
 In the following sections we explore the possibilities of creating textile touch surfaces with advanced interaction capabilities as an exemplification of how surfaces can be used to interact in the home to create ad hoc interaction.
-We have chosen to work with textiles as an interactive platform as we see unused potential in this area, both for its tangible and aesthetic textural qualities compared to e.g. polymer solutions \cite{rosenberg2009unmousepad}, as well as for the interesting possibilities to allow for DIY solutions to creating interactive surfaces in the home.
+We have chosen to work with textiles as an interactive platform as we see unused potential in this area, both for its tangible and aesthetic textural qualities compared to e.g. polymer solutions \cite{rosenberg2009unmousepad}, as well as for the interesting possibilities to allow for DIY solutions for creating interactive surfaces in the home.
 
 \section{Related work and approaches}
-Before getting into detail with our implementation we will first give an overview of work and approaches that relates to our prototype and have inspired our solution.
-We are, of course, not the first ones to consider the surfaces that surrounds us as interactive potential.
-For example interactive floors such as iFloor \citep{petersen2005floor} and  iGameFloor \citep{gronbaek2007igamefloor}, augmented surface displays in fridges, walls and bowls \citep{taylor2007homes}, interactive tables such as reacTable \citep{jorda2007reactable} or, quite different from the other examples, REVEL that via a digital overlay changes the tactile perception of a physical surfaces \citep{bau2013revel}.
+Before getting into detail with our implementation we will first give an overview of work and approaches that relate to our prototype and have inspired our solution.
+We are, of course, not the first ones to consider the surfaces that surround us as interactive potential.
+For example interactive floors such as iFloor \citep{petersen2005floor} and  iGameFloor \citep{gronbaek2007igamefloor}, augmented surface displays in fridges, walls and bowls \citep{taylor2007homes}, interactive tables such as reacTable \citep{jorda2007reactable} or, quite different from the other examples, REVEL that via a digital overlay changes the tactile perception of physical surfaces \citep{bau2013revel}.
 
 We have separated this section into three different fields that all have influenced the construction and implementation of our prototype work: electronic textiles, touch sensing and gesture recognition.
  
@@ -20,15 +20,15 @@ We have separated this section into three different fields that all have influen
 \begin{quotation}
 \emph{The most profound technologies are those that disappear. They weave themselves into the fabric of everyday life until they are indistinguishable from it. \citep{weiser1991computer}}
 \end{quotation}
-One of the research areas that have stemmed from ubiquitous computing is electronic textiles or `e-textiles', which seeks to integrate electronic and computation into fabric.
-\citet{park2002wearable} presents the E-Textile vision as the paradigm the ``fabric is the computer'', taking Weiser's much quoted description of ubiquitous computing very literal.
+One of the research areas that have stemmed from ubiquitous computing is electronic textiles or `e-textiles', which seek to integrate electronic and computation into fabric.
+\citet{park2002wearable} present the E-Textile vision as the paradigm the ``fabric is the computer'', taking Weiser's much quoted description of ubiquitous computing very literal.
 One of the main obstacles for attaining this vision of the \emph{fabric as the computer} is how to incorporate the underlying computation into the fabric.
-There are generally seen three ways to do it, either by computing \emph{offline}, on a separate system connected to the fabric, \emph{onto}, on components attached to the fabric or \emph{into} the fabric, embedded seamlessly into it \citep{marculescu2003}.
-Today computation is commonly done either offline or onto the fabric, or a combination of the two, but advances in organic electronics and nano technology, for example with organic transistors weaved into fabric \citep{lee2005weave}, suggests that computation embedded into the fabric is not far off.
+Generally seen there are three ways to do it, either by computing \emph{offline}, on a separate system connected to the fabric, \emph{onto} components attached to the fabric or \emph{into} the fabric, embedded seamlessly into it \citep{marculescu2003}.
+Today computation is commonly done either offline or onto the fabric, or a combination of the two, but advances in organic electronics and nano technology, for example with organic transistors weaved into fabric \citep{lee2005weave}, suggest that computation embedded into the fabric is not far off.
 
 E-textile is often seen used as part of wearable computing systems, logically, since clothing as a medium is ever present when people are involved.
 An example of this is the Wearable Motherboard \citep{gopalsamy1999wearable} seen in figure~\ref{sofa_interaction:wearable_motherboard}, also called the ``Smart Shirt'', which is a lightweight monitoring `shirt' that can provide sensory data for use in medical and military contexts.
-The fabric here is used as data paths that facilitates routing of information from any point to any other point on the shirt through conductive fibers embedded in the fabric.
+The fabric here is used as data paths that facilitate routing of information from any point to any other point on the shirt through conductive fibers embedded in the fabric.
 
 \begin{figure}[h]
   \centering
@@ -41,10 +41,10 @@ The fabric here is used as data paths that facilitates routing of information fr
 \end{figure}
 
 E-textiles are not limited to wearable computing and clothing, and can just as well be part of interior design such as curtains, pillows, carpets, upholstery ect.
-Shutters by \citet{coelho2009shutters}, seen in figure~\ref{sofa_interaction:shutters}, is an example of this where shape-memory alloy (SMA) threads are woven into a felt surface creating a curtain-like structure capable change of shape in permeability, used for indoor ventilation control among other things.
+Shutters by \citet{coelho2009shutters} (see in figure~\ref{sofa_interaction:shutters}), is an example of this where shape-memory alloy (SMA) threads are woven into a textile felt surface creating a structure capable of permeability shape-change, used for indoor ventilation control among other things.
 Here the SMA allows for actuation in the shutters while retaining the look, feel and softness of textile without any hard mechanic actuators.  
-Another example from \citet{coelho2008sprout} is Sprout I/O, see figure~\ref{sofa_interaction:sprout}, where a membrane filled with strands of SMA and felt provides textually rich input and actuated output capabilities.
-By measuring the capacitance between the users hand and the SMA threads touches can be registered, enabling stroke-like interaction, by creating an input matrix that register changes in each of the the individual SMA threads.
+Another example from \citet{coelho2008sprout} is Sprout I/O (see figure~\ref{sofa_interaction:sprout}), where a membrane filled with strands of SMA and felt provides textually rich input and actuated output capabilities.
+By measuring the capacitance between the users hand and the SMA threads touches can be registered, enabling stroke-like interaction, by creating an input matrix that registers changes in each of the the individual SMA threads.
 
 \begin{figure}[h]
 \centering
@@ -63,9 +63,9 @@ By measuring the capacitance between the users hand and the SMA threads touches 
 \end{minipage}
 \end{figure}
 
-We have gotten a lot of inspiration from the various ``Do It Yourself'' (DIY) on-line communities related to e-textile craft and crafts in general, notably KOBAKANT DIY\footnote{http://www.kobakant.at/DIY/} and Instructable\footnote{http://www.instructables.com/}.
-Both sites provides guides, tips, and tricks for materials, construction and techniques and have for us been a good starting point for doing an e-textile project.
-One of our inspirations has been rSkin\footnote{http://www.plusea.at/?p=2255 and http://www.instructables.com/id/rSkin-Open-Source-Robot-Skin/}, a project by Hannah Perner-Wilson, which attempts to create a `skin' for a robot arm, made out of textiles, that enables the arm to register intensity and location of touches on the whole arm, seen in figure~\ref{rskin}.
+We have drawn inspiration from the various ``Do It Yourself'' (DIY) on-line communities related to e-textile craft and crafts in general, notably KOBAKANT DIY\footnote{http://www.kobakant.at/DIY/} and Instructable\footnote{http://www.instructables.com/}.
+Both sites provide guides, tips, and tricks for materials, construction and techniques and have been a good starting point for doing an e-textile project.
+One of our inspirations has been rSkin\footnote{http://www.plusea.at/?p=2255 and http://www.instructables.com/id/rSkin-Open-Source-Robot-Skin/}, a project by Hannah Perner-Wilson, which attempts to create a `skin' for a robot arm, made out of textiles, that enables the arm to register intensity and location of touches on the whole arm (seen in figure~\ref{rskin}).
 
 \begin{figure}[h]
   \centering
@@ -91,31 +91,32 @@ In this section we will look at some of the general approaches to a specific for
 Generally seen there are three broad categories for doing multi-touch input sensing: optical, capacitive and resistive \citep{rosenberg2009unmousepad}.
 
 Optical sensing usually involve one or more digital cameras placed behind the touch surface to generate an image of the user's finger to track the interaction.
-As this approach relies on cameras it is typically used for larger applications such as tabletops, since the cameras has to be far enough away to capture entire interactive surface, e.g. reacTable \citep{jorda2007reactable}, seen in figure~\ref{sofa_interaction:reactable} and the tabletop version of Microsoft Surface.
+As this approach relies on cameras it is typically used for larger applications such as tabletops, since the cameras have to be far enough away to capture the entire interactive surface, e.g. reacTable \citep{jorda2007reactable}, seen in figure~\ref{sofa_interaction:reactable} and the tabletop version of Microsoft Surface.
 
 Capacitive sensing systems for touch based interaction rely on the human body's capacitive abilities to acquire the position of the touch on a surface. 
 As a finger touches the surface, the surface's electrostatic field distorts and this change is then measurable as a change in capacitance at some position in a 2D grid.
 The most common example of this approach is the touch surface of modern smart phones and tablets where touch has become the preferred form of interaction, for example Apples iPad seen in figure~\ref{sofa_interaction:ipad}.
 Another example is Touch\'e \citep{sato2012touche} that allow objects and environments to become touch sensitive, allowing everyday objects to become touch interfaces, such as doorhandles, cups, water bottles ect.
 This is done by sending a signal through the object and doing electromagnetic frequency sweeps. 
-These frequencies will change when a touch occur and will change based on the size of the touched on the surface allowing for simple gesture recognition.
-Two limitations of this technology is that pressure can not reliably be measured and that most systems based this technology only works with bare skin touching it.    
+These frequencies will change when a touch occurs and will change based on the size of the touched area of the surface, allowing for simple gesture recognition.
+Two limitations of this technology are that pressure can not reliably be measured and that most systems based on this technology only work with bare skin touching it.    
 
 Resistive sensing is based on the principle of Force Sensitive Resistance (FSR).
-The basic principle of a FSR sensor is to apply current to a semi-conductive material with piezoresistive capabilities then and measure the voltage drop through the material.
+The basic principle of a FSR sensor is to apply current to a semi-conductive material with piezoresistive capabilities and then to measure the voltage drop through the material.
 As stress is applied to the semi-conductor the resistance will decrease and as a result the voltage will drop less. 
-\citet{rosenberg2009unmousepad} describes FSR devices as 
+\citet{rosenberg2009unmousepad} describe FSR devices as 
 \begin{quotation}
 \emph{a continuous electrical switch through which electric conductance increases gradually as external force is applied}
 \end{quotation}
 The simple approach to making a touch sensitive surface, with multiple input areas, is to create a discrete array of FSR sensors in which each sensor has its own input and output channel.
 This has some obvious limitations that will be discussed in iteration 1 in the next section.
-Another approach is to create a row/column grid as seen in previously mentioned rSkin, this approach will be explored in iteration 2.
-Lastly in iteration 3 we will explore the approach suggested by \citet{rosenberg2009unmousepad} to create a device based on IFSR, which is interpolating FSR, to increase the resolution of our prototype.
+Another approach is to create a row/column grid as seen in previously mentioned rSkin.
+This approach will be explored in iteration 2.
+Lastly, in iteration 3 we will explore the approach suggested by \citet{rosenberg2009unmousepad} to create a device based on IFSR (interpolating FSR) to increase the resolution of our prototype.
 Generally seen resistive sensing is a low-cost and easy to implement solution to doing multi-touch interfaces and has the added benefit of being able to measure pressure.
-It does also enable the use of flexible materials such as polymers in UnMousePad, seen wrapped on a coffee cup in figure~\ref{sofa_interaction:unmousepad}, and fabrics, as seen in rSkin where it is wrapped on a robot arm in figure~\ref{rskin}.
+It also enable the use of flexible materials such as polymers in UnMousePad, seen wrapped on a coffee cup in figure~\ref{sofa_interaction:unmousepad}, and fabrics, as seen in rSkin where it is wrapped on a robot arm in figure~\ref{rskin}.
 Though to attain resolutions higher than the size of the underlying grid, a lot of data processing has to be done as seen in \citep{rosenberg2009unmousepad}.
-Also from our own experience with the technology we have seen a lot of input signal noise from the sensor which makes it harder to get accurate position tracking.   
+Also from our own experience with the technology we have observed a lot of signal noise from the sensor input which makes it harder to get accurate position tracking.   
 
 \begin{figure}[h]
   \centering
@@ -147,16 +148,16 @@ Also from our own experience with the technology we have seen a lot of input sig
 \label{ch:textiletouch:gesture_recognition}
 Being able to sense a x-y position or a pressure map on an interactive surface is usually not enough for an application to provide interesting interaction possibilities.
 Adding gestures can be one way to approach the interaction in a more involving, natural and expressive way.
-\citet{baudel1993charade} points out three possible advantages in using gesture based systems:
+\citet{baudel1993charade} point out three possible advantages in using gesture based systems:
 \begin{itemize}
   \item \emph{Natural interaction:} Gestures are a natural and intuitive way to interact that is easy to learn.
   \item \emph{Terse and powerful interaction:} The expressive nature of a gesture can provide the ability for a single gesture to specify both a command and its parameters.
   \item \emph{Direct interaction:} As the hand is used for input no intermediate transducer is needed
 \end{itemize}
-Gestures inherent expressive character does pose a challenge though as the computer system has to interpret the gesture in some way to give it meaning.
-Reversely the user needs to know, or at least have hints at, which gestures that the system understands in order to interact with it.
-Some types of gestures and their interaction meaning has eventually become so common that their behaviour is expected when interacting with touch interfaces today, for example pinch for zoom out, inverse pinch for zoom in and horizontal swipes for shifting though pages.
-A standardized interaction model for gesture interfaces are still a long way off though, at least in our opinion. 
+Gestures inherent expressive character does pose a challenge though, as the computer system has to interpret the gesture in some way to give it meaning.
+Reversely the user needs to know, or at least have hints at, which gestures the system understands in order to interact with it.
+Some types of gestures, and their interaction meaning, have eventually become so common that their behaviour is expected when interacting with touch interfaces today, for example pinch for zoom out, inverse pinch for zoom in and horizontal swipes for shifting through pages.
+A standardized interaction model for gesture interfaces is still a long way off though, at least in our opinion. 
 
 The increase in mainstream use of touch input devices of various types and sizes such as tablets, tabletops and smart phones has resulted in some easily accessible frameworks for doing gesture recognition.
 This is a relatively new thing as earlier gesture recognition was reserved for experts in pattern matching and therefore not quite suitable for user interface prototyping, unless you were able to put a large amount of work into it \citep{wobbrock2007gestures}.  
