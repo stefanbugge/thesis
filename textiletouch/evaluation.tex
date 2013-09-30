@@ -5,28 +5,24 @@ On the one hand, we want to evaluate on the interaction potentials of using simp
 This goal involves using the prototype as an interactive device to control existing devices of the home.
 On the other hand, we want to explore our prototype in alternative contexts.
 This goal should shed light on the prototype's potential of encouraging alternative usages than controlling existing devices.
-
-Evaluations were done over three rounds to get a diversity in age groups of the test participants and also to evaluate both technical and non-technical people.
-\hl{We were interested in shedding light on the diversity of creative ideas a child would bring compared to an adult.
-}
-\todo{mere + afrunding}
+Evaluations were done over three rounds to get feedback from a diverse set of people, both technical and non-technical.
 \blank
 As mentioned earlier in \emph{ \nameref{ch:textiletouch:it3} } we have developed a simple audio and video application which mimics some of the functionality of a television and a stereo system.
 This application was used as the starting point for evaluating the value of using the prototype for controlling existing devices.
-During the evaluation we would connect the prototype setup and computer to the home TV to resemble the real situation and the prototype would for instance be laid as part of the sofa, as a table cloth or attached to a wall as for example wallpaper.
+During the evaluation we would connect the prototype setup and laptop to the home TV to resemble the real situation.
+The prototype would then for instance be laid as part of the sofa, as a table cloth or attached to a wall as for example wallpaper.
 From there on the basics of interaction were understood and further discussions and explorations could be made extending beyond the limits of the audio/video application.
 
 Moving on from looking at the potentials of controlling existing devices of the home, the evaluations would take a more discussion-oriented direction where alternative usages and activities were the primary focus.
-To start off discussions we would present some of our own ideas of potential usages.
-\todo{mere}
+Ideas were brainstormed in plenum while we occasionally would pitch a few of our own ideas for potential usages.
 \blank
 An overall note to be taken from the evaluations was that the participants found it intriguing to try out the prototype.
 Not so much for the purpose of the simple test application, but more for the idea of interacting with textile and using it for digital input.
-Surely they are accustomed to using touch interaction on the small surfaces of everyday consumer devices such as displays and touchpads, but not with inherently non-electronic materials such as textile. \todo{lidt mere generelt her}
+Surely they are accustomed to using touch interaction on the small surfaces of everyday consumer devices such as displays and touchpads, but not with inherently non-electronic materials such as textile.
 \blank
 In the next section we will evaluate on the performance of our prototype and then continue with the conceptual potentials in the subsequent two sections.
 
-\subsection{Performance and feedback}
+\subsection{Performance and interaction feedback}
 
 In this section we will discuss the prototype concerning performance and feedback and some of the improvements suggested during evaluations.
 
@@ -40,13 +36,14 @@ They were all able to adapt to it and perform their intended actions with succes
 In our first evaluation we tested a scenario with a sofa with textile touch embedded.
 The softness of the sofa made touch input readings inconsistent and unstable.
 The reason for this was that the prototype was not part of the sofa construction which makes even small movements and pressure inputs push the prototype around on the surface of the sofa.
-This makes the pattern that constitutes a touch look different than when used on a hard surface which we have not taken into account in our software.
+This makes the pattern constituting a touch look different than when used on a hard surface which we have not taken into account in our software.
+We quickly fixed this by laying a thin plastic cutting board underneath the prototype which made sure pressure propagations were correct again.
 
 % fb: vibrations
-The idea of a pulsating vibration during touch was well received as an indication of touch being recorded and to delimit for example the digital sofa from the physical sofa. \todo{what?}
-As we anticipated, the haptic feedback got some critique and it was pointed out that it should give a stronger sensation.
+The idea of a pulsating vibration during touch was well received as an indication of touch being recorded and as indication of the boundary between the interactive area and the non-interactive area.
+As we anticipated, the quality of the haptic feedback got some critique and it was pointed out that it should give a stronger sensation.
 We had placed the vibration motor in the center beneath the prototype and vibrations were therefore only noticeable in that area.
-With a less powerful motor the subtle touch sensation of ones hand against the texture of the linen could easily drown the vibrations as well.
+With a less powerful motor, like ours, the subtle touch sensation of ones hand against the texture of the linen could easily drown the vibrations as well.
 
 % fb: visual on display
 A concern brought up by several participants was that there was a lack of indication of the stroke one had just applied.
@@ -61,7 +58,7 @@ The single LED we installed beneath the prototype did not prove to be very usefu
 We discussed a larger deployment where a low resolution grid of tiny LEDs could be embedded beneath the textile surface and follow movements by illuminating at touch points and get a direct visual feedback (see figure~\ref{fig:textiletouch:eval:backlighting}).
 This approach is again limited to applications where the surface material allows for illumination to shine through, but it does extend beyond textile materials.
 
-\subsection{The concept as a controller for existing devices}
+\subsection{The prototype as a controller for existing devices}
 \todo{\dots}
 \blank
 \begin{verbatim}
@@ -252,7 +249,7 @@ This application does not really fall under the category of AHIs, but it is ment
     * doermaatte
 \end{verbatim}
 
-\subsection{Future work for Textile Touch}
+\section{Conclusions and future work for Textile Touch}
 \label{ch:textiletouch:futurework}
 
 There are several points about the prototype that are candidates for future work.

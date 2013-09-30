@@ -1,14 +1,8 @@
 %!TEX root = ../thesis.tex
 This section will go though the process and implementation of our prototype.
-\todo{As one of the goals of this prototype has been to implement advanced interaction possibilities into a textile surface without the use of advanced machinery ... something something}
-To give an insight into the prototype process as well as the final prototype, we have chosen to split the implementation into three overall iteration steps.
-Our hope is that this will give a better understanding of the rationale behind our construction decisions as well as ... something something 
-
-
-
-\todo{iterationer skal indeholder motivation for n\ae ste skridt \dots}
-
-\todo{iteration 1 is longer because we describes the basics osv. ??}
+As one of the goals of this prototype has been to implement advanced interaction possibilities into a textile surface without the use of advanced machinery we will go into details on the construction principles.
+Our hope is that this will give a better understanding of the rationales behind our construction decisions.
+To give an insight into the process as well as the final prototype, we have chosen to split the implementation into three overall iteration steps where each consecutive step builds upon the principles of the previous step.
 
 \subsection{Iteration 1}
 \label{ch:textiletouch:it1}
@@ -17,7 +11,7 @@ So this first prototype serves more as a proof-of-concept construction.
 
 \subsubsection{Construction principles}
 As a first iteration of our prototype we applied the principles from Pressure Sensor Matrix\footnote{http://www.instructables.com/id/Pressure-Sensor-Matrix/}, to construct a simple 2x3 touch pad in neoprene, as seen in figure~\ref{prototype_1}, and a bend sensor for simple testing, also seen in figure~\ref{prototype_1}.
-The prototype consists of three layers as depicted in figure~\todo{ref}, connected to an Arduino\footnote{http://www.arduino.cc/} for input/output data that is sent to Processing\footnote{http://processing.org/} for data visualization.
+The prototype consists of three different layers, which makes up the sensor, connected to an Arduino\footnote{http://www.arduino.cc/} for input/output data that is sent to Processing\footnote{http://processing.org/} (a visual programming language) for data visualisation (see figure~\ref{data-process}).
 
 \begin{figure}[h]
   \centering
@@ -35,7 +29,7 @@ We do not know if this is the general case as we only had a limited number of sa
 The bottom layer is another layer of neoprene, but with separate conductive stitchings for each of the 2 x 3 cells.
 The setup is illustrated in figure~\ref{layers_iteration1}.
 
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \begin{subfigure}[t]{.44\textwidth}
   \centering
@@ -52,6 +46,16 @@ The setup is illustrated in figure~\ref{layers_iteration1}.
 \label{prototype_1}
 \end{figure}
 
+\begin{figure}[b]
+  \centering
+  \begin{minipage}[b]{.8\textwidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{figures/touch/layers_it_1}
+    \caption{The three layers of our touch sensitive fabric showing the construction principle of iteration 1.}
+    \label{layers_iteration1}
+  \end{minipage}
+\end{figure}
+
 By sending a 5V signal into the single top layer stitch, each of the six (\(2*3\)) bottom layer outputs can now be read on the Arduino after passing through the piezoresistive material.  
 As pressure is applied to the different sections the voltage drop at the individual grid locations can now be measured with the analog input pins on the Arduino.
 The ADC on the Arduino then translates the measured voltage, between 0--5V, into the amount of pressure that is applied to each of the cells, as a number between 0--1023.
@@ -60,22 +64,18 @@ A single layer of our anti-static bags has resistance values from around 180-200
 Depending on the piezoresistive material and the construction of the sensor, these values will vary.
 \citet{rosenberg2009unmousepad} report values between 1.2 MOhms and 2.2 kOhms for their FSR ink.
 
-\begin{figure}[h]
-  \centering
-  \begin{minipage}[b]{.8\textwidth}
-    \centering
-    \includegraphics[width=.7\linewidth]{figures/touch/layers_it_1}
-	\caption[The three layers of our touch sensitive fabric, iteration 1.]
-   {The three layers of our touch sensitive fabric showing the construction principle of iteration 1.}
-   \label{layers_iteration1}
-  \end{minipage}
-\end{figure}
-
 Each of the cells acts in principle as a discrete sensor as they have their own individual output and are not influenced by each other.
 This approach is simple, both in terms of Arduino setup and coding, and can attain the fastest possible update rates as no computation is needed to determine the location of the touch. 
-The data received from the sensors are sent to Processing\footnote{The data visualisation program mentioned earlier} for visualisation as can be seen in figure~\todo{ref} which we have used for testing.
+The data received from the sensors are sent to Processing\footnote{The data visualisation program mentioned earlier} for visualisation as can be seen in figure~\ref{fig:ch:touch:it1:banana} where a the pressure of a banana is reflected in Processing running on the laptop.
 
-\subsubsection{Iteration 1 conclusion}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/touch/banana-processing}
+  \caption{The prototype of iteration 1 tested with a banana.}
+  \label{fig:ch:touch:it1:banana}
+\end{figure}
+
+\subsubsection{Iteration 1 discussion}
 This quite simple prototype showed us that the basic principles for constructing a textile touch surface with the materials we have had access to, is indeed possible.
 One of the major obstacles we found though was the transition from soft electronics (thread and anti-static bags) to hard electronics, as the conductive metal in the threads are woven into normal cotton thread, making soldering extremely hard.
 For this first iteration we settled for a simple approach with glued on tin foil connectors as a quick-and-dirty solution.
@@ -145,14 +145,14 @@ The fact that it is linear on both axes allows for bilinear interpolation to det
 
 Compared to the UnMousePad, which uses printed conductors, our fabric approach is a lot less `perfect' in its construction precision.
 At the same time the fabric can bend and twist a lot more than a sheet of polymer, all in all generating a less precise pressure map which translates into less precise interpolation.
-As a result we have taken a slightly more simple approach to the interpolation than \citep{rosenberg2009unmousepad} and in turn sacrificed some of the possible resolution gain.
+As a result we have taken a slightly more simple approach to the interpolation than \citet{rosenberg2009unmousepad} and in turn sacrificed some of the possible resolution gain.
 \blank
 For a given touch we first find the max value of the nearest intersection of the touch, point \(P_{max}\).
 Because a touch gives a radial spread of current around itself, the precise location of the touch will always be in the region of the \(P_{max}\).
 As there is a linear drop-off we can now take the readings from the surrounding \((X_{max}\pm1,Y_{max}\pm1))\) and use them to do a weighted average on both axes to approximate the correct position.
 The new approximated point \(P_{approx}\) will, as a result of the radial spread, have a higher weight than the sensed \(P_{max}\) so we scale the value of \(P_{approx}\) with a factor according to the Euclidean distance to \(P_{max}\). 
-
-\todo{maaske lidt mere her}
+The result of the interpolation is an approximated point which gives a more precise location of the touch than can be acquired directly from the raw sensor data.
+We have illustrated the interpolation process in figure~\ref{fig:ch:touch:interpolation}.
 
 \begin{figure}[h]
 \centering
@@ -168,10 +168,10 @@ The new approximated point \(P_{approx}\) will, as a result of the radial spread
   \caption{The weight-approximated position, based on the raw touch data from (a). The blue circles indicates the intensity of the values of the sensor cells surrounding the \(P_{max}\).}
 \end{subfigure}
 \caption{Illustration of the interpolation process.}
-\label{interpolation}
+\label{fig:ch:touch:interpolation}
 \end{figure}
 
-\subsubsection{Iteration 2 conclusion}
+\subsubsection{Iteration 2 discussion}
 For this type of application where a large number of individual sensor cells are needed the construction approach we have used in this iteration is by far superior to the one from iteration 1.
 It is a more complex setup both in software and hardware but it does in turn enable much larger sensor arrays than before as we showed before with the amount of I/O pins needed.
 As it scales up it is of course more computational heavy on the Arduino CPU as the multiplexers and, in our case, 49 sensor cells need to be controlled, but as this is still only a 7 x 7 grid we did not experience performance problems.
@@ -190,7 +190,14 @@ As we were aware of the possibility of generating imprecise data, as we have dis
 \subsubsection{Construction Principles}
 We used the same setup for iteration 3 but scaled to a 16 x 16 grid, providing 256 sensor cells after software upscaling, compared to the 49 sensor cells in iteration 2.
 The prototype was made in linen which is robust but a lot finer and thinner than the sofa textile and the conductive thread was sewed with less close seams to avoid some of the problems from iteration 2.
-The prototype can be seen in figure~\todo{ref} and the schematics for the final hardware setup as well as links to the software implementation can be found in appendix \ref{app:textile-touch}.
+The prototype can be seen in figure~\ref{fig:ch:textiletouch:final_prototype} and the schematics for the final hardware setup as well as links to the software implementation can be found in appendix \ref{app:textile-touch}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/touch/final_prototype}
+  \caption{The final prototype.}
+  \label{fig:ch:textiletouch:final_prototype}
+\end{figure}
 
 One of the main challenges in the construction of this iteration was the attachment of the wires to the conductive thread.
 In iteration 1 we tried with glued on tin foil which only worked because we only had 6 connections to handle.
@@ -239,7 +246,6 @@ Next we will cover some additional steps in the data flow and the \emph{applicat
 On the software side we have implemented a simple averaging filter\footnote{http://en.wikipedia.org/wiki/Moving\_average} to reduce noise by increasing the signal-to-noise ratio, SNR.
 This filter takes each input frame and averages the values of each cell with the cell values of \(x\) previous frames.
 We have found that averaging over the past \(x = 2\) frames gives the best result for our setup. 
-\todo{udpensles mere?} 
 In this way noise such as sudden spikes will be reduced while preserving the actual touch values of the frame.
 
 \subsubsection{Peak detection and interpolation}
@@ -249,7 +255,7 @@ The new part is that we in iteration 3 also have introduced multi-touch input.
 This is more a proof of concept feature which will not be fully functional and stable for interaction. The reason for this is that our code needs some adjustments to be able to provide proper stroke data to the recognition framework which would require too much implementation time.
 So for now we can visualise multi-touch input and basic multi-touch drawing (see figure~\ref{fig:textiletouch:multitouch}).
 
-An alternative would be to serve all recorded touch points to the \$N implementation, as opposed to \$P, \todo{but as noted earlier} this would be unsatisfactory slow.
+An alternative would be to serve all recorded touch points to the \$N implementation, as opposed to \$P, but as noted earlier this would be unsatisfactory slow.
 
 \begin{figure}[h]
   \centering
@@ -287,7 +293,7 @@ Also common to both is the ease of adding and removing new gesture templates whi
 
 For haptic feedback we have used a vibration motor mounted on the rear of the prototype.
 We have tested different patterns of vibration as feedback to find a suitable feedback approach.
-For instance having the motor vibrate shortly for a haptic sensation in response to a matched gesture input. \todo{tell about ``touch hard to begin'' ??}
+For instance having the motor vibrate shortly for a haptic sensation in response to a matched gesture input.
 Also, using a firm press to activate the system with a subsequent short vibration on activation.
 Besides this, we have also tested the motor continuously vibrating in response to a touch as an indication of a touch being recorded.
 This continuous vibration seems promising, in our opinion, especially if it is divided in to small intervals of on/off pulsations.
@@ -317,7 +323,7 @@ Additionally, the LED will blink to indicate that it has stopped recording strok
 % \end{subfigure}
 % \end{figure}
 
-\subsubsection{Iteration 3 conclusion} 
+\subsubsection{Iteration 3 discussion} 
 
 Although the 3rd iteration overcame some of the limitations of the 2nd iteration it still has some constraints that we would like to address.
 
@@ -361,7 +367,3 @@ Therefore we see it as a balance between the size of the touch area and the comp
 
 Our exploration of possible interaction feedback has been limited, so further work on this would be appropriate.
 We do envision that the application that is interacted with through the Textile Touch will provide some of the feedback, but more/better, both haptic and visual, feedback on the prototype could improve the user experience. 
-
-\begin{verbatim}
-Flere punkter i konklusionen?
-\end{verbatim}
