@@ -5,40 +5,98 @@ As we have now gone through three very different approaches to the creation of A
 
 \section{Revisiting the definition of AHIs}
 In this section we will revisit our original definition of ad hoc interfaces in the light of the concepts and prototypes that were the results of our three construction approaches that followed the definition.
+
+\subsection{Definition and experiences}
 In chapter 4 we defined AHIs as
 \begin{quotation}
 \emph{Tangible interfaces that can be created or accessed on demand for a particular purpose and with the user as the initiator of action. When in use the interface will temporarily emerge to the foreground after which it disappears into the background, either physically or perceptually.}
 \end{quotation}
-We will address the definition part by part in relation to our experiences from chapters 6--8.
+Here we will address the definition part by part in relation to our experiences from chapters 6--8.
 
 \subsubsection{Created or accessed on demand}
 This part of the definition expresses the initial encounter with an AHI.
-In our three approaches we have \todo{approached} this aspect of the definition in very different ways.
-Textile Touch (\autoref{ch:textile-touch}) is an example of \emph{accessing} the interface mediated through an existing object.
+In our three different explorations we have approached this aspect of the definition in very different ways.
+Textile Touch is an example of \emph{accessing} the interface mediated through an existing object.
 In our case Textile Touch was implemented as a general purpose touch interface for multiple applications, i.e. the audio and video application.
-So, the specific interface for the \emph{particular purpose} is in a sense \emph{created} on the spot, for instance the shift between video and audio control.
-This does not affect the physical manifestation of the interface as it is a virtually \emph{created} interface and as such we see it as an \emph{accessed} interface.
+So, the specific interface for the particular purpose is in a sense created on the spot, for instance the shift between video and audio control.
+This does not affect the physical manifestation of the interface as it is a virtually created interface and as such we see it as an accessed interface.
 
 Conductive Paint, on the other hand, is clearly an example of a physically \emph{created} interface.
 
-With the jamming concepts there is not a clear distinction as there are aspects of both \emph{created} and \emph{accessed} interfaces.
+With the jamming concepts there is not a clear distinction as there are aspects of both created and accessed interfaces.
 A more appropriate term would be \emph{adapted} or \emph{formed} interfaces, pointing to an addition to our definition.
 
 \subsubsection{The user as the initiator} 
 Again we see different interpretations of the definition.
-Textile Touch takes a traditional approach where the user explicit \emph{initiates} some action or activity.
+Textile Touch takes a traditional approach where the user explicit initiates some action or activity.
 Jamming and Conductive Paint are more interesting in this regard.
-In Conductive Paint the \emph{initiation of action} refers to the actual creation of the interface as this is the part where the purpose of future interaction is being defined.
+In Conductive Paint the initiation of action refers to the actual creation of the interface as this is the part where the purpose of future interaction is being defined.
 In some of the jamming concepts (Improvised Furniture and Playful Blobs) the user initiates the action by shaping the interface for a particular purpose.
 So generally we see the user as the initiator of action though the action has different purposes in the different examples.
 
 \subsubsection{Foreground and background}
-Foreground refers to the center of action and the approach to this does not differ much.
-However, the transition from foreground to background is more loosely interpreted.
-As Textile Touch does not have a physical manifestation other than the embedded object the notion of background is more of a perceptual character.
+Foreground refers to the center of action and as all our prototypes have a degree of direct interaction the interpretation of foreground does not vary much between the approaches.
+However, the transition from foreground to background is more loosely interpreted as to how the interface should \emph{disappear} into the background.
+As Textile Touch does not have a physical manifestation, other than the object that it embeds itself in, the notion of background is more of a perceptual character.
+So the interface disappears but in a more virtual than physical way.
+The only physical traits that disappear are the haptic and visual feedback from the interface.
 
+The transition from foreground to background in Conductive Paint can be seen in two different way.
+In one sense the interface will fade into the background when not in use by being just an artistic expression on the wall, so more of a passive perceptual transition.
+The other aspect is the true disappearance of the interface when it is removed.
+As we envision this a an interface that can equally easy be constructed as removed, this transition is a very concrete interpretation of the disappearance.
 
+Lastly in our jamming concepts, and BeoMotion, we see the disappearance into the background as the interface deforming itself into a natural state, which is a mix between a physical and perceptual disappearance.  
 
+A note is that we see a general tendency for the interfaces to be relevant while in the background, in the sense that they have an inherent meaning while not in use.
+At least this is the case in Textile Touch, Conductive Paint, Improvised Furniture and BeoMotion and to a less extend Dynamic Input Control.
+
+\subsubsection{Interfaces that disappears}
+\citet{abowd2012next} notes that, while many of Weiser's predications about the future of computing have come true, some were not so accurate such as inch-scaled devices being readily disposable.
+While this is true, our concept of AHIs does, in some aspects, challenges this as we propose that AHIs \emph{disappear} after use.
+We see this disappearance both in the sense of the affordance or perception of the interface, so here not a physical disposal in the sense that \citeauthor{abowd2012next} is referring to, but also in the sense of the physical removal of the interface.
+This is apparent in Conductive Paint as we here suggest that interfaces are build on the spot which will, at least in some cases, also lead to deconstruction of the interface after use and therefore be disposable in the sense \citeauthor{abowd2012next} is referring to.
+
+As we saw with our exploration of paint as a construction mechanism the interface could be disposed simply with a wet cloth.
+From a sustainability point of view disposable interfaces are of course not an unproblematic approach.
+So a future focus for such interfaces should be to focus on reuse.
+In our paint interface this could for example mean that the paint is collected in a container for later re-use instead of simply being washed away. 
+
+\subsection{A possible fourth approach}
+In our exploratory evaluation of Textile Touch we saw a pointer to a way of approaching AHIs that we had not considered in our initial outline of the concept.
+
+Where we with the Textile Touch prototype have focused on it as an example of how interaction can be integrated into the existing environment in a ubiquitous fashion, it can also be used as an example of how to extend the capabilities of existing objects and to augment their functions in an ad hoc manner.
+
+At a glance this does sound somewhat like Augmented Reality (AR), but as \citet{azuma1997survey} describe AR it \emph{allows the user to see the real world, with virtual objects superimposed upon or composited with the real world.}
+So the focus is on augmenting the environment \emph{virtually}, while our proposed focus is on augmenting the environment \emph{physically}.
+
+Inspired by this idea of augmenting existing objects in an ad hoc fashion, we have taken a brief look around for other examples that might give weight to this approach.
+
+REVEL \citep{bau2013revel}, as we have briefly mentioned earlier, is a system that via a digital overlay augments objects by changing the tactile perception of their physical surface.
+So it is a physical augmentation that, in principle, can be done to arbitrary objects giving them a new function when part of the interaction, while retaining the existing properties of the object \todo{reformulate - focus on the aspect of the object being useful while augmented}
+
+Another example is Pinoky \citep{sugiura2012pinoky} that is a wireless ring-like device that can augment ordinary plush toys to allow them to move limbs.
+This is done by attaching the ring around a limb to actuate it and the Pinoky can now record movements done by the user and play them back, animating the plush toy.
+
+Common for both these examples is the ad hoc augmentation of non-intractable objects (in an computing sense), changing their inherent physical properties or giving them new intractable, and in Pinoky, kinetic properties.
+
+We see this as an interesting aspect of future AHIs and a direction that should be explored more in depth, both in terms of more precise definition of the approach and in terms of an actual exploration through literature, concepts and prototypes.
+
+\subsection{A modified definition}
+As we have now analysed the different aspects of our initial definition of AHIs in relation to our concepts and prototypes we present a modified version of the definition of AHIs.
+We now define AHIs as
+\begin{quotation}
+\emph{Tangible interfaces that can be created, adapted or accessed on demand for a particular purpose and with the user as the initiator of action. In use the interface will emerge, either physically or perceptually, to the foreground and transition into a meaningful background state when inactive.}
+\end{quotation}
+
+Along with this definition we new suggest four approaches to the creation of such interfaces,
+
+\begin{itemize}
+	\item{Using shape change as the construction mechanism.}
+	\item{Through invisible interfaces embedded into the physical environment.}
+	\item{Literally constructing the interface on the spot.}
+	\item{Augmenting existing objects or interface dynamically.}
+\end{itemize} 
 
 \section{Understanding interaction with AHIs}
 \begin{quotation}
@@ -104,6 +162,27 @@ Our conductive paint exploration from chapter~\ref{ch:prototype3} is quite diffe
 As it is up to the user to construct the interface there is no initial perceptual or tangible guidelines to direct interaction or construction. Though the interesting aspect of our example of painting the wires and switches on the walls, is that it creates a, in Norman's terms \citep{norman2002design}, \emph{natural mapping} between the interface control and the controlled object as there would be a direct visual link between the two.
 If this would lead to natural interaction is only speculative but it does point to a possible quality of such interfaces. 
 
+\subsubsection{Feedback and Feedforward}
+We have already covered the aspect of affordances previously in this chapter as a way to discuss and inform our prototypes and concepts.
+Here we will look at an approach that we believe future AHIs could benefit from in order to increase the user experience and understanding of the interface and its functions.
+
+The Interaction Frogger is a framework \citep{stienstra2012design,wensveen2004interaction} that gives us tools to understand and improve designs in relation to the coupling between user actions and the product's functions through the use of feedback and feedforward.
+
+While feedback is the repose that a user gets from an action, feedforward is seen as the mechanism that invites a user to action and therefore happens before the user's action takes place. 
+Three types of feedforward are identified; \emph{inherent, functional and augmented}, along with six aspects of action-function coupling; \emph{time, location, direction, dynamics and modality}.
+This make up the different parts of the interaction loop that can be used to analyse and augment the interaction.
+
+The idea of feedforward is especially intriguing in relation to AHIs that make use of shape-change.
+If we see interaction as a continuous action-perception loop, an interface with a dynamic form could potentially influence the user's interpretation of the action possibilities by continuously changing its shape, as a method of providing feedforward.
+\todo{more stuff}
+
+%As we have already touched upon feedback in the prototyping chapters, we will limit ourselves to discuss feedforward here.
+%Inherent feedforward is related to the perceptual action possibilities of an interface, in this sense much in line with Gibson's \citep{gibson1979ecological} view on affordances.
+%Functional feedforward informs about the general purpose of an interface, for example through semantics or visibility of functional parts.
+%Augmented feedforward is when the user receives information about the action possibilities from an additional source, such as words or sounds. 
+
+
+
 \subsubsection{A taxonomy for tangibles}
 The last topic we will cover in this section is a look into Fishkin's taxonomy for tangible interfaces \citep{fishkin2004taxonomy}.
 The taxonomy uses two axes, \emph{metaphor} and \emph{embodiment} to address how `tangible' an interface is.
@@ -135,55 +214,3 @@ We have placed it as a full metaphor as we argue that we have truly direct manip
 
 Generally we do see a high degree of tangibility in AHIs, at least based on our interpretation of the taxonomy, which does fit our goal of such interfaces as we seek to tie the physical and digital aspects of interfaces closer together, drawing on the qualities of both worlds.
 The individual placements can of course be discussed as some of the examples could possibly have a different placement, but we do see a tendency in AHIs towards \emph{more tangibility} rather than less tangibility. 
-
-\section{Perspectives on AHIs}
-This section will cover perspectives on AHIs that we find relevant \todo{mere}
-
-\subsubsection{Interfaces that disappears}
-\citet{abowd2012next} notes that, while many of Weiser's predications about the future of computing have come true, some were not so accurate such as inch-scaled devices being readily disposable.
-While this is true, our concept of AHIs does, in some aspects, challenges this as we propose that AHIs \emph{disappear} after use.
-We see this disappearance both in the sense of the affordance or perception of the interface, so here not a physical disposal in the sense that \citeauthor{abowd2012next} is referring to, but also in the sense of the physical removal of the interface.
-This will most likely be most apparent in our third construction approach to AHIs as we here suggest that interfaces are build on the spot which will, at least in some cases, also lead to deconstruction of the interface after use and therefore be disposable in the sense \citeauthor{abowd2012next} is referring to.
-
-As we saw with our exploration of paint as a construction mechanism the interface could be disposed simply with a wet cloth.
-From a sustainability point of view disposable interfaces are of course not an unproblematic approach as such interfaces should instead focus on reuse.
-In our paint interface this could for example mean that the paint is collected in a container for later re-use instead of simply being washed away. 
-
-\subsubsection{Feedback and Feedforward}
-We have already covered the aspect of affordances previously in this chapter as a way to discuss and inform our prototypes and concepts.
-Here we will look at an approach that we believe future AHIs could benefit from in order to increase the user experience and understanding of the interface and its functions.
-
-The Interaction Frogger is a framework \citep{stienstra2012design,wensveen2004interaction} that gives us tools to understand and improve designs in relation to the coupling between user actions and the product's functions through the use of feedback and feedforward.
-
-While feedback is the repose that a user gets from an action, feedforward is seen as the mechanism that invites a user to action and therefore happens before the user's action takes place. 
-Three types of feedforward are identified; \emph{inherent, functional and augmented}, along with six aspects of action-function coupling; \emph{time, location, direction, dynamics and modality}.
-This make up the different parts of the interaction loop that can be used to analyse and augment the interaction.
-
-The idea of feedforward is especially intriguing in relation to AHIs that make use of shape-change.
-If we see interaction as a continuous action-perception loop, an interface with a dynamic form could potentially influence the user's interpretation of the action possibilities by continuously changing its shape, as a method of providing feedforward.
-\todo{more stuff}
-
-%As we have already touched upon feedback in the prototyping chapters, we will limit ourselves to discuss feedforward here.
-%Inherent feedforward is related to the perceptual action possibilities of an interface, in this sense much in line with Gibson's \citep{gibson1979ecological} view on affordances.
-%Functional feedforward informs about the general purpose of an interface, for example through semantics or visibility of functional parts.
-%Augmented feedforward is when the user receives information about the action possibilities from an additional source, such as words or sounds. 
-\subsubsection{A possible fourth approach}
-\todo{indledning}
-
-In our exploratory evaluation of Textile Touch we saw a pointer to a way of approaching AHIs that we had not considered in our initial outline of the concept.
-
-Where we with the Textile Touch prototype have focused on it as an example of how interaction can be integrated into the existing environment in a ubiquitous fashion, it can also be used as an example of how to extend the capabilities of existing objects and to augment their functions in an ad hoc manner.
-
-At a glance this does sound somewhat like Augmented Reality (AR), but as \citet{azuma1997survey} describe AR it \emph{allows the user to see the real world, with virtual objects superimposed upon or composited with the real world.}
-So the focus is on augmenting the environment \emph{virtually}, while our focus is on augmenting the environment \emph{physically}.
-
-\todo{more on why this is so}
-
-Inspired by this idea of augmenting existing objects in an ad hoc fashion we have taken a brief look around for other examples that might give weight to this approach.
-
-REVEL \citep{bau2013revel}, as we have briefly mentioned earlier, is a system that via a digital overlay augments objects by changing the tactile perception of their physical surface.
-So it is a physical augmentation that, in principle, can be done to arbitrary objects giving them a new function when part of the interaction, while retaining the existing properties of the object \todo{reformulate - focus on the aspect of the object being useful while augmented}
-
-Another example is Pinoky \citep{sugiura2012pinoky} that is a wireless ring-like device that can augment ordinary plush toys to allow them to move limbs.
-This is done by attaching the ring around a limb to actuate it and the Pinoky can now record movements done by the user and play them back, animating the plush toy.
-
