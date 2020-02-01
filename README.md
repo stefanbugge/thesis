@@ -1,3 +1,7 @@
+# Ad Hoc Interfaces: A tangible approach to on-demand user interfaces
+
+Master thesis
+
 ## Sublime 2 text + SumatraPDF ##
 
 Setup tutorial: [http://knowledgepayback.blogspot.dk/2012/07/latex-on-windows-with-sublime-text.html](http://knowledgepayback.blogspot.dk/2012/07/latex-on-windows-with-sublime-text.html)
